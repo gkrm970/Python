@@ -1,0 +1,639 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Functions\n",
+    "\n",
+    "Formally, a function is a useful technique that groups together a set of statements so they can be run more than once. They can also let us specify parameters that can serve as inputs to the functions.\n",
+    "\n",
+    "\n",
+    "Functions are one of most basic methods of reusing code in Python.\n",
+    "\n",
+    "Uptil now, we were writing code in a sequential manner. As and when we wanted to perform some action we wrote some code and so on. What if the same action is required to be performed again after certain lines of code. Will you keep writing same piece of code again and again?\n",
+    "<br>No, right? Nobody likes to same work again and again. That is when **functions** come into picture.\n",
+    "<br> Functions prove to be useful when we want to **reuse** code.\n",
+    "\n",
+    "There are two types of functions:\n",
+    "1. Built-in functions\n",
+    "2. User defined functions\n",
+    "\n",
+    "Functions perform another important task i.e **modularity** of code.\n",
+    "<br> The code is divided into certain modules and then these modules can used as and when required.\n",
+    "\n",
+    "\n",
+    "So if functions have so many advantages why not learn about them?\n",
+    "<br> So lets begin the second phase of this course, with **FUNCTIONS**!!\n",
+    "\n",
+    "The first question which arises is how do we write functions?\n",
+    "<br> The syntax is :\n",
+    "<br>\n",
+    "```python\n",
+    "def function_name(parameter1,parameter2,........,parametern):\n",
+    "    #### function definition ####\n",
+    "    \n",
+    "```\n",
+    "There could be a function with no parameters also.\n",
+    "Function definition includes the set of statements you want to execute or the set of actions you want your function to perform.\n",
+    "\n",
+    "<font color=orange>### IMPORTANT NOTE </font>\n",
+    "<br> Notice that there is colon after the def statement for function declaration.\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## User defined functions\n",
+    "\n",
+    "Lets explore the different types of functions and how can we use them.\n",
+    "<br>We are going to learn how to create user defined functions."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Functions with no parameters and returning nothing"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def addition_num(a,b):\n",
+    "    sum1= a+b\n",
+    "    print(sum1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "30\n"
+     ]
+    }
+   ],
+   "source": [
+    "addition_num(10,20)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "21\n",
+      "None\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(addition_num(10,11))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "TypeError",
+     "evalue": "addition_num() takes 2 positional arguments but 3 were given",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-5-a4d5e1f68140>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0maddition_num\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;36m20\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;36m1\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;36m1\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;31mTypeError\u001b[0m: addition_num() takes 2 positional arguments but 3 were given"
+     ]
+    }
+   ],
+   "source": [
+    "addition_num(20,1,1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 141,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "def display_good_job():\n",
+    "    '''\n",
+    "    This function \n",
+    "    Parameters\n",
+    "    ----------\n",
+    "    None\n",
+    "    ----------\n",
+    "    \n",
+    "    Returns\n",
+    "    ----------\n",
+    "    None\n",
+    "    ----------\n",
+    "    '''\n",
+    "    print(\"Cheers! Good Job. Happy Learning.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 142,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Cheers! Good Job. Happy Learning.\n"
+     ]
+    }
+   ],
+   "source": [
+    "display_good_job()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "You can call this function whenever you want to print \"Cheers! Good Job. Happy Learning.\" \n",
+    "\n",
+    "<font color=orange>### IMPORTANT NOTE </font>\n",
+    "<br> You must be wondering why should we create a function which just prints a string.\n",
+    "<br> Is this only for learning purpose or is this actually to be used? \n",
+    "<br> Suppose you want to display the above string and you use print statement everywhere instead of creating a user defined function for it. \n",
+    "<br> Later you realise that you have have to make some change in the string so you need to make that change everywhere, rather it would be better to make a single function and make the change in it."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Create a function add() that adds two numbers which are already initialised as below"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "a = 5\n",
+    "b = 4\n",
+    "\n",
+    "def add():\n",
+    "    '''\n",
+    "    Performs addition of two numbers and prints the result.\n",
+    "    Parameters\n",
+    "    ----------\n",
+    "    None\n",
+    "    ----------\n",
+    "    \n",
+    "    Returns\n",
+    "    ----------\n",
+    "    None\n",
+    "    ----------\n",
+    "    '''\n",
+    "    \n",
+    "    print(a+b)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def maths(a,b):\n",
+    "    c = a*b+b\n",
+    "    print(c)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "TypeError",
+     "evalue": "maths() missing 1 required positional argument: 'b'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-17-87afccee1071>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mmaths\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;36m5\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;31mTypeError\u001b[0m: maths() missing 1 required positional argument: 'b'"
+     ]
+    }
+   ],
+   "source": [
+    "maths(5)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "<font color=orange>### IMPORTANT NOTE </font>\n",
+    "<br>The the string we have written above in triple quotes is called docstring.\n",
+    "<br> It is useful when you want to provide detailed information about the function you have created.\n",
+    "<br> The details ideally should include informations about the input parameters (if any) and output parameters (if any) and of course, function description."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "<font color=orange>### IMPORTANT NOTE </font>\n",
+    "<br> After executing the previous cell, why was the answer of (a+b) not printed?\n",
+    "<br> Functions won't execute the statements in their body unless they are called. \n",
+    "\n",
+    "How to call a function?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "9\n"
+     ]
+    }
+   ],
+   "source": [
+    "add()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "How much ever times you call this function it will always print 9, because the values of a,b are fixed.\n",
+    "\n",
+    "What if I want to use the answer of the addition?\n",
+    "<br> This function cannot be used in such case as the result is printed there itself and the answer is not returned.\n",
+    "\n",
+    "The reusability of the function needs to be improved. \n",
+    "<br>How to make it more reusable, lets see in the next type?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Functions with no parameters and returning objects"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "a = 5\n",
+    "b = 4\n",
+    "\n",
+    "def add():\n",
+    "    \n",
+    "    '''\n",
+    "    Performs addition of two numbers and returns the result.\n",
+    "    Parameters\n",
+    "    ----------\n",
+    "    None\n",
+    "    ----------\n",
+    "    \n",
+    "    Returns\n",
+    "    ----------\n",
+    "    a+b : Addition of a and b \n",
+    "    ----------\n",
+    "    '''\n",
+    "        \n",
+    "    return a+b"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "result = add()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "9\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(result)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "9\n"
+     ]
+    }
+   ],
+   "source": [
+    "result = add()\n",
+    "\n",
+    "print(result)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Here the answer is stored in variable *result* and then printing it gives the output as 9.\n",
+    "<br> But still there is a problem, this function is not reusable unless and until you want to calculate the addition of 5 and 4 again and again, which is unlikely.\n",
+    "\n",
+    "How to make it more reusable, lets see in the next type."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Functions with parameters and not returning objects"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "def add(x,y):\n",
+    "    \n",
+    "    '''\n",
+    "    Performs addition of two numbers and prints the result.\n",
+    "    Parameters\n",
+    "    ----------\n",
+    "    x: First number to be added\n",
+    "    y: Second number to be added\n",
+    "    ----------\n",
+    "    \n",
+    "    Returns\n",
+    "    ----------\n",
+    "    None\n",
+    "    ----------\n",
+    "    '''\n",
+    "        \n",
+    "    print(x+y)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "9\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = 5\n",
+    "b = 4\n",
+    "\n",
+    "add(a,b)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "<font color=orange>### IMPORTANT NOTE </font>\n",
+    "<br>Here, the value in a is copied in x and the value in b is copied in y.\n",
+    "<br> Outside the function x and y cannot be used.\n",
+    "<br> x and y only exist within the function scope."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Functions with parameters and returning objects"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "def add(x,y):\n",
+    "    \n",
+    "    '''\n",
+    "    Performs addition of two numbers and returns the result.\n",
+    "    Parameters\n",
+    "    ----------\n",
+    "    x: First number to be added\n",
+    "    y: Second number to be added\n",
+    "    ----------\n",
+    "    \n",
+    "    Returns\n",
+    "    ----------\n",
+    "    x+y : Addition of x and y \n",
+    "    ----------\n",
+    "    '''\n",
+    "    \n",
+    "    return (x+y)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "9\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = 5\n",
+    "b = 4\n",
+    "\n",
+    "result = add(a,b)\n",
+    "\n",
+    "print(result)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Now the add() function is in most reusable state."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "15\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = 5\n",
+    "b = 10\n",
+    "\n",
+    "result = add(a,b)\n",
+    "\n",
+    "print(result)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 111,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'Arun': {'designation': 'Manager', 'salary': 50000}, 'Manish': {'designation': 'Senior Manager', 'salary': 70000}, 'Zahir': {'designation': 'Associate', 'salary': 40000}, 'Tom': {'designation': 'Managing Director', 'salary': 100000}}\n"
+     ]
+    }
+   ],
+   "source": [
+    "names = [\"Arun\", \"Manish\", \"Zahir\", \"Tom\"]\n",
+    "designations = [\"Manager\", \"Senior Manager\", \"Associate\", \"Managing Director\"]\n",
+    "salaries = [50000, 70000, 40000, 100000]\n",
+    "\n",
+    "details = employee_details(names, designations, salaries)\n",
+    "print(details)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
