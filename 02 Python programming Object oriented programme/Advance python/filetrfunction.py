@@ -44,3 +44,4 @@
 # # Print the result
 # print(result) # [3, 6, 9]
 #
+print("hello")
