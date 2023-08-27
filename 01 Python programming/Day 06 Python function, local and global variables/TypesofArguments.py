@@ -1,23 +1,25 @@
 #Example1:
-
 # def func(i,j):
 #     print(i,j)
-#
-# #func(10,20)   # Positional arguments
+
+# func(10,20)   # Positional arguments
+# func(i=10,j=20) # Keyword arguments
 # func(j=20,i=10) # Keyword arguments
+
 
 #Example2:defulat values assigned to positional arguments
 # def func(i,j=10):
 #     print(i,j)
 #
+# # func(100)  #100 10
 # func(100,200)  #100 200
-# func(100)  #100 10
 
 #Example3: keyword arguments
 # def greetings(name,greetmsg):
-#     print(greetmsg+"   "+name)
+#     # print(greetmsg+"   "+name)
+#     print(greetmsg,name)
 #
-# greetings(name='John', greetmsg="Hello")  # Hello   John
+# # greetings(name='John', greetmsg="Hello")  # Hello   John
 # greetings(greetmsg="Hello",name='John') #Hello   John
 
 #Example4:
@@ -30,9 +32,8 @@
 #
 # my_func(10,20,c=30)  #10 20 30
 # my_func(10,b=20,c=30) #10 20 30
-# #my_func(10,b=20,30) #this is wrong as positional argument must appear before any keyword argument
-# my_func(10,30,b=20)  # this is having logical error mean how can understand remaining two values assigned
-                       # - to which parameter.
+# my_func(10,b=20,30) #this is wrong as positional argument must appear before any keyword argument.
+# my_func(10,30,b=20)  # this is having logical error mean how can understand remaining two values assigned- to which parameter.
 
 #Example5:Function can return multiple values
 
@@ -44,8 +45,17 @@
 #
 # res=largest(10,20)
 # print(res)
-#     # or
+# #     # or
 # print(largest(100,200)) #(200, 100)
 # print(largest(20,10))  #(20, 10)
-#
+# #
 # print(type(res))   # tuple
+
+
+def bmi_calculator(weight, height):
+    bmi = weight / (height) ** 2
+    return bmi
+
+
+bmi = bmi_calculator(100, 5)
+print(bmi)

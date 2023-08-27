@@ -2,7 +2,7 @@
 # class A:
 #     def m1(self):
 #         print("this is m1 method from class A")
-#
+# #
 # class B(A):
 #     def m2(self):
 #         print("this is m2 method from class B")
@@ -17,11 +17,12 @@
 #     def m1(self):
 #         print(self.x+self.y)
 #
+#
 # class B(A):
 #     a,b=200,100
 #     def m2(self):
-#         print(self.a-self.b)
-#
+#         print(self.a*self.b)
+
 # bobj=B()
 # bobj.m1() # 30
 # bobj.m2() # 100
@@ -36,7 +37,7 @@
 #     a,b=200,100
 #     def m2(self):
 #         print(self.a-self.b)
-#
+# #
 # class C(B):
 #     i,j=5,2
 #     def m3(self):
@@ -52,21 +53,21 @@
 #     x,y=10,20
 #     def m1(self):
 #         print(self.x+self.y)
-#
+# #
 # class B(A):
 #     a,b=200,100
 #     def m2(self):
 #         print(self.a-self.b)
-#
+# #
 # class C(A):
 #     i,j=5,2
 #     def m3(self):
 #         print(self.i*self.j)
-#
-# bobj=B()
-# bobj.m1()  # 30
-# bobj.m2() # 100
-#
+# #
+# # bobj=B()
+# # bobj.m1()  # 30
+# # bobj.m2() # 100
+# #
 # cobj=C()
 # cobj.m1() # 30
 # cobj.m3()  #10
@@ -77,17 +78,17 @@
 #     x,y=10,20
 #     def m1(self):
 #         print(self.x+self.y)
-#
+# #
 # class B:
 #     a,b=200,100
 #     def m2(self):
 #         print(self.a-self.b)
-#
+# #
 # class C(A,B):
 #     i,j=5,2
 #     def m3(self):
 #         print(self.i*self.j)
-
+#
 # cobj=C()
 # cobj.m1() # 30
 # cobj.m2() #100
@@ -99,13 +100,14 @@
 #         print("This is m1 method from class A")
 #
 # class B(A):
-#     def m1(self):
-#         print("This is m1 method from class B")
+#     def m2(self):
+#         print("This is m2 method from class B")
 #         super().m1()
-#
+# #
 # bobj=B()
-# bobj.m1()  #This is m1 method from class B
-#             #This is m1 method from class A
+# bobj.m1()
+# # bobj.m2()  #This is m1 method from class B
+# #             #This is m1 method from class A
 
 # Example7
 # class A:
@@ -116,8 +118,8 @@
 #     def m(self,x,y):
 #         print(x+y)  # local variables  3000
 #         print(self.i+self.j) # class variables 300
-#         print(self.a+self.b) # printing class variables from other class 30
-#
+#         print(self.a+self.b) # printing class variables from other class  ---30
+# #
 # bobj=B()
 # bobj.m(1000,2000)
 
@@ -128,10 +130,11 @@
 # class Child(Parent):
 #     name="John"   # overriding the variable value
 #     def test(self):
+#         print(self.name)
 #         print(super().name)
-#
+# #
 # cobj=Child()
-# print(cobj.name) #"John"
+# # print(cobj.name) #"John"
 # cobj.test() #Scott
 
 
@@ -139,18 +142,18 @@
 # class Bank:
 #     def rateOfInterest(self):
 #         return 0
-#
+# #
 # class XBank(Bank):
 #     def rateOfInterest(self):
 #         return 10
-#
+# #
 # class YBank(Bank):
 #     def rateOfInterest(self):
 #         return 12
 #
 # objx=XBank()
 # print(objx.rateOfInterest()) # 10     method name is remain same here
-#
+# #
 # objy=YBank()
 # print(objy.rateOfInterest()) #12
 
@@ -162,7 +165,7 @@
 #             print("Hello " +name)
 #         else:
 #             print("Hello")
-#
+# #
 # h=Human()
 # h.sayhello("scott")
 # h.sayhello()
@@ -170,13 +173,10 @@
 # Example11: overloading 2
 
 # class Calculation:
-#     def add(self,a=0,b=0,c=0):
+#     def add(self,a=0,b=0,c=5):
 #         print(a+b+c)
-#
+# #
 # calobj=Calculation()
 # calobj.add() # 0
 # calobj.add(10,20) # 30
 # calobj.add(100,200,300) #600
-#
-#
-#

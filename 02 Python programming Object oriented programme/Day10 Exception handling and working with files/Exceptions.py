@@ -2,22 +2,24 @@
 # print("this is starting point of program...")
 # print("this is starting point of program...")
 # print("this is starting point of program...")
+
 # try:
-#     print("x")
+#     print("xyz")
 # except:
 #     print("Exception occurred")
-#
+
 # print("this is end of the program..")
 # print("this is end of the program..")
 # print("this is end of the program..")
 
 # Example2
-# print("This is starting point of program.....")
-# print("Program in progress")
-# try:
-#     print(10/5)   #2.0
-# except ZeroDivisionError:
-#     print("Exception occurred...handled..")
+print("This is starting point of program.....")
+print("Program in progress")
+try:
+    print(5/0)   #2.0
+except:
+    print("Exception occurred and handled..")
+
 # print("Program completed...")
 
 # Example3 : Multiple except blocks  - try, except else, finally

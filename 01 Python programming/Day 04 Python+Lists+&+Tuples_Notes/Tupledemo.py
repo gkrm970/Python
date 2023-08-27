@@ -14,13 +14,13 @@
 # print(mytuple[2:5]) #('cherry', 'orange', 'kiwi')
 # print(mytuple[-4:-1]) # ('orange', 'kiwi', 'melon')
 
-# Example 4: Changing tuple items
+# Example 4: Can not changing the tuple items.
 # by default tuple does not allow you to change values bcoz it is immutable, but there is work around it
 # tuple--> list(modify)--> tuple
 #
-# #mytuple=("apple", "banana", "cherry")
-# mytuple=("apple", 100, 200)
-# mylist=list(mytuple) # convert tuple into list
+# mytuple1=("apple", "banana", "cherry")
+# mytuple2=("apple", 100, 200)
+# mylist=list(mytuple1) # convert tuple into list.
 # mylist[0]="orange"
 # mytuple=tuple(mylist)
 # print(mytuple) #('orange', 'banana', 'cherry')
@@ -61,15 +61,14 @@
 # Example11: Join/combine tuple
 # tuple1 = (10, 20, 30)
 # tuple2 = ('a', 'b', 'c')
-#
-# tuple3 = tuple1 + tuple2  # concatenation possible
-# print(tuple3)  # (10, 20, 30, 'a', 'b', 'c')
+# # tuple3 = tuple1 + tuple2  # concatenation possible
+# # print(tuple3)  # (10, 20, 30, 'a', 'b', 'c')
 # tuple3 = tuple1.copy('tuple2')  # AttributeError: 'tuple' object has no attribute 'copy'
+# print(tuple3)
 
 # Example12:  tuples comparison
 # tuple1 = (10, 20, 30)
 # tuple2=('a','b','c')
-# tuple2 = (10, 20, 30)
 
 # if tuple1 == tuple2:
 #     print("tuples are equal")

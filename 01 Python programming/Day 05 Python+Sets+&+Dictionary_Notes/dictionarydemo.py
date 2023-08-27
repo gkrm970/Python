@@ -6,19 +6,17 @@
 # mydic={
 #     "brand": "Hyudai",
 #     "model": "i10",
-#     "year": 2021
-# }
+#     "year": 2021}
 # print(mydic["brand"])  # Hyudai
 # print(mydic["model"]) #i10
-# # using get()
+# # # using get()
 # print(mydic.get("brand")) #Hyudai
 
 # Example3: change values in dictionary
 # mydic={
 #     "brand": "Hyudai",
 #     "model": "i10",
-#     "year": 2020
-# }
+#     "year": 2020}
 # print(mydic) # {'brand': 'Hyudai', 'model': 'i10', 'year': 2020}
 # mydic["year"]=2021    # new value
 # print(mydic) #{'brand': 'Hyudai', 'model': 'i10', 'year': 2021}
@@ -27,16 +25,17 @@
 # mydic={
 #     "brand": "Hyundai",
 #     "model": "i10",
-#     "year": 2020
-# }
-#
+#     "year": 2020}
 # for i in mydic:
 #     print(i)   # prints only keys from dictionary
-#
+
 # for i in mydic:
 #     print(mydic[i])    # prints only values from dictionary
 
 # for i in mydic.values():
+#     print(i)  # prints only values from dictionary
+
+# for i in mydic.keys():
 #     print(i)  # prints only values from dictionary
 
 # for x,y in mydic.items():
@@ -48,13 +47,14 @@
 #     "model": "i10",
 #     "year": 2020
 #  }
-#
+# print("model" in mydic)  # True
+# print("model1" in mydic)  # False
+
 # if "model1" in mydic:
 #     print("exist")
 # else:
 #     print("not exist")
 
-# print("model" in mydic)  # True
 
 # Example6: find number of items in dictionary
 # mydic={
@@ -68,8 +68,7 @@
 # mydic={
 #     "brand": "Hyudai",
 #     "model": "i10",
-#     "year": 2020
-#  }
+#     "year": 2020}
 # mydic["color"]="red"
 # print(mydic) #{'brand': 'Hyudai', 'model': 'i10', 'year': 2020, 'color': 'red'}
 
@@ -84,7 +83,7 @@
 
 # del mydic["year"]
 # print(mydic) #{'brand': 'Hyudai', 'model': 'i10'}
-
+#
 # del mydic
 # print(mydic) #NameError: name 'mydic' is not defined
 

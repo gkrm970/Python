@@ -20,7 +20,7 @@ List is mutable(changeable).
 Tuple
 --------------
 A tuple is a collection which is ordered and unchangeable. 
-In Python tuples are written with round brackets. ()
+In Python tuples are written with round brackets. () ---> braces
 Tuple is Immutable.
 
 if it is Immutable below things are not possible....
@@ -29,7 +29,6 @@ if it is Immutable below things are not possible....
 2) we cannot append new value
 3) we cannot insert a new value
 4) we cannot remove a value
-
 
 mutable  - can change
 immutable -- we cannot change

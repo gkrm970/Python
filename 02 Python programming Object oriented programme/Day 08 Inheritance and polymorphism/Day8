@@ -9,7 +9,7 @@ Inheritance
 ------------------
 Acquiring all the attributes(variables) & behavior(methods) from one class to another class is called as inheritance.
 
-class A   ---> a,b,c  m1() m2()    ----> A is parent of B class    (Base class/Super class)
+class A():   ---> a,b,c  m1() m2()    ----> A is parent of B class    (Base class/Super class)
 
 class B(A)    ----> x,y,z   m3()   ----> B is child of A class    (Sub class/ Derived class)
 

@@ -35,20 +35,20 @@ Method --> the function creates in side the class  called method.
 
 1) instance method ( we call only through object)
 2) static method ( we can directly call using class)
-       when we call the static method inside the class , we have to give value for self parameter
+       when we call the static method inside the class , we have to give value for self as a parameter
        annotation ---->@staticmethod,
 
 
-Global variables
+Global variables  --> If variable create out the class called global variable.
 Class variables --> declare the variable inside the class is called class variable.
-Local variables
+Local variables--> this for function.
 
 Method  & constructor
 -------------------------
-Method: give any name
+Method: give any name as a method name.
 		 return the value/s
 		 method can take arguments/parameters
-		 we have to use an object to invoke the method
+		 we can use an object to invoke the method
 
 Constructor:constructor name is fixed :
 			   def  __init__(self):
@@ -56,7 +56,7 @@ Constructor:constructor name is fixed :
  constructor will not return any value but print the value.
  constructor can also take arguments/parameters
  constructor will be called at the time of object creation itself.
- as soon as created the object, constructor called automatically
+ as soon as created the object, constructor called automatically.
  No mandatory to create the initialization constructor in the class.
 
 

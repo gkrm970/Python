@@ -1,35 +1,31 @@
-#Example1
+# Example1
 # def myfun():
 #     print("hello")
 #
 # myfun()    # call the function
+# print("hello")
 
-#Example2:
+# Example2:
 # def myfun(name):
 #     print("Hello",name)
 #
 # myfun("Smith")  #Hello Smith
 
-#Example3:
-# def cal(a,b):
-#     return (a+b)
-#
+# Example3:
+# def cal(a, b):
+#     return (a + b)
 # sum=cal(100,200)
 # print(sum)  #300
-#
-# print(cal(10,20)) #30
+# print(cal(10, 20))  # 30
 
-#Example4:
+# Example4:
 
-# def func():
-#     return
-
-# def func():
+# def funcccc():
 #     i=10
+#
+# print(funcccc())  #None
 
-# print(func())  #None
-
-#Example5:
+# Example5:
 # def cal(a,b):
 #     print(a+b)
 #
@@ -39,7 +35,3 @@
 #     return(a+b)
 #
 # print(cal(10,20))  #30
-
-
-
-
