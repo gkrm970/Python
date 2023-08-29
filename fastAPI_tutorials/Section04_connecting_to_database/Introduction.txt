@@ -1,0 +1,32 @@
+FastAPI is a flexible web framework for building APIs in Python. It does not specify or enforce a particular type of database to use. Instead, you have the freedom to choose the database that best suits your needs and preferences.
+
+FastAPI can work with a variety of databases, including:
+
+Relational databases: FastAPI supports popular relational databases such as PostgreSQL, MySQL, SQLite, and Microsoft SQL Server. You can use an Object-Relational Mapping (ORM) library like SQLAlchemy or an asynchronous SQL toolkit like databases to interact with these databases.
+
+NoSQL databases: FastAPI can also connect to NoSQL databases such as MongoDB, Cassandra, or Redis. For MongoDB, you can use the PyMongo library, while for Cassandra, you can use libraries like cassandra-driver or object modeling libraries like gino-cassandra.
+
+In-memory databases: If you require a lightweight and temporary storage solution, you can use in-memory databases like SQLite (for small-scale applications) or Redis (for caching and session management).
+
+The choice of the database depends on factors such as the nature of your application, the data model, scalability requirements, and personal preference. It is recommended to research and evaluate different databases based on your specific project requirements before making a decision.
+
+
+what is SQLalchemy
+================== 
+
+
+SQLAlchemy is a popular and powerful Python library that provides a set of tools and utilities for working with relational databases. It serves as an Object-Relational Mapping (ORM) framework, which means it allows you to interact with a database using Python objects instead of writing raw SQL queries.
+
+SQLAlchemy provides a high-level, Pythonic interface for database operations, making it easier to work with databases and manage database relationships. It abstracts away the differences between different database engines, allowing you to write database-agnostic code.
+
+Key features and components of SQLAlchemy include:
+
+Object-Relational Mapper (ORM): SQLAlchemy's ORM allows you to define database models as Python classes. These classes represent database tables, and each instance of a class represents a row in the table. The ORM provides functionality for mapping the Python objects to the database schema, handling relationships between tables, and performing CRUD (Create, Read, Update, Delete) operations.
+
+SQL Expression Language: SQLAlchemy also provides a SQL Expression Language, which allows you to construct SQL queries using Python objects and methods. This provides a powerful and flexible way to build complex queries, and it integrates well with the ORM.
+
+Connection Pooling: SQLAlchemy includes built-in connection pooling functionality, which helps manage database connections efficiently, improving performance and scalability.
+
+Database Engine Support: SQLAlchemy supports various database engines, including PostgreSQL, MySQL, SQLite, Oracle, Microsoft SQL Server, and more. It abstracts away the differences between these engines, allowing you to write code that works with multiple databases.
+
+Overall, SQLAlchemy simplifies the process of working with databases in Python, providing a high-level and flexible API for database interactions. It is widely used in Python web development frameworks like Flask and Django, and it is a popular choice for building database-driven applications.

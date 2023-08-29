@@ -1,0 +1,4 @@
+fastAPI==0.98.0
+Uvicorn==0.22.0
+sqlalchemy==2.0.17
+
