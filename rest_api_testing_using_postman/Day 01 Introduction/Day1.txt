@@ -1,0 +1,35 @@
+Day-1
+----
+API Testing Introduction
+---------------------------
+
+
+Rest API methods / http request
+----------
+get
+post
+put
+delete
+--
+
+
+--
+
+http://www.google.com/
+
+
+https://reqres.in/api/users?page=2
+
+https://reqres.in/api/users/2
+
+
+
+Java materials: https://www.w3schools.com/java/
+Java videos: https://www.youtube.com/playlist?list=PLUDwpEzHYYLt8jYba459LEYrzlUKINCrk
+
+
+
+
+
+
+
