@@ -1,0 +1,40 @@
+Manual testing 
+------------------
+Module 1: Testing concept (Theory ) what?
+Madule 2: Testing project(Practical) How ?
+module 3: Ajile process.
+
+Software:- is a collection of computer programs that helps us to perform a task
+
+Types of software
+---------------
+System software:-
+ex: Device driver,operating system, server, utilities
+2) Programming software
+ex: compilers, debuggers, interpreters etc...
+3) Application software.
+ex: web Application,mobile apps, Desktop application etc..
+
+
+
+
+Veification and validation
+
+verification
+--------------
+verification checks whether we are building the right product
+focus on documentation
+ static testing ------
+testing the project related documents is called static testing 
+review 
+walkthrought
+inspection
+
+validation
+---------
+validation checks whether we are building the product right
+takes place after verification are completed
+focus on software
+ dynamic testin------------
+testing the actual software 
+unit testing, intgration testing sysytem testing and user acceptance testing

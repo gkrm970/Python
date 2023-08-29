@@ -1,0 +1,49 @@
+Manual testing project.
+----------------------
+
+Project introduction
+understanding and exploring the functionality(FRS)
+test plan
+writing test scenarios.
+writing the test cases and reviews
+Environment setup and built deployment
+test execution
+bug reportinig and tracking
+sanity testing , re testing and regression testing
+Testing sign off
+
+
+Project v/s process
+------------
+Product
+ecomerse product/application
+
+ecomerce
+-----------
+
+	login
+	search for product/items
+	add then to cart
+	Do payment
+	product will be delivered.
+	return the product
+	etc
+Frontend--For public
+Backend--Admin
+
+url: https://demo.opencart.com/
+customer: opencart
+	
+Mockup screens.
+
+
+
+Built setup
+--------------
+Prequisite .
+1) Mysql
+2) Apache server.
+
+XAMPP --> WILL GIVE BOTH MYSQL,PHP and apache server.
+
+Release note --> how to deploy the built in the environment.

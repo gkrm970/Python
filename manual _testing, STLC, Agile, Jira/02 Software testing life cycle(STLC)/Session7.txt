@@ -1,0 +1,12 @@
+SDLC ---required analysis,design,coding ,testing ,deployment,maintanace.
+
+
+STLC-Software testing life cycle.
+	1)Requirement analysis
+	2)Testing planning
+	3)Test design
+	4)Test execution
+	5)Defect/bug reporting and tracking.
+	6) Test closure
+
+

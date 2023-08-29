@@ -1,0 +1,31 @@
+Static testing.
+Review -
+---------
+Conduct on dic to ensure correctness and completeness.
+
+Requirement review
+designe review
+code review
+test plan review 
+test case review
+
+Walkthroug
+--------
+it is a informal review 
+Auther reads the doc or code and discuss with peers
+Its not pre-planned and can be done when ever required.
+Also walkthrough does not have minute of the meet.
+
+Inspection
+----------
+its a mostly formal review type.
+In which atleast 3-8 people will sit in the meeting 1-reader 2-writer 3-moderator plus concerned
+Inspection will have a proper schedule which will be intimated via email to the concerned developer/tester
+
+Dynamic testing techniques.
+---------------------------
+Unit testing
+Integration testing 
+Sytem testing
+User acceptance testing
+

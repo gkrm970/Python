@@ -1,0 +1,90 @@
+System testing
+-------------
+
+Functionality testing 
+-----------------
+Object properties testing:- Check the properties of the object present on the application
+example: Enable , disable , visible, focuse...............
+
+Datbase testing/backend testing
+------------------------------
+DML operation (data manupulation language)
+Checking database operation wrt to user operations .
+
+insert
+update
+delete
+select
+
+
+Combination of both white box and black box testing called grey box testing.
+Ex : database testing.
+
+Table and column level validation (column type, column length,number of column...)
+Relation between the tables (Narmalization).
+Functions
+Procedures
+Triggers
+Indexes
+Views
+etc....
+
+
+Error handling Testing
+-----------------------
+Tester Verify  thr error message while performing incurrect action on the application.
+Error message should be readable
+User understanding /simple language.
+
+Incorrect data
+Invalid user
+
+Calculation/manipulation testing
+-----------------------
+Tester should verify the calculations.
+
+Link Existence/Link execution.
+---------------------------- applicable only for web application
+Where exactly the link are placed............links existence
+Links are navigating to proper page or not--------link execution
+
+internal link ----same page but different section
+External link---------- jump to another page
+Brokens link------- Does not have any target page .  its kept for future implimentation
+
+Cookies and Session 
+------------------ only for web application applicable
+
+Cookies are tempropry file created by the browser while browsing the pages through internet.
+Session will be created on server side...
+session is timeslot where after some time browser will stop.
+Session are timeslot created by server . session will be expired after some time (if you are idle for some time)
+
+Non functional testing.
+For Non functional testing required saparete fecilist/skillsets for testing and also required saparete environment.
+-----------------------
+Performance testing-->Speed of the application and its done mostly to web application.
+	a)Load testing-->Gradualy Increasing load on application swlowly then check the 	speed of the application
+	b)Stress testing-->Suddly increase/decrease load on the application.
+	c)volume testing--> Check how much data is able to handle by the application.
+Security testing-->How secure our application.
+	Authentication--> Users are valid or not
+	Authorizarion/access-->Permission of the valid user.
+
+Recovery testing-->Recovery checks the system change to abnormal to normal.
+
+Compatibilty testing--
+	Forword
+	Backword
+	Hardware compatibility [configaration testing].
+
+Instalation testing.-->
+	Check screens are clear to understand.
+	Simple or not
+	Uninstalation
+
+Sanitation/garbage testing-->
+	If any appliaction provides extra feature/functionality then we consider them as 	bug.
+
+
+
