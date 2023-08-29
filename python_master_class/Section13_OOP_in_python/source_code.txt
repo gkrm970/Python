@@ -1,0 +1,249 @@
+Source Code
+Lecture : Creating a class & class attributes
+
+
+class Product:
+ 
+    quantity = 200
+ 
+ 
+product1 = Product()
+ 
+print(product1)
+ 
+print(product1.quantity)
+ 
+product2 = Product()
+print(product2.quantity)
+
+
+Lecture : Instance attributes & constructor
+
+
+class Product:
+    quantity = 200
+ 
+    
+    def __init__(self,name,price):
+        
+        self.name = name
+        
+        self.price = price
+ 
+ 
+product2 = Product("Phone",500)
+print(product2.name)
+print(product2.price)
+ 
+
+
+Lecture : Methods
+
+
+class Product:
+    quantity = 200
+ 
+    def __init__(self,name,price):
+        self.name = name
+        self.price = price
+ 
+    def summer_discount(self,discount_percent):
+        self.price = self.price - (self.price *discount_percent/100)
+ 
+product1 = Product("Laptop",500)
+print(product1.price)
+ 
+#let's call the method on object here
+product1.summer_discount(10)
+print(product1.price)
+.
+
+Lecture : Function based v/s OOP based way of writing code
+
+
+def product_data():
+    product_name = input('Enter name of product')
+    product_price = input('Enter price of product')
+    print(product_name)
+    print(product_price)
+ 
+product_data()
+
+
+class Product:
+ 
+    def __init__(self,name,price):
+        self.name = name
+        self.price = price
+ 
+    def get_data(self):
+        self.name = input('Enter name')
+        self.price = input('Enter price')
+ 
+    def put_data(self):
+        print(self.name)
+        print(self.price)
+ 
+product1 = Product("","")
+product1.get_data()
+product1.put_data()
+
+
+Lecture : Inheritance
+
+
+class Product:
+ 
+    def __init__(self,name,price):
+        self.name = name
+        self.price = price
+ 
+    def get_data(self):
+        self.name = input('Enter name')
+        self.price = input('Enter price')
+ 
+    def put_data(self):
+        print(self.name)
+        print(self.price)
+ 
+class DigitalProduct(Product):
+ 
+    def __init__(self,link):
+        self.link = link
+ 
+    def get_link(self):
+        self.link = input('Enter product link')
+ 
+    def put_link(self):
+        print(self.link)
+ 
+ebook = DigitalProduct("")
+ebook.get_data()
+ebook.get_link()
+ebook.put_data()
+ebook.put_link()
+
+
+Lecture : Multiple inheritance
+
+
+class A:
+    def method_a(self):
+        print('Method of class A')
+ 
+class B:
+    def method_b(self):
+        print('Method of class B')
+ 
+class C(A,B):
+    def method_c(self):
+        print('Method of class C')
+ 
+cobject = C()
+cobject.method_a()
+cobject.method_b()
+cobject.method_c()
+
+
+Lecture 8: Multi-level inheritance
+
+
+class A:
+    def method_a(self):
+        print('Method of class A')
+ 
+class B(A):
+    def method_b(self):
+        print('Method of class B')
+ 
+class C(B):
+    def method_c(self):
+        print('Method of class C')
+ 
+cobject = C()
+cobject.method_a()
+cobject.method_b()
+cobject.method_c()
+
+
+Lecture : Polymorphism
+
+
+print(10+20)
+print('Hello'+'world')
+
+
+# In this case python counts the number of characters in a string
+print(len('HelloWorld'))
+# In this case python counts the number of items in a list
+print(len(['Apple','Mango','Banana']))
+
+
+Lecture : Method overriding
+
+
+class Food:
+    def type(self):
+        print("Food")
+ 
+class Fruit(Food):
+    def type(self):
+        print('Fruit')
+ 
+burger = Food()
+print(burger.type())
+# this invokes the method in the Food class
+ 
+apple = Fruit()
+print(apple.type())
+# The method in the Fruit class overrides the method in the Food class.
+.
+
+Lecture : Operator overloading
+
+
+class Point:
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
+ 
+    #To overload the + operator, we use the __add__ method
+    # To perform overloading, python provides a special method
+    # to overload the + operator we use the magic method __add__
+ 
+    # we want the plus operator to perform addition of two Points/ two objects
+    def __add__(self, other):
+        x = self.x + other.x
+        y = self.y + other.y
+        #once we have the values of x and y we want to return then into a point
+        return Point(x,y)
+ 
+point1 = Point(1,2)
+point2 = Point(3,4)
+print(point1+point2)
+
+
+def __str__(self):
+        return '({0},{1})'.format(self.x,self.y)
+
+
+class Point:
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
+ 
+   
+ 
+    
+    def __add__(self, other):
+        x = self.x + other.x
+        y = self.y + other.y
+        #once we have the values of x and y we want to return then into a point
+        return Point(x,y)
+ 
+    def __str__(self):
+        return '({0},{1})'.format(self.x,self.y)
+ 
+point1 = Point(1,2)
+point2 = Point(3,4)
+print(point1+point2)

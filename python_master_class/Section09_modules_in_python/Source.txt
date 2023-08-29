@@ -1,0 +1,65 @@
+Source Code
+Lecture: Creating a module
+
+
+
+File name greet:
+
+def hello():
+    print('Welcome to the club')
+
+
+File name demo
+
+import greet
+ 
+greet.hello()
+
+
+Creating another function called bye.
+
+def hello():
+    print('Welcome to the club')
+ 
+def bye():
+    print('Goodbye, thanks for visiting')
+
+
+Another way to import function from a module.
+
+from greet import hello,bye
+ 
+hello()
+bye()
+
+
+Lecture: Using built-in Python modules
+
+
+
+import random
+ 
+result = random.randint(1,10)
+print(result)
+
+
+from random import randint
+ 
+result = randint(1,10)
+print(result)
+
+
+import datetime
+ 
+today_date = datetime.date.today()
+current_time = datetime.datetime.now()
+print(today_date)
+print(current_time)
+# but a better way to write above code is
+from datetime import date
+from datetime import datetime
+ 
+today_date = date.today()
+current_time = datetime.now()
+print(today_date)
+print(current_time)

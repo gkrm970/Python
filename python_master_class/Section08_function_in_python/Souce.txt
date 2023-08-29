@@ -1,0 +1,436 @@
+Lecture: Functions in Python
+
+def hello():
+    print('Hello')
+    print('Hi')
+    print('Tom')
+	
+
+
+hello()
+hello()
+
+
+Lecture: Passing arguments to function
+
+def add():
+    a= 10
+    b= 20
+    print(a+b)
+ 
+add()
+def add(a,b):
+    print(a+b)
+ 
+add()
+add(10,20)
+add(20,40)
+add(34,23)
+
+
+Lecture: Keyword arguments
+
+def speed(distance,time):
+    s = distance/time
+    return s
+ 
+avgspeed = speed(100,2)
+print(avgspeed)
+ 
+avgspeed = speed(2,100)
+print(avgspeed)
+ 
+
+
+Calling the above function with keyword arguments
+
+avgspeed = speed(time=2,distance=100)
+print(avgspeed)
+
+
+Lecture: Default parameters
+
+def area(pi,radius):
+    a = pi * radius * radius
+    return a
+ 
+circle_area = area(3.14,10)
+print(circle_area)
+
+
+Making the pi argument as default argument
+
+def area(radius,pi=3.14):
+ 
+
+
+Now even if you don’t pass in the value of PI in the function call it still works fine
+
+circle_area = area(10)
+
+
+Passing pi as 3.15
+
+circle_area = area(10,3.15)
+
+
+Lecture: Making function return a value
+
+def add(a,b):
+    c= a+b
+    return c
+ 
+result = add(10,20)
+print(result)
+
+
+Lecture: calling a function inside another function
+
+def add(a,b):
+    return a+b
+ 
+def square(c):
+    return c*c
+ 
+result = square(add(2,3))
+print(result)
+
+
+Lecture: Returning multiple values from a function
+
+def circle(r):
+    area = 3.14*r*r
+    circumfurence = 2*3.14*r
+    return area,circumfurence
+ 
+# calling the function and extracting the value
+a,c = circle(10)
+print(f"Area of a circle is {a}, circumference is {c}")
+
+
+Lecture: Passing list to a function
+
+def sum(numbers):
+    total = 0
+    for number in numbers:
+        total = total + number
+    return total
+ 
+result = sum([1,2,3,4,5])
+print(result)
+
+
+Lecture: Returning a list
+
+def remove_duplicates(numbers):
+    # create a new list which does not contain duplicates
+    new_list =[]
+    for number in numbers:
+        if number not in new_list:
+            new_list.append(number)
+    return new_list
+ 
+list = [1,2,3,4,3,4,5,2,1,7,8,9]
+result = remove_duplicates(list)
+print(result)
+A simpler way is by using set()
+
+Take the list, pass it to the set it will remove the duplicate elements.
+
+Then convert the set back into a list:
+
+def remove_duplicates(lst):
+    return list(set(lst))
+
+
+Lecture: Global & Local Variables
+
+def add():
+    count =1
+    print(count)    
+    
+def sub():
+    count =2
+    
+    print(count)
+    
+sub()
+add()
+
+
+Lecture: Accessing global variable inside a function
+
+count = 10
+ 
+def increment():
+    global count
+    count = count + 1
+    print(count)
+    
+    
+increment()
+
+
+Lecture: Check if a string is palindrome
+
+word = "panasonic"
+# treat a string like a list
+print(word[0])
+ 
+# get the length of string
+l = len(word)
+ 
+# loop through all the items from the start
+print('Printing the string straight')
+for i in range(l):
+    print(word[i])
+    
+# loop through the items in reverse
+print('Printing the string in reverse')
+for i in range(l):
+    print(word[l-i-1])
+    
+#comparing and returning if palindrome
+palindrome_flag = True
+for i in range(l):
+    if word[i] != word[l-i-1]:
+        palindrome_flag = False
+        break
+    else:
+        palindrome_flag = True
+ 
+if palindrome_flag:
+    print("The string is a palindrome")
+else:
+    print('The string is not a palindrome')
+    
+ 
+#converting the above code into a function
+def check_palindrome(word):
+    #get the length of the string
+    l = len(word)
+    for i in range(l):
+        if word[i] != word[l-i-1]:
+            return False
+        else:
+            return True
+    
+# call the above function
+print(check_palindrome("racecar"))
+
+
+Lecture: EMI Calculator
+
+#formula to calculate emi is: P x R x (1+R)^N / [(1+R)^N-1]
+#P: Principal loan amount = INR 10,000,00
+ 
+#N: Loan tenure in months = 120 months
+ 
+#R: Interest rate per month [7.2/12/100] = 0.006
+ 
+def emi_calculator(principal,rate,time):
+    #calculate the monthly rate
+    r = rate/12/100
+    emi = (principal * r * (1+r)**time) / ((1+r)**time -1 )
+    return emi
+ 
+#checking the function
+print(emi_calculator(4858900, 8.75, 240))
+
+
+Lecture: Factorial Using Recursion in Python
+
+Python code to calculate factorial:
+
+def factorial(number):
+    if number ==1:
+        return 1
+    else:
+        return number * factorial(number-1)
+    
+print(factorial(4))
+ 
+#how the iterations work
+#factorial(4) => return 4 * factorial(3)
+#factorial(3) => return 3 * factorial(2)
+#factorial(2) => return 2 * factorial(1)
+#factorial(1) => return 1
+Lecture: Variable length positional arguments
+
+def add(*args):
+    sum = 0
+    for n in args:
+        sum = sum+n
+    print(sum)
+ 
+add()
+add(10)
+add(20, 30)
+add(40, 50, 60)
+
+
+Lecture: Variable length keyword arguments
+
+def product(**kwargs):
+    for key, value in kwargs.items():
+        print(key+":"+value)
+ 
+product(name='iphone', price="700")
+product(name='iPad', price="400", description="This is an ipad")
+
+
+Lecture: Decorators in Python
+
+def chocolate():
+    print('chocolate')
+chocolate()
+
+
+def chocolate():
+    print('chocolate')
+ 
+# this decorator function accepts function as argument
+ 
+def decorator(func):
+    # inside the decorator function we have another function
+    def wrapper():
+        print('Wrapper up side')
+        # now here I call the func
+        func()
+        print('Wrapper down side')
+    # now the decorator needs to return this wrapper
+    return wrapper
+ 
+# now to call the functions, i first call the decorator and then pass chocolate inside it
+# then assign the function back to the previous main function i.e chocolate
+# finally call the chocolate function
+chocolate = decorator(chocolate)
+chocolate()
+
+
+def decorator(func):
+    # inside the decorator function we have another function
+    def wrapper():
+        print('Wrapper up side')
+        # now here I call the func
+        func()
+        print('Wrapper down side')
+    # now the decorator needs to return this wrapper
+    return wrapper
+ 
+@decorator
+def chocolate():
+    print('chocolate')
+ 
+chocolate()
+Lecture: Reusing decorators
+
+@decorator
+def cake():
+    print('cake')
+ 
+cake()
+
+
+Lecture: Decorating functions which accept arguments
+
+@decorator
+def cake(name):
+    print('cake'+name)
+ 
+cake("apple")
+
+
+def decorator(func):
+    def wrapper(name):
+        print('Wrapper up side')
+        func(name)
+        print('Wrapper down side')
+    return wrapper
+
+
+chocolate()
+
+
+def decorator(func):
+    def wrapper(*args, **kwargs):
+        print('Wrapper up side')
+        func(*args, **kwargs)
+        print('Wrapper down side')
+    return wrapper
+ 
+@decorator
+def chocolate():
+    print('chocolate')
+ 
+@decorator
+def cake(name):
+    print('cake'+name)
+ 
+chocolate()
+cake("Mango")
+
+
+Lecture: Decorating functions that return a value
+
+def total(price):
+    # Let's assume there was some code here which calculated the total amount
+    return price
+Now let’s create a decorator for it:
+
+def summer_discount_decorator(func):
+    def wrapper(price):
+        # take the value inside the total and return
+        func(price)
+        return func(price/2)
+    return wrapper
+Entire code:
+
+def summer_discount_decorator(func):
+    def wrapper(price):
+        # take the value inside the total and return
+        func(price)
+        return func(price/2)
+    return wrapper
+ 
+@summer_discount_decorator
+def total(price):
+    # Let's assume there was some code here which calculated the total amount
+    return price
+ 
+print(total(20))
+
+"""
+Create a BMI calculator, BMI which stands for Body Mass Index can be calculated using the formula:
+
+
+
+BMI = (weight in Kg)/(Height in Meters)^2.
+
+
+Write python code which can accept the weight and height of a person and calculate his BMI.
+
+note: Make sure to use a function which accepts the height and weight values and returns the BMI value.
+
+For solution refer next lecture.
+"""
+Solution to coding challenge part 4
+
+
+
+def calculate_BMI(new_weight, new_height):
+    new_bmi = new_weight/(pow(new_height, 2))
+    return new_bmi 
+ 
+weight = float(input('Enter weight in Kgs'))
+height = float(input('Enter height in meters'))
+bmi = calculate_BMI(weight, height)print(bmi)
+
+or 
+def bmi_calculator(weight, height):
+    bmi = weight / (height) ** 2
+    return bmi
+
+
+bmi = bmi_calculator(100, 5)
+print(

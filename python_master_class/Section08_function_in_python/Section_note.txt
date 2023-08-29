@@ -1,0 +1,177 @@
+Functions in Python:
+
+A function in Python is a block of code that performs a specific task.
+
+It can be created to avoid repeating code and to make the program more efficient.
+
+To create a function in Python, we need to define it first. The syntax for defining a function is as follows:
+
+def function_name():
+    # code to be executed
+
+
+The def keyword is used to define the function, followed by the name of the function and a pair of parentheses.
+
+Any arguments that the function takes can be specified within these parentheses.
+
+The colon : is used to indicate the start of the function block.
+
+The code to be executed inside the function must be indented. It is best practice to use four spaces for indentation.
+
+For example, let's define a function called hello:
+
+def hello():
+    print('Hello')
+    print('Hi')
+    print('Tom')
+
+
+To execute the function, we simply call it by its name followed by a pair of parentheses. For example, we can call the hello function twice:
+
+hello()
+hello()
+
+
+When we run the code, it will print the output of the hello function twice, which is:
+
+Hello
+Hi
+Tom
+Hello
+Hi
+Tom
+
+
+Passing arguments to function:
+
+let's say we want to create a function that adds two numbers:
+
+def add():
+    a = 10
+    b = 20
+    print(a + b)
+ 
+add()
+This works, but the problem is that every time we call the add() function, it performs the addition of 10 and 20.
+
+However, we want our function to be dynamic, i.e., it should perform the addition of any two numbers we want, just like the print() function.
+
+
+
+To make a function accept arguments, we have to change its definition. Let's modify the function definition for add() so that instead of having variables a and b inside the function, we make them parameters:
+
+def add(a, b):
+    print(a + b)
+ 
+add()
+Now calling the add() function gives an error because the function call now expects two arguments.
+
+
+
+Let's pass values to the function call and see the result:
+
+def add(a, b):
+    print(a + b)
+ 
+add(10, 20)
+Note: In the above code, a and b are parameters, and 10 and 20 are arguments.
+
+
+In the above code, what happens is that the value 10 gets assigned to a, and 20 gets assigned to b.
+
+You can even verify that by printing them:
+
+pythonCopy code
+def add(a, b):
+    print(a)
+    print(b)
+    print(a + b)
+ 
+add(10, 20)
+This is why they are called positional arguments.
+
+
+
+Let's call this function multiple times with different values:
+
+add(10, 20)
+add(20, 40)
+add(34, 23)
+
+
+Positional arguments:
+
+In positional arguments, the position of arguments matters, and you must know the position of the parameters so that you could pass them accurately.
+
+But let’s say you don't want to be bothered by the position of the argument.
+
+Let’s take an example to understand this. Let’s create a function that calculates the speed.
+
+def speed(distance,time):
+    s = distance/time
+    return s
+
+
+As we are using positional arguments, we always have to remember that while calling a function, we need to pass the arguments in the proper order.
+
+If we pass arguments in the wrong order, the function returns a wrong result. For instance:
+
+avgspeed = speed(100,2)
+print(avgspeed)
+ 
+avgspeed = speed(2,100)
+print(avgspeed)
+
+
+However, we can call the same function using keyword arguments, which do not require the order of arguments to be the same as the parameter order in the function definition. For example:
+
+avgspeed = speed(time=2,distance=100)
+print(avgspeed)
+Now in the above code, even if we pass arguments in the wrong order, we do not have to worry about the result being wrong.
+
+
+
+Default parameters:
+
+While defining a function, we can add parameters to it. However, we can also pass the values to these parameters inside the function definition itself, which is called passing default parameters.
+
+
+
+Let’s take an example:
+
+def area(pi, radius):
+    a = pi * radius * radius
+    return a
+ 
+circle_area = area(3.14, 10)
+print(circle_area)
+
+
+Now let's make the pi argument a default argument:
+
+def area(radius, pi=3.14):
+
+
+Even if we don’t pass the value of PI in the function call, it still works fine:
+
+circle_area = area(10)
+
+
+You can also override the value of the default parameter by passing your own value. Let’s pass pi as 3.15:
+
+circle_area = area(10, 3.15)
+Now the value of 3.14, which is the default parameter, gets overridden by the value which we pass in the function call.
+
+
+
+Making a function return a value:
+
+The "add" function above prints a value, but suppose we want to access that value instead of printing it. In this case, we need to modify the function definition to return the value using the "return" keyword:
+
+def add(a, b):
+    c = a + b
+    return c
+ 
+result = add(10, 20)
+print(result)
+This is a common practice in real-world function design, where functions often return a value that can be used in other parts of the program.

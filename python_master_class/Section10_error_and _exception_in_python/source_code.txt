@@ -1,0 +1,90 @@
+Source Code
+Lecture: Syntax error
+def function()
+    print("Hello World")
+ 
+
+
+Lecture: Logical error
+
+
+def addition(a,b):
+    return a-b
+ 
+result = addition(5,3)
+print(result)
+
+
+Lecture: Runtime error
+
+
+numerator = 10
+denominator = 0
+result = numerator/denominator
+print(result)
+ 
+
+
+x = 5
+y = z + 3
+print(x)
+print(y)
+ 
+
+
+n = int(input('Enter numerator'))
+d = int(input('Enter denominator'))
+ 
+result = n/d
+print(result)
+
+
+Lecture : Exception handling.
+
+
+result = n/d
+
+
+n = int(input('Enter numerator'))
+d = int(input('Enter denominator'))
+ 
+try:
+    result = n/d
+		print(result)
+except ZeroDivisionError:
+    # write the code we want to execute when exception occurs
+    print('Divide by zero error')
+ 
+print(result)
+
+
+Lecture : Else block
+
+
+n = int(input('Enter numerator'))
+d = int(input('Enter denominator'))
+ 
+try:
+    result = n/d
+ 
+except ZeroDivisionError:
+    # write the code we want to execute when exception occurs
+    print('Divide by zero error')
+else:
+    print(result)
+
+
+Lecture : Finally block
+
+
+n = int(input('Enter numerator'))
+d = int(input('Enter denominator'))
+ 
+try:
+    result = n/d
+    print(result)
+except ZeroDivisionError:
+    # write the code we want to execute when exception occurs
+    print('Divide by zero error')
+finally:
+    print('This code will be executed no matter what')

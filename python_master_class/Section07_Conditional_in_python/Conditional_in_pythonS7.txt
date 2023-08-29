@@ -1,0 +1,316 @@
+Lecture: If conditional statement:
+
+age = input('Enter your age')
+age = int(age)
+ 
+if age>=18:
+    print('You are an adult')
+else:
+    print('You are not an adult')
+
+
+Lecture: Elif statement
+
+marks = int(input('Enter marks'))
+ 
+if marks>=90:
+    print('Grade A')
+elif marks >=70:
+    print('Grade B')
+elif marks >=60:
+    print('Grade C')
+elif marks<60:
+    print('Grade D')
+Lecture: Nested IF
+
+Explain the below example in detail:
+
+age = int(input('Enter your age'))
+if age>=18:
+    score = int(input('Enter your exam score'))
+    if score>=40:
+        print('You meet both the age and score criteria and are qualified for the post')
+    else:
+        print('You meet the age criteria but not the score criteria, disqualified')
+else:
+    print('You do not meet the age criteria, try when you are above 18 ')
+
+
+Lecture: Range function
+
+
+
+numbers =[1,2,3,4,5,6,7,8,9,10]
+
+
+Using range
+
+numbers =list(range(10))
+print(numbers)
+
+
+List of numbers from 1-9
+
+numbers =list(range(1,10))
+
+
+List of numbers from 1 to 10
+
+numbers =list(range(1,11))
+
+
+List of 100 numbers
+
+numbers =list(range(1,101))
+print(numbers)
+
+
+Range function takes two parameters
+
+range(start,stop)
+
+
+Additional parameter called as step
+
+range(start,stop,step)
+
+
+Using step.
+
+range(1,101,3)
+
+
+Lecture: For loop
+
+
+
+for x in range(1,10):
+    print (x)
+
+
+for x in range(1,10):
+    print (x)
+
+
+Lecture: Iterating list of items
+
+Loop through a list of items
+
+fruits = ['apple','mango','banana','orange']
+ 
+for x in fruits:
+    print(x)
+
+
+Lecture: Iterating a dictionary
+
+people={"John":32,"Rob":40,"Tim":20}
+ 
+# To get access to keys
+for x in people:
+    print(x)
+ 
+#To get access to values
+for x in people:
+    print(people[x])
+
+
+Lecture: While loop
+
+
+
+counter = 0
+ 
+while counter<=10:
+    print(counter)
+    counter = counter + 1
+
+
+Lecture: Break
+
+
+
+counter = 0
+ 
+while counter<=10:
+ 
+    counter = counter + 1
+    if counter == 5:
+        break
+    print(counter)
+# The below line will be executed Because break stops the loop from executing,
+#not the entire program
+print('Line after break')
+
+
+Lecture: Continue
+
+counter = 0
+ 
+while counter<=10:
+ 
+    counter = counter + 1
+    if counter == 5:
+        continue
+    print(counter)
+print('Line after continue')
+
+
+Lecture: Adding items to cart using loop
+
+# Let's say we want to create a shopping cart
+cart = []
+ 
+# Accept the number of items we want
+n = int(input("Enter the number of items: "))
+ 
+for x in range(n):
+    item = input("Enter the item to add to the cart: ")
+    cart.append(item)
+    print(cart)
+ 
+# This code now accepts multiple items and adds them to the cart.
+
+
+Lecture: Adding items using while loop
+
+cart = []
+ 
+while True:
+    choice = input("Do you want to add an item to the cart? ")
+    if choice == "yes":
+        item = input("Enter the item you want to add: ")
+        cart.append(item)
+        print(f"Current cart contents are: {cart}")
+    else:
+        break
+ 
+print(f"Thank you! Your final cart contents are: {cart}")
+
+
+Lecture: Creating a list of products & adding items to cart
+
+products = [
+    {"name": "Smartphone", "price": 500, "description": "A handheld device used for communication and browsing the internet."},
+    {"name": "Laptop", "price": 1000, "description": "A portable computer that is easy to carry around."},
+    {"name": "Headphones", "price": 50, "description": "A pair of earphones worn over the head to listen to music."},
+    {"name": "Smartwatch", "price": 300, "description": "A wearable device used for fitness tracking and receiving notifications."},
+    {"name": "Bluetooth speaker", "price": 100, "description": "A portable speaker that connects wirelessly to devices using Bluetooth technology."}
+]
+cart = []
+ 
+while True:
+    choice = input("Do you want to continue shopping? ")
+ 
+    if choice == "y":
+        print("Here is a list of products and their prices:")
+        for index, product in enumerate(products):
+            print(f"{index}: {product['name']}: {product['description']}: ${product['price']}")
+        product_id = int(input("Enter the ID of the product you want to add to the cart: "))
+        cart.append(products[product_id])
+        print(f"Current cart contents are: {cart}")
+    else:
+        break
+ 
+print(f"Thank you! Your final cart contents are: {cart}")
+
+
+Lecture: Displaying cart items
+
+print("Here are the contents in your cart:")
+for product in cart:
+    print(f"{product['name']}: ${product['price']}")
+
+
+Lecture: Incrementing the quantity
+
+products = [
+    {"name": "Smartphone", "price": 500, "description": "A handheld device used for communication and browsing the internet."},
+    {"name": "Laptop", "price": 1000, "description": "A portable computer that is easy to carry around."},
+    {"name": "Headphones", "price": 50, "description": "A pair of earphones worn over the head to listen to music."},
+    {"name": "Smartwatch", "price": 300, "description": "A wearable device used for fitness tracking and receiving notifications."},
+    {"name": "Bluetooth speaker", "price": 100, "description": "A portable speaker that connects wirelessly to devices using Bluetooth technology."}
+]
+cart = []
+ 
+while True:
+    choice = input("Do you want to continue shopping? ")
+ 
+    if choice == "y":
+        print("Here is a list of products and their prices:")
+        for index, product in enumerate(products):
+            print(f"{index}: {product['name']} : {product['description']} : ${product['price']} ")
+ 
+        product_id = int(input("Enter the ID of the product you want to add to the cart:"))
+ 
+        # Check if product already present in cart
+        if products[product_id] in cart:
+            # In this case, increase the quantity of the product rather than adding it to the cart
+            products[product_id]['quantity'] += 1
+        else:
+            products[product_id]['quantity'] = 1
+            cart.append(products[product_id])
+ 
+        # Code to display the current cart contents, including the name, price, and quantity
+        print("Here are the contents in your cart:")
+        for product in cart:
+            print(f"{product['name']} : {product['description']} : ${product['price']} : Quantity: {product['quantity']}")
+ 
+    else:
+        break
+ 
+print(f"Thank you! Your final cart contents are: {cart}") 
+
+
+Lecture: Calculating the total amount
+
+total = 0
+print("Here are the contents in your cart:")
+for product in cart:
+    print(f"{product['name']} : {product['description']} : ${product['price']} : Quantity: {product['quantity']}")
+    total = total + (product['price'] * product['quantity'])
+print(f"Cart total is: ${total}")
+
+
+Entire source code:
+
+pythonCopy code
+products = [
+    {"name": "Smartphone", "price": 500, "description": "A handheld device used for communication and browsing the internet."},
+    {"name": "Laptop", "price": 1000, "description": "A portable computer that is easy to carry around."},
+    {"name": "Headphones", "price": 50, "description": "A pair of earphones worn over the head to listen to music."},
+    {"name": "Smartwatch", "price": 300, "description": "A wearable device used for fitness tracking and receiving notifications."},
+    {"name": "Bluetooth speaker", "price": 100, "description": "A portable speaker that connects wirelessly to devices using Bluetooth technology."}
+]
+cart = []
+ 
+while True:
+    choice = input('Do you want to continue shopping? ')
+ 
+    if choice == "y":
+        print('Here is a list of products and their prices:')
+        for index, product in enumerate(products):
+            print(f"{index}: {product['name']} : {product['description']} : ${product['price']}")
+        product_id = int(input("Enter the ID of the product you want to add to the cart:"))
+ 
+        # Check if product is already present in the cart
+        if products[product_id] in cart:
+            # Increase the quantity of the product rather than adding it to the cart again
+            products[product_id]["quantity"] += 1
+        else:
+            products[product_id]["quantity"] = 1
+            cart.append(products[product_id])
+ 
+        # Code to display the current cart contents, including the name, description, price, and quantity
+        total = 0
+        print('Here are the contents in your cart:')
+        for product in cart:
+            print(f"{product['name']} : {product['description']} : ${product['price']} : Quantity: {product['quantity']}")
+            total += product['price'] * product['quantity']
+        print(f"Cart total is: ${total}")
+    else:
+        break
+ 
+print(f"Thank you, your final cart contents are: {cart}")
+
+

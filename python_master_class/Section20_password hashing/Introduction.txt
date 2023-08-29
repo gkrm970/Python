@@ -1,0 +1,16 @@
+
+Password hashing is a crucial aspect of secure password management. It involves converting a user's password into a different, irreversible form before storing it in a database. The purpose of password hashing is to enhance the security of user credentials by preventing unauthorized access to sensitive information, even if the database is compromised.
+
+Here's an introduction to the process of password hashing:
+
+Hash Functions: A hash function is a mathematical algorithm that takes an input (in this case, a password) and produces a fixed-size string of characters, known as a hash or digest. Hash functions are designed to be one-way functions, meaning it is computationally infeasible to reverse-engineer the original input from the hash value.
+
+Salting: To further strengthen password hashing, a technique called salting is employed. A salt is a random and unique value that is generated for each user and combined with their password before hashing. The salt is then stored alongside the hash value in the database. Salting adds complexity and uniqueness to each hashed password, making it more resistant to precomputed lookup tables (rainbow tables) and brute-force attacks.
+
+Iterations: Another technique used in password hashing is key stretching or key derivation functions (KDFs). KDFs apply the hash function multiple times in a loop, increasing the time required to compute the hash. This slows down attackers attempting to crack passwords by making the hashing process resource-intensive. The number of iterations can be adjusted to find the right balance between security and performance.
+
+Verification: When a user attempts to log in, the password they provide is hashed using the same salt and number of iterations as the stored hash. The resulting hash is then compared to the stored hash in the database. If the hashes match, the password is considered valid, and the user is granted access.
+
+The use of secure password hashing techniques is essential to protect user passwords in the event of a data breach. By using cryptographic hashing functions, salts, and iterations, the original passwords become extremely difficult to recover, significantly reducing the risk of unauthorized access to user accounts.
+
+It's worth noting that password hashing is just one part of a broader password security strategy. Other measures, such as enforcing strong password policies, employing multi-factor authentication, and regular security audits, are also crucial to ensure robust protection against unauthorized access.

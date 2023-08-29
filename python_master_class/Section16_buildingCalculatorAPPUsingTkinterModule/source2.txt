@@ -1,0 +1,67 @@
+Certainly! Here's the continuation of the code with a for loop to create number buttons and position them on the grid:
+
+import tkinter as tk
+
+def button_click(number):
+    current = entry.get()
+    entry.delete(0, tk.END)
+    entry.insert(tk.END, current + str(number))
+
+def button_clear():
+    entry.delete(0, tk.END)
+
+def button_equal():
+    expression = entry.get()
+    try:
+        result = eval(expression)
+        entry.delete(0, tk.END)
+        entry.insert(tk.END, str(result))
+    except Exception as e:
+        entry.delete(0, tk.END)
+        entry.insert(tk.END, "Error")
+
+# Create the main window
+window = tk.Tk()
+window.title("Calculator")
+
+# Create the entry widget for displaying the input and result
+entry = tk.Entry(window, width=25)
+entry.grid(row=0, column=0, columnspan=4)
+
+# Create a list of button labels for numbers
+number_buttons = ["7", "8", "9", "4", "5", "6", "1", "2", "3", "0"]
+
+# Position the number buttons on the grid
+row = 1
+col = 0
+for number in number_buttons:
+    button = tk.Button(window, text=number, padx=10, pady=10, command=lambda num=number: button_click(num))
+    button.grid(row=row, column=col)
+    col += 1
+    if col > 2:
+        col = 0
+        row += 1
+
+# Create a list of button labels for operators
+operator_buttons = ["+", "-", "*", "/"]
+
+# Position the operator buttons on the grid
+row = 1
+col = 3
+for operator in operator_buttons:
+    button = tk.Button(window, text=operator, padx=10, pady=10, command=lambda op=operator: button_click(op))
+    button.grid(row=row, column=col)
+    row += 1
+
+# Create the equal button
+button_equal = tk.Button(window, text="=", padx=10, pady=10, command=button_equal)
+button_equal.grid(row=4, column=2)
+
+# Create the clear button
+button_clear = tk.Button(window, text="C", padx=10, pady=10, command=button_clear)
+button_clear.grid(row=4, column=1)
+
+# Start the Tkinter event loop
+window.mainloop()
+
+In this updated code, we use a for loop to iterate over the number_buttons list and create number buttons dynamically. The same is done for the operator_buttons list to create operator buttons. The buttons are then positioned on the grid using the grid() method, and the row and column variables are incremented accordingly.

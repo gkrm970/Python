@@ -1,0 +1,70 @@
+Certainly! Here's the updated code where all the calculator functionality is encapsulated inside a class called CalculatorApp:
+
+import tkinter as tk
+
+class CalculatorApp:
+    def __init__(self):
+        self.window = tk.Tk()
+        self.window.title("Calculator")
+        self.create_widgets()
+
+    def create_widgets(self):
+        self.entry = tk.Entry(self.window, width=25)
+        self.entry.grid(row=0, column=0, columnspan=4)
+
+        number_buttons = ["7", "8", "9", "4", "5", "6", "1", "2", "3", "0"]
+        operators = ["+", "-", "*", "/"]
+        row, col = 1, 0
+
+        for number in number_buttons:
+            button = tk.Button(self.window, text=number, padx=10, pady=10, command=lambda num=number: self.button_click(num))
+            button.grid(row=row, column=col)
+            col += 1
+            if col > 2:
+                col = 0
+                row += 1
+
+        for operator in operators:
+            button = tk.Button(self.window, text=operator, padx=10, pady=10, command=lambda op=operator: self.button_click(op))
+            button.grid(row=row, column=col)
+            row += 1
+
+        button_equal = tk.Button(self.window, text="=", padx=10, pady=10, command=self.button_equal)
+        button_equal.grid(row=4, column=2)
+
+        button_clear = tk.Button(self.window, text="C", padx=10, pady=10, command=self.button_clear)
+        button_clear.grid(row=4, column=1)
+
+    def button_click(self, number):
+        current = self.entry.get()
+        self.entry.delete(0, tk.END)
+        self.entry.insert(tk.END, current + str(number))
+
+    def button_clear(self):
+        self.entry.delete(0, tk.END)
+
+    def button_equal(self):
+        expression = self.entry.get()
+        try:
+            result = eval(expression)
+            self.entry.delete(0, tk.END)
+            self.entry.insert(tk.END, str(result))
+        except Exception as e:
+            self.entry.delete(0, tk.END)
+            self.entry.insert(tk.END, "Error")
+
+    def run(self):
+        self.window.mainloop()
+
+# Create an instance of the CalculatorApp class and run the application
+calculator = CalculatorApp()
+calculator.run()
+
+
+In this updated code, the CalculatorApp class encapsulates all the calculator functionality. The initialization of the class sets up the Tkinter window and calls the create_widgets() method to create and position the calculator buttons.
+
+The button click, clear, and equal functions are defined as methods within the class. They access the entry widget using the self.entry attribute.
+
+Finally, an instance of the CalculatorApp class is created, and the run() method is called to start the Tkinter event loop.
+
+This class-based structure allows for better organization and encapsulation of the calculator application.

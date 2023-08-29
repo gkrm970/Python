@@ -1,0 +1,21 @@
+POSTgreSQL
+==========
+POSTgreSQL (also written as PostgreSQL or simply Postgres).is an open-source object-relational database management system (ORDBMS). 
+It is known for its robustness, scalability, and extensibility, making it a popular choice for handling large amounts of data in various applications.
+
+PostgreSQL follows the SQL (Structured Query Language) standard and provides a wide range of features and capabilities. 
+It supports ACID (Atomicity, Consistency, Isolation, Durability) properties, which ensure data integrity and reliability. 
+It also offers advanced functionality such as support for complex queries, indexes, stored procedures, triggers, and full-text search.
+
+One of the key strengths of PostgreSQL is its support for object-relational database features. 
+It allows users to define custom data types, create complex data structures, and build relationships between tables using foreign keys. 
+This flexibility makes it suitable for handling complex data models and diverse application requirements.
+
+Additionally, PostgreSQL has a vibrant and active open-source community that continually contributes to its development. 
+This community-driven approach has resulted in frequent updates, bug fixes, and the introduction of new features. 
+It is available for multiple operating systems, including Windows, macOS, and various Unix-like systems.
+
+PostgreSQL is widely used by organizations and developers for various applications, ranging from small-scale projects to enterprise-level systems. 
+It is particularly popular in sectors such as finance, telecommunications, scientific research, and geospatial applications, where data integrity and reliability are crucial.
+
+Overall, PostgreSQL is a powerful and feature-rich database management system that provides a robust foundation for managing and manipulating data in a wide range of applications.
