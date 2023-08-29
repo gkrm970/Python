@@ -1,0 +1,15 @@
+Important python concepts
+============================
+
+1. ast.literal_eval() or a JSON parser.
+	The statement normal_list = eval(payload_fedkafkabus_id) means that the Python eval() function is being used to evaluate the contents of the variable payload_fedkafkabus_id as a Python expression, and the result is being assigned to the variable normal_list.
+	Assuming that payload_fedkafkabus_id is a string containing a valid Python expression, the eval() function will parse and execute the expression, returning the result. In this case, the result will be a Python list object, which will be assigned to normal_list.
+	However, it's important to note that using eval() to evaluate arbitrary strings can be dangerous, as it can execute potentially malicious code. 
+	If payload_fedkafkabus_id is not trusted or properly sanitized, it could be used to execute arbitrary code on the system running the program. Therefore, 
+	it's generally recommended to avoid using eval() with untrusted input, and instead use safer alternatives like ast.literal_eval() or a JSON parser if appropriate.
+
+
+
+
+
+

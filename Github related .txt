@@ -1,0 +1,189 @@
+
+Git workflow
+================
+1) git init  --> Create an Empty git repository(Local repository)
+
+2) git config --global user.name "your name"
+   git config --global user.email "your email"
+
+3) git status ---> to know the status of the files
+
+*************Actually start from here************************
+4) git add -A or .(dot)     ---->add all the files into staging/indexing area 
+   Example :git add filename.java    --> add specific file into staging/indexing area
+			git add *.java 
+
+
+5) git commit -m "user comment about commiting"
+
+4) push your code into Remote repository
+  	git remote add origin https://github.com/pavanoltraining/OpencartV11.git    ---> only once
+	git push origin master
+
+
+5)Pull files from remote to local
+-------------------------------
+	git pull origin <branch_name>
+
+
+git clone
+git add .
+git commit 
+git commit -m "commit message"
+git push
+git push origin branch-name
+git pull
+git pull origin branch-name
+git branch
+git branch new-branch-name
+git checkout
+git checkout other-branch-name
+git checkout -b new-branch-name
+git status 
+
+
+Diffrence between git clone and git pull pull
+====================================
+git clone and git pull are both Git commands, but they serve different purposes.
+
+git clone is used to create a copy of a repository that is hosted remotely. 
+	When you clone a repository, you download a complete copy of the repository to your local machine, 
+	including all of its history, branches, and tags. 
+	This is typically done only once, when you want to start working with a repository that you don't already have a copy of.
+
+	For example, if you wanted to clone the Git repository for the Linux kernel, you would use the command:
+
+	git clone https://github.com/torvalds/linux.git
+	This would create a local copy of the Linux kernel repository on your machine.
+
+git pull, on the other hand, is used to update an existing local repository with changes from a remote repository. 
+	When you pull changes, Git fetches the latest changes from the remote repository and merges them into your local copy of the repository. 
+	This is typically done regularly, to keep your local copy of the repository up-to-date with changes made by other contributors.
+
+	For example, if you had previously cloned the Git repository for the Linux kernel and wanted to update your local copy with the latest changes, 
+	you would use the command:
+	git pull
+	This would fetch any new changes from the remote repository and merge them into your local copy of the repository.
+
+In summary, git clone is used to create a new copy of a remote repository, while git pull is used to update an existing local repository with changes from a remote repository.
+
+
+Github
+--------------
+1) Create new account (Sign up)
+2) Login to github  ---> create a new empty remote repository
+	Remote Repo url:
+		https://github.com/pavanoltraining/OpencartV11.git
+
+
+3) Create a token 
+	Reference link: https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token
+
+Create Personal Access Token on Github
+--------------------------------------
+	From your Github account, go to Settings => Developer Settings => Personal Access Token => Generate New Token (Give your password) => Fillup the form => click Generate token => Copy the generated Token.
+
+	`github token  :   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  
+
+
+
+git tutorials(PlayList): https://youtube.com/playlist?list=PLUDwpEzHYYLuMNNTu0EdWBeBtXdRhj4Lv
+
+
+push an existing repository from the command line
+======================================================
+git remote add origin https://github.com/gkrm970/Telus.git
+git branch -M main
+git push -u origin main
+
+
+Git process end-to-end:
+========================
+
+First, create a new repository on your preferred Git hosting service, such as GitHub or GitLab. Let's call this repository "example-repo".
+
+1.Clone the repository to your local machine by running the following command in your terminal:
+	git clone https://github.com/your-username/example-repo.git  --> This command will clone from upstream branch mean current branch 
+	git clone -b develop https://github.com/your-username/example-repo.git   ---> this command will clone from develop branch.
+
+2.Navigate into the cloned repository by running:
+	cd example-repo
+	
+3.Create a new branch to work on by running:	
+	git checkout -b new-feature
+	This will create a new branch called "new-feature" and switched you to that branch.
+	Make changes to your files in the repository, such as adding new features or fixing bugs.
+	
+4.Once you're happy with your changes, stage them by running:
+	git add .
+	This will stage all the changes you've made.
+
+5.Commit your changes by running command:
+	git commit -m "Added new feature"
+	Replace "Added new feature" with a meaningful message that describes the changes you've made.
+
+6.Push your changes to the remote repository by running command:
+	git push origin new-feature
+	This will push your changes to the "new-feature" branch on the remote repository.
+
+7.Open a pull request (PR) on the Git hosting service(In github.comor gitlab), comparing your "new-feature" branch to the "main" branch.
+	A pull request is a way of asking the maintainers of the repository to review and merge your changes.
+
+8.Once your pull request is reviewed and approved, it can be merged into the "main" branch.
+
+9.To update your local repository with the latest changes from the "main" branch, switch to the "main" branch by running:
+	git checkout main
+	
+10.Then pull the latest changes by running:
+	git pull origin main
+	This will update your local repository with the latest changes from the remote "main" branch.
+	
+11. git logs:
+	"git log <file_name>"
+	command is used to display the commit history of a specific file in a Git repository. 
+	It shows a list of all the commits that have affected the file, along with the author, date, commit message, and other details.
+
+
+12.Difference between git checkout "branch_name" and git checkout -b "branch_name"
+-----------------------------------------------------------------------------
+	git checkout "branch": This command switches to an existing branch with the name "branch". If the branch does not exist, Git will raise an error.
+
+	git checkout -b "branch": This command creates a new branch with the name "branch" and immediately switches to it. If a branch with the same name already exists, Git will raise an error.
+
+
+13.The "git log" command is used to view the commit history of a Git repository.
+	git log -->This command will display the commit history in reverse chronological order.
+	git log --stat -->This command will display the commit history along with the file changes made in each commit.
+	git log --oneline --decorate --color --graph --all -->This command will display the commit history in a more readable format with one commit per line, decorated with branch and tag names, and with a graphical representation of the commit tree.
+	git log <branch_name> -->This command will display the commit history for a specific branch.
+	git log --follow <file_path> -->This command will display the commit history for a specific file, including changes made to the file across renames.
+
+
+
+
+
+
+
+
+history | grep 
+
+
+git clone
+git add .
+git commit 
+git commit -m "commit message"
+git push
+git push origin branch-name
+git pull
+git pull origin branch-name
+git branch
+git branch new-branch-name
+git checkout
+git checkout other-branch-name
+git checkout -b new-branch-name
+git status 
+
+
+
+
+It's important to note that git stash pop removes the stashed changes from the stash, whereas git stash apply leaves them in the stash. So if you want to keep the changes in the stash after applying them to your working directory, you should use git stash apply instead of git stash pop.

@@ -1,0 +1,152 @@
+Linux commands:
+===============
+1.ls - lists the files and directories in the current directory. 
+	Example: ls -l shows the files and directories with detailed information.
+	ls -ltr
+
+2.cd - changes the current directory. 
+	Example: cd Documents changes the current directory to the "Documents" directory.
+
+3.mkdir - creates a new directory. 
+	Example: mkdir new_directory creates a new directory called "new_directory".
+	
+touch: Create file. Use this command to create a new file. 
+	For example, touch myfile.txt will create a new file called myfile.txt in the current directory.
+
+4.rm - removes a file or directory. 
+	Example: To delete a file named "example.txt", you can run rm example.txt. 
+	To delete a directory named "test" and its contents, you can run rm -rf test
+	
+5.cp - copies a file or directory. 
+	Example: cp file.txt backup.txt copies the file "file.txt" to a new file called "backup.txt". 
+	To copy a directory, use cp -r directory/ new_directory/.
+	
+	Example: To copy a file named "file.txt" from the current directory to a directory named "backup", you can run cp file.txt backup/. 
+	To copy a directory named "docs" and its contents to a directory named "backup", you can run cp -r docs backup/.
+
+6.mv - Move or rename files or directories
+	Example: To rename a file named "oldname.txt" to "newname.txt", you can run mv oldname.txt newname.txt. 
+	To move a file named "file.txt" from the current directory to a directory named "backup", you can run mv file.txt backup/
+
+7.cat - displays the contents of a file. 
+	Example: cat file.txt displays the contents of the file "file.txt".
+
+a. vi -displays the contents of a file.
+	Example: vi file.txt displays the contents of the file "file.txt".
+	If insert/modify data to the file --> First press INSERT and then do changes .
+	After changes done , for saving data and come out from the file . ---> press Esc first and then :wq! 
+	
+8.grep - searches for a pattern in a file or directory. 
+	Example: To search for the word "hello" in a file named "example.txt", you can run grep hello example.txt.
+
+9.chmod - changes the permissions of a file or directory. 
+	Example: chmod 755 file.txt sets the permissions of the file "file.txt" to read, write, and execute for the owner, and read and execute for others.
+	Example: To make a file named "script.sh" executable for the owner, you can run chmod u+x script.sh.
+	
+10.sudo  - runs a command with superuser privileges. 
+	Example: sudo apt-get update updates the system packages with superuser privileges.
+	
+	sudo -i its says , go back to thr root.
+
+11.ps: List running processes. 
+	Use this command to display a list of running processes on the system. For example, ps aux will display a detailed list of running processes.
+	
+12. history - Display a list of previously executed commands.
+
+13. yum - Install, update, or remove packages on Red Hat-based systems
+
+14.tar - Create or extract compressed archive files.
+
+15. The ggdG command in Linux is used to delete the contents of a file. If you have used this command and deleted the contents of a file, 
+	it is difficult to recover the deleted data as it has been permanently deleted from the file sys
+	
+16. CTRL R ENTER WORD---> will give search box     ----> command search
+	CTRL / ENTER WORD --> will give search box  ---> text search in any file.
+	Esc:u1 ---> ctrl+z -- Results in linux
+	shift+INSERT --> pasting already selected.
+	
+17. Searching the words in linux system
+	history | grep "words"   --> history command along with grep to search for relevant entries of command.
+	grep -ir text_start *   --> Searching the word in.
+	CTRL+R text word   --> will search relevants.
+	
+18. ctrl+y ---> Delete the particular line on which cursor is....
+19. trl+D ---> Duplicate the particular line on which cursor is .....
+20. ctrl+D---> Duplicate the seleted lines
+21.cntrl+alt+F7 --> Can view list of all usages of class , method or variables across the whole projecvt.and quickly navigate to selected its.
+22. ctrl+w --> to expand code selection. each time you press ctrl+w the selection expand to other areas of code.
+
+
+
+kill - Send a signal to a process to terminate it
+ping - Test network connectivity to a host
+ifconfig - Configure network interfaces
+ssh - Connect to a remote host over SSH protocol
+scp - Securely copy files between hosts over SSH protocol
+
+
+
+python: This command is used to start the Python interpreter in the terminal.
+
+	pip: This command is used to install Python packages and their dependencies. 
+	For example, you can use pip install <package-name> to install a specific package.
+	command :-pip install <package-name>
+
+	virtualenv: This command is used to create isolated Python environments for different projects. 
+	For example, you can use virtualenv env to create a new virtual environment named "env".
+	command :-virtualenv env
+
+	source: This command is used to activate a virtual environment. 
+	For example, if you have a virtual environment named "env", you can activate it by using source env/bin/activate.
+	command:-source env/bin/activate.
+
+	deactivate: This command is used to deactivate a virtual environment. 
+	For example, if you have a virtual environment activated, you can deactivate it by using deactivate.
+	command :-deactivate
+
+git: This command is used to manage source code versions and collaborate with others. 
+	For example, you can use git clone <repository-url> to clone a Git repository to your local machine.
+
+
+
+Windows Command Prompt Commands:
+==================================
+dir - Displays a list of files and folders in the current directory
+cd - Changes the current directory
+mkdir - Creates a new directory
+copy - Copies one or more files from one location to another
+del - Deletes one or more files
+type - Displays the contents of a text file
+move - Moves one or more files from one location to another
+cls - Clears the command prompt window
+
+
+the basic commands in Windows command prompt and Linux are quite similar, but there are some differences in the syntax and usage. 
+For example, in Windows, you use the "copy" command to copy files, while in Linux, you use "cp". 
+Similarly, in Windows, you use "del" to delete files, while in Linux, you use "rm". 
+The commands for navigating the file system (cd and ls) are the same in both Windows and Linux.
+
+
+du -sh . --> define the size of the directory 
+
+ls -ltr
+
+rm -rf file_name
+grep -ir text_start *
+
+
+cp -aprf filename
+
+pip3 install pipenv
+pipenv shell
+pipfile
+
+
+ls ../file_name
+
+
+
+df -kh
+du -hs * | sort -rh
+
+docker image prone

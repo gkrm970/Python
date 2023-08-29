@@ -1,0 +1,86 @@
+Mysql commands.
+==============
+1.Create a database:
+	CREATE DATABASE dbname;
+	
+2.Select a database:
+	USE dbname;
+	
+3.Create a table:
+	CREATE TABLE tablename (
+	  column1 datatype constraints,
+	  column2 datatype constraints,
+		...
+		);
+	Example:
+	CREATE TABLE users (id INT PRIMARY KEY AUTO_INCREMENT,
+						name VARCHAR(50) NOT NULL,
+						email VARCHAR(50) NOT NULL UNIQUE,
+						password VARCHAR(255) NOT NULL);
+
+3.Insert data into a table:
+	INSERT INTO tablename (column1, column2, ...) VALUES (value1, value2, ...);
+	Example:
+			INSERT INTO users (name, email, password) VALUES ('John', 'john@example.com', 'password123');
+			
+4.Select data from a table:
+	SELECT column1, column2, ... FROM tablename;
+	Example:
+	SELECT name, email FROM users;
+	
+4.1SELECT: Used to retrieve data from a table
+	Example: SELECT * FROM my_table;
+
+5.Update data in a table:
+	UPDATE tablename SET column1 = value1, column2 = value2, ... WHERE condition;
+	Example:
+	UPDATE users SET password = 'newpassword' WHERE id = 1;
+
+6.Delete data from a table:
+	DELETE FROM tablename WHERE condition;
+	Example:
+	DELETE FROM users WHERE id = 1;
+
+7.create index:
+	CREATE INDEX indexname ON tablename (column);
+	Example:
+	CREATE INDEX email_index ON users (email);
+
+8.Drop table:
+	DROP TABLE tablename;
+	Example:
+	DROP TABLE users;
+
+9.drop database:
+	DROP DATABASE dbname;
+	Example:
+	DROP DATABASE mydatabase;
+	
+10.Trancate table :
+	TRUNCATE TABLE table_name;
+	
+	This query will delete all data from the specified table, but it will not delete the table structure itself. 
+	This means that any constraints, indexes, or triggers on the table will still exist after the truncation.
+	It's important to note that the TRUNCATE TABLE statement is a DDL (Data Definition Language) statement, not a DML (Data Manipulation Language) statement like DELETE. 
+	This means that TRUNCATE TABLE cannot be rolled back using the ROLLBACK statement, so be careful when using it.
+
+
+
+
+
+SET FOREIGN_KEY_CHECKS = 0;
+SET UNIQUE_CHECKS = 0;
+DROP TABLE GSSAPI_authentication_info;
+DROP TABLE kerberos_authentication_info;
+DROP TABLE keycloak_authentication_info;
+DROP TABLE LDAP_authentication_info;
+DROP TABLE OAuthBearer_authentication_info;
+DROP TABLE plaintext_authentication_info;
+DROP TABLE SASL_authentication_info;
+DROP TABLE scram_authentication_info;
+DROP TABLE SSL_authentication_info;
+SET FOREIGN_KEY_CHECKS = 1;
+SET UNIQUE_CHECKS = 1;
+
+
+
