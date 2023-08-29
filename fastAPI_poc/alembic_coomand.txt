@@ -1,0 +1,11 @@
+1)pip install alembic
+2)alembic -h   which will help us to do with the arguments and number of libraries are available.
+3) alembic init alembic(folder_name)
+
+create the table 
+	alembic revision --autogenerate -m "user_database"
+
+alembic upgrade head
+alembic downgrade -1    # meaning number of commit need to be downgrade.
+
+
