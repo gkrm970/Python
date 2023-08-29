@@ -1,0 +1,370 @@
+Common Docker commands with examples:
+===================================
+BRS--> bussiness requirements specification docs
+MRS---> Market requirements specification docs.
+FRS--> Funtional requirements specification docs
+
+Docker desktop.
+Enter Your Password
+Enter your password for Docker to continue to Docker Desktop
+gopalakrishna6783
+Edit
+Password
+Krishna@4970
+PasswordHide passwordHide password
+Forgot password?
+
+
+
+/usr/local/bin/docker-compose -f docker-compose.yml down
+docker rmi pubsub_discoverer-discovery-plugin
+docker rmi pubsub_discoverer-backend
+/usr/local/bin/docker-compose -f docker-compose.yml up -d
+
+
+1.docker run: This command is used to start a new container from an image.
+Example: To start a new container based on the "ubuntu" image, run the following command:
+
+	docker run ubuntu --- ubontu is an image
+	docker run ubuntu sleep 2000  --> it means docker run till 2000 secands.
+	docker run -d  ubontu --> its run in baground.
+	docker run -d -p 9000:80 ubuntu ---> its run in baground and in localhost:9000 port for local host(host port) and this 80 is for application port on which running(container port).
+	docker run --name container_name -d - 900:80 ubuntu.
+	
+2.docker ps: This command is used to list all the running containers.
+Example: To list all the running containers, run the following command:
+
+	docker ps and 
+	docker ps -a [This command will list down all the containers]
+
+3.docker images: This command is used to list all the available images on the local machine.
+Example: To list all the available images on the local machine, run the following command:
+
+	
+	docker images
+
+4.docker stop: This command is used to stop a running container.
+Example: To stop a running container with ID "abcd1234", run the following command:
+
+	docker stop abcd1234 or container_name
+
+4.docker start: This command is used to start  a running container.
+Example: To start a running container with ID "abcd1234", run the following command:
+
+	docker start abcd1234 or container_name
+
+
+
+5.docker rm: This command is used to remove a container.
+Example: To remove a container with ID "abcd1234", run the following command:
+
+	docker rm abcd1234 or container_name
+
+6.docker rmi: This command is used to remove an image.
+Example: To remove an image with name "my-image", run the following command:
+
+	docker rmi my-image
+
+7.docker build: This command is used to build an image from a Dockerfile.
+	Example: To build an image from a Dockerfile in the current directory, run the following command:
+
+	docker build -t my-image .
+	
+8. docker logs: this command used to find logs of containers.
+
+	docker logs container_ID --> logs will display.
+	docker logs container_ID -f  --> details logs will display
+	
+9. 
+
+8.This will create a new image with the name "my-image" based on the Dockerfile in the current directory.
+
+
+
+
+Docker
+=========
+
+What is docker image:
+--------------------
+	Docker images are the building blocks of Docker containers, which are lightweight, standalone, and executable packages that contain everything needed to run a piece of software, including the code, runtime, libraries, environment variables, and system tools.
+
+	A Docker image is a read-only template that contains the instructions for creating a container, and it is built from a Dockerfile, which is a text file that contains all the commands needed to assemble the image. 
+	The Dockerfile specifies the base image to use, the software to install, the configuration settings, and any other files or resources needed to run the application.
+
+	Once a Docker image is built, it can be stored in a registry, such as Docker Hub, and then pulled by users to create new containers. Docker images can also be customized and updated, and new versions can be created by modifying the Dockerfile and rebuilding the image.
+
+	In summary, a Docker image is a preconfigured package that contains all the necessary components to run a software application in a containerized environment.
+
+What is docker container:
+-------------------------
+	Docker container is a lightweight and standalone executable package that contains everything needed to run a piece of software, including code, libraries, dependencies, and system tools. 
+	Docker is a platform that enables developers to build, package, and deploy applications as Docker containers, which are isolated and portable environments that can run on any system that supports Docker.
+	Each container runs in its own isolated environment and shares the host system's resources, including the kernel, CPU, and memory, while being protected from other containers and the host system. 
+	Docker containers are easy to create, manage, and deploy, and they provide a standardized way to package and distribute software across different environments and platforms.
+
+
+Difference between docker image and docker container.
+-----------------------------------------------------
+	In Docker, an image is a read-only template that contains instructions for creating a Docker container. An image might include an operating system, application code, libraries, dependencies, and other necessary files.
+
+	A container is an instance of an image that runs as a separate process on a Docker host. A container includes its own isolated filesystem, networking, and resources, and it can communicate with other containers or the Docker host. 
+	When you run a container, Docker creates a writable layer on top of the image, allowing you to make changes to the container's filesystem that are separate from the original image.
+
+	In short, an image is a static snapshot of a container, while a container is a running instance of an image that has its own state and can be modified or interacted with.
+
+
+Docker is a popular containerization technology that provides several advantages, including:
+--------------------------------------------------------------------------------------------
+
+	Portability: Docker containers can be easily moved between different environments, such as from a developer's laptop to a production server, without the need to modify the application code.
+
+	Scalability: Docker containers are lightweight and can be easily scaled up or down, depending on the demand. This allows for better resource utilization and cost savings.
+
+	Consistency: Docker ensures that the environment in which the application runs is consistent across different platforms. This eliminates the "it works on my machine" problem that developers often face.
+
+	Isolation: Docker containers provide isolation between different applications and services, which helps prevent conflicts between them.
+
+	Efficiency: Docker uses a layered file system and copy-on-write technology, which allows it to create new containers quickly and efficiently, without duplicating files or data.
+
+	Security: Docker provides several security features, such as container isolation and control over resource usage, to ensure that applications and services are secure.
+
+	Overall, Docker provides a range of benefits for developers and organizations, including improved portability, scalability, consistency, isolation, efficiency, and security.
+
+
+
+
+
+While Docker provides many benefits for application development and deployment, there are also some potential disadvantages to consider:
+----------------------------------------------------------------------------------------------------------------------------------------
+
+	Complexity: Docker introduces additional complexity to the development and deployment process. It requires developers to learn new concepts and tools, and can add overhead to the build and deployment process.
+
+	Resource Usage: Docker containers can consume a significant amount of system resources, including CPU, memory, and disk space. This can lead to performance issues and increased costs for hosting and infrastructure.
+
+	Security: Although Docker provides some security features, such as container isolation and user namespaces, it is still possible for containers to be compromised, and vulnerabilities can exist in container images or in the Docker infrastructure itself.
+
+	Persistence: Docker containers are designed to be ephemeral, meaning that they are expected to be destroyed and recreated frequently. This can make it difficult to maintain stateful applications or databases that require persistent storage.
+
+	Compatibility: Not all applications and environments are suitable for Docker containers. Some legacy applications or systems may not be compatible with Docker, or may require significant modification to run in a containerized environment.
+
+	Learning Curve: There can be a steep learning curve associated with Docker, particularly for developers who are new to containerization and DevOps practices. This can slow down development and deployment times in the short term.
+
+	Overall, while Docker offers many benefits, it is important to carefully evaluate whether it is the right solution for a given application or system, taking into account the potential disadvantages and trade-offs involved.
+
+
+
+
+Cutomized docker images
+========================
+
+1.FROM Python:3.10
+	build this image from the specified image
+	
+2.COPPY "file_name" "In which directory file has to copy "    
+	example COPPY XYZ.PY /app/ -----> file
+			COPPY ABC /app/  ----> directory/folder where all the code located or any others.
+			COPPY requirements.txt /app/
+			
+3.WORKDIR /app 
+OR   
+	---> where/in which directory we have to do activities ---> set the default location.
+	set the working directory for all folloing commands.
+	example like changing into directory  "cd .."
+	
+3.RUN python -r requirements.txt
+	will execute any command in a shell inside the container environment.
+	
+4. this , has to the last command.
+	CMD ["uvicorn", "crud:router", "--host=0.0.0.0", "--port=15400"]
+	or 
+	CMD [ "python", "./your-daemon-or-script.py" ]
+	
+	
+	
+finally docker image build commands
+	docker build -t(or)--tag "Give name of the image on own" :1.0 "location of docker file"
+	
+	
+	Docker is used in a real life development process.
+	
+	developing a python application ----commit---->Git --trigger CI/CD --->CI server(here to build docker immage)--push--->company private repository and Database image---pull---->
+	development server(both images are pulled to server.)
+	
+	
+
+Question 
+===============
+First create a redis database container called redis, image redis:alpine.
+	docker run --name redis -d redis:alpine
+	
+Create a docker-compose.yml file under the directory /root/clickcounter. Once done, run docker-compose up.
+
+
+The compose file should have the exact specification as follows -
+
+	redis service specification - Image name should be redis:alpine.
+	clickcounter service specification - Image name should be kodekloud/click-counter, app is run on port 5000 and expose it on the host port 8085 in the compose file.	
+
+version: '3.0'
+services:
+  redis:
+    image: redis:alpine
+  clickcounter:
+    image: kodekloud/click-counter
+    ports:
+    - 8085:5000
+
+https://docs.docker.com/compose/
+
+https://docs.docker.com/engine/reference/commandline/compose/
+
+https://github.com/dockersamples/example-voting-app
+
+Let practice deploying a registry server on our own.
+Run a registry server with name equals to my-registry using registry:2 image with host port set to 5000, and restart policy set to always.
+
+	Note: Registry server is exposed on port 5000 in the image.
+	Here we are hosting our own registry using the open source Docker Registry.
+	sol = docker run -d -p 5000:5000 --restart=always --name my-registry registry:2
+
+Now its time to push some images to our registry server. Let's push two images for now .i.e. nginx:latest and httpd:latest.
+Note: Don't forget to pull them first.
+To check the list of images pushed , use curl -X GET localhost:5000/v2/_catalog
+
+	Run: docker pull nginx:latest then docker image tag nginx:latest localhost:5000/nginx:latest and finally push it using docker push localhost:5000/nginx:latest.
+	We will use the same steps for the second image docker pull httpd:latest and then docker image tag httpd:latest localhost:5000/httpd:latest and finally push it using docker push localhost:5000/httpd:latest
+
+
+Let's remove all the dangling images we have locally. Use docker image prune -a to remove them. How many images do we have now?
+Note: Make sure we don't have any running containers except our registry-sever.
+To get list of images use: docker image ls
+
+	docker image prune -a
+	
+Now we can pull images from our registry-server as well. Use docker pull [server-addr/image-name] to pull the images that we pushed earlier
+In our case we can use: docker pull localhost:5000/nginx\
+
+
+Let's clean up after ourselves.
+Stop and remove the my-registry container.
+	Use: docker stop my-registry and then docker rm my-registry
+
+
+
+++++++++++++++++++++++++++++++
+Run a mysql container named mysql-db using the mysql image. Set database password to db_pass123
+Note: Remember to run it in the detached mode.
+	docker run -d --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 mysql
+	
+
+able to view the data now in database.	
+sh get-data.sh
+
+The database crashed. Are you able to view the data now?
+Use the same command to try and view data. Try to find the container.
+	sh get-data.sh     ---> data will not be available/
+	
+Run a mysql container again, but this time map a volume to the container so that the data stored by the container is stored at /opt/data on the host.
+Use the same name : mysql-db and same password: db_pass123 as before. Mysql stores data at /var/lib/mysql inside the container
+
+We have now re-written data again. Run the get-data.sh script to ensure data is present.
+	Command: sh get-data.sh
+	
+Disaster strikes.. again! And the database crashed again. But this time we have the data stored at /opt/data directory. Re-deploy a new mysql instance using the same options as before.
+Just run the same command as before. Here it is for your convenience: docker run -v /opt/data:/var/lib/mysql -d --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 mysql
+
+Fetch data and make sure it is present.
+	command: sh get-data.sh
+	
+
+
+
+list docker network.
+	docker network ls.
+	
+Run a container named alpine-2 using the alpine image and attach it to the none network.
+	docker run --name alpine-2 --network=none alpine
+	
+Create a new network named wp-mysql-network using the bridge driver. Allocate subnet 182.18.0.1/24. Configure Gateway 182.18.0.1
+	Run the command: docker network create --driver bridge --subnet 182.18.0.1/24 --gateway 182.18.0.1 wp-mysql-network
+
+	Inspect the created network by docker network inspect wp-mysql-network
+	
+Deploy a mysql database using the mysql:5.6 image and name it mysql-db. Attach it to the newly created network wp-mysql-network
+Set the database password to use db_pass123. The environment variable to set is MYSQL_ROOT_PASSWORD.
+	Run the command: docker run -d -e MYSQL_ROOT_PASSWORD=db_pass123 --name mysql-db --network wp-mysql-network mysql:5.6
+	Name: mysql-db
+	Image: mysql:5.6
+	Env: MYSQL_ROOT_PASSWORD=db_pass123
+	Network: wp-mysql-network
+	
+Deploy a web application named webapp using the kodekloud/simple-webapp-mysql image. Expose the port to 38080 on the host.
+
+The application makes use of two environment variable:
+1: DB_Host with the value mysql-db.
+2: DB_Password with the value db_pass123.
+Make sure to attach it to the newly created network called wp-mysql-network.
+
+
+Also make sure to link the MySQL and the webapp container.
+
+	Run the command: docker run --network=wp-mysql-network -e DB_Host=mysql-db -e DB_Password=db_pass123 -p 38080:8080 --name webapp --link mysql-db:mysql-db -d kodekloud/simple-webapp-mysql
+	Name: webapp
+	Image: kodekloud/simple-webapp-mysql
+	Env: DB_Host=mysql-db
+	Network: wp-mysql-network
+	
+
+
+=============================================================================
+Summary Points:
+
+Docker on Windows has two options
+
+Docker on Windows using Docker Toolbox - Docker on Linux VM on Oracle Virtual Box on Windows
+
+Docker Toolbox Requirements
+
+64-bit operating system
+
+Windows 7 or Higher
+
+Virtualization enabled on Windows
+
+Docker Toolbox Contents
+
+Oracle Virtualbox
+
+Docker Engine
+
+Docker Machine
+
+Docker Compose
+
+Kitematic GUI
+
+Docker For Windows - Docker on Linux VM on Windows Hyper-V on Windows
+
+Docker For Windows Requirements
+
+Windows 10 Enterprise/Professional Edition
+
+Windows Server 2016
+
+Docker For Windows supports Linux Containers (Default) and Windows Containers
+
+Docker For Windows Container Types:
+
+Windows Server Core: Windows container on native windows server core
+
+Hyper-V Isolation: Windows container on an isolated hyper-v kernel
+
+References and Links:
+Docker on Windows Documentation: https://docs.docker.com/docker-for-windows/
+
+Docker For Windows Download: https://www.docker.com/docker-windows
+
+Docker Toolbox Download: https://www.docker.com/products/docker-toolbox
+	
+https://kodekloud.com/topic/labs-command-entrypoint-3/?utm_source=udemy&utm_medium=labs&utm_campaign=docker   ---> test link docker aasociate exam.
