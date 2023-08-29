@@ -1,0 +1,58 @@
+LOCUST COMMANDS.
+===============
+
+Locust is a popular open-source load testing tool that allows users to simulate the behavior of multiple users accessing a web application simultaneously. Here are some commonly used commands in Locust:
+
+1.Starting the Locust Master: To start a Locust master node, use the following command:
+
+	locust -f /path/to/your/script.py --master
+	Replace /path/to/your/script.py with the path to your Locust script file. The --master flag specifies that this is a master node.
+
+2.Starting the Locust Worker: To start a Locust worker node, use the following command:
+
+	locust -f /path/to/your/script.py --worker --master-host=MASTER_HOST_IP_ADDRESS
+	Replace /path/to/your/script.py with the path to your Locust script file and MASTER_HOST_IP_ADDRESS with the IP address of the machine running the master node. The --worker flag specifies that this is a worker node and the --master-host flag specifies the IP address of the master node.
+
+3.Starting the Locust Web Interface: To start the Locust web interface, use the following command:
+
+	locust -f /path/to/your/script.py
+	Replace /path/to/your/script.py with the path to your Locust script file. This command will start the Locust web interface on the default port 8089.
+
+4.Headless Mode and only summary: To run Locust in headless mode, use the following command:
+
+	locust -f /path/to/your/script.py --headless --only summary
+	This command will run Locust without starting the web interface.
+
+5.Setting the Number of Users: You can set the number of users using the following command:
+
+	locust -f /path/to/your/script.py --headless -u NUM_USERS
+	Replace /path/to/your/script.py with the path to your Locust script file and NUM_USERS with the number of users you want to simulate.
+
+6.Setting the Hatch Rate: You can set the hatch rate using the following command:
+
+	locust -f /path/to/your/script.py --headless -r HATCH_RATE
+	Replace /path/to/your/script.py with the path to your Locust script file and HATCH_RATE with the number of users you want to simulate per second.
+
+7.Specifying the Test Duration: You can specify the test duration using the following command:
+
+	locust -f /path/to/your/script.py --headless -t TEST_DURATION
+	Replace /path/to/your/script.py with the path to your Locust script file and TEST_DURATION with the duration of the test in seconds.
+	
+8.--logfile: This option allows you to specify the path to the log file that Locust should write its logs to. For example:
+
+	locust --logfile=/path/to/logfile.log
+
+9.--loglevel: This option allows you to specify the log level that Locust should use. The available log levels are DEBUG, INFO, WARNING, and ERROR. For example:
+
+	locust --loglevel=INFO
+	locust --logfile=/path/to/mylogfile.log --loglevel=INFO
+	locust --logfile=<path to log file> --loglevel=<log level>
+
+	To use both options together, you can simply include both command-line options when starting Locust:
+	locust --logfile=/path/to/logfile.log --loglevel=INFO
+	This will start Locust with logging enabled and will write log messages to the specified log file at the specified log level.
+
+
+
+These are some commonly used commands in Locust.
+
