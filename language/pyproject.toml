@@ -1,0 +1,16 @@
+[metadata]
+[tool.poetry]
+name = "language"
+version = "0.1.0"
+description = ""
+authors = ["Gopalakrishna R M <devendra.v@prodapt.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+
+[build-system]
+requires = ["poetry-core","platform"]
+build-backend = "poetry.core.masonry.api"
