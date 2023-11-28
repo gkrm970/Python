@@ -1,0 +1,21 @@
+sociate 2023
+Document - Mount Volumes with Swarm
+Create Service with Volume
+
+docker service create --name myservice --mount type=volume,source=myvolume,target=/mypath nginx
+
+Verify the Host where service is created:
+
+docker service ps myservice
+
+Connect to Container and Verify Mount
+
+docker container exec -it [CONTAINER-ID] bash
+ls -l /
+Verify Volume Information
+
+docker volume ls
+
+Remove Service
+
+docker service rm myservice
