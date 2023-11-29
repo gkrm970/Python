@@ -28,5 +28,9 @@ Is GCP A Kubernetes managed service?
 Yes, Google Cloud offers a Kubernetes managed service called Google Kubernetes Engine (GKE) [1][2]. GKE is a fully managed Kubernetes service that allows users to securely run enterprise workloads at scale. It provides increased velocity, reduced risk, and lower total cost of ownership. GKE offers advanced features such as container-native networking and security, pod and cluster autoscaling, prebuilt Kubernetes applications, GPU and TPU support, multi-team and multi-cluster management, backup for GKE, multi-cloud support, hybrid support, managed service mesh, managed GitOps, and identity and access management [1]. GKE is the industry's first fully managed Kubernetes service and is considered one of the most advanced services in the market [1][2].
 
 kubectl docs
-================
+============
 https://kubernetes.io/docs/tasks/tools/
+
+Creating pod by using config file
+=================================
+https://kubernetes.io

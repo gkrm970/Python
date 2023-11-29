@@ -1,0 +1,9 @@
+Code - POD YAML
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginxwebserver
+spec:
+  containers:
+  -  image: nginx
+     name: democontainer
