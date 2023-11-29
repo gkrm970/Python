@@ -1,0 +1,37 @@
+
+Docker provides a set of system commands that allow you to manage and interact with the Docker environment. Here are some commonly used Docker system commands:
+
+
+docker version: Displays the Docker version information, including the client and server versions.
+
+
+docker info: Provides detailed information about the Docker installation, such as the number of containers and images, storage driver used, and system resources.
+
+
+docker images: Lists all the Docker images available on the system.
+
+
+docker ps: Displays the running containers on the system.
+
+
+docker logs: Fetches the logs of a specific container.
+
+
+docker stats: Shows live resource usage statistics for all running containers.
+
+
+docker exec: Runs a command in a running container.
+
+
+docker build: Builds a Docker image from a Dockerfile.
+
+
+docker pull: Downloads a Docker image from a registry.
+
+
+docker push: Uploads a Docker image to a registry.
+
+
+These are just a few examples of Docker system commands.
+Docker provides many more commands to manage containers, networks, volumes, and other aspects of the Docker environment.
+You can explore the Docker documentation for a comprehensive list of available commands and their usage.
