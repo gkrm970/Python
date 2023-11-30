@@ -1,6 +1,6 @@
- code snippet that reads data from a file and converts it to audio using the gTTS library in Python:
+ # code snippet that reads data from a file and converts it to audio using the gTTS library in Python:
  
- from gtts import gTTS
+from gtts import gTTS
 import os
 
 def file_to_speech(filename, output_filename):

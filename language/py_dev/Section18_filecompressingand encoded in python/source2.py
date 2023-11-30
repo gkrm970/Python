@@ -1,4 +1,4 @@
-GUI application using the Tkinter library to compress and decompress files:
+# GUI application using the Tkinter library to compress and decompress files:
 
 import tkinter as tk
 import tkinter.filedialog as filedialog
@@ -61,4 +61,4 @@ This code creates a simple GUI with two buttons: "Compress" and "Decompress". Wh
 Make sure to run this code using a Python environment that has Tkinter installed.
 """
 
-compressing file from local directory.
+# compressing file from local directory.

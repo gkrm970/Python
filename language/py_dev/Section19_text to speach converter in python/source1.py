@@ -1,6 +1,6 @@
- code snippet that uses the gTTS (Google Text-to-Speech) library in Python to convert text to audio:
+ # code snippet that uses the gTTS (Google Text-to-Speech) library in Python to convert text to audio:
  
- from gtts import gTTS
+from gtts import gTTS
 import os
 
 def text_to_speech(text, filename):

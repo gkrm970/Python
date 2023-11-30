@@ -1,4 +1,4 @@
-generates a QR code using pyqrcode, Tkinter, and PIL:
+# generates a QR code using pyqrcode, Tkinter, and PIL:
 
 import pyqrcode
 from PIL import ImageTk
