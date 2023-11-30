@@ -4,10 +4,10 @@ Python -> Structured + object oriented programming language
 
 oops ( Object oriented Programming concepts)
 -----------------------------------------------
-class
-object
-Inheritance
-Polymorphism
+1. class
+2. object
+3. Inheritance
+4. Polymorphism
 
 
 class  object
@@ -18,32 +18,173 @@ Animal   ------> Dog, Horse, Elephant   etc....
 class ---> collection of variables(attributes) & methods(behavior)
 			-A class is blue print
 			-Logical entity
-			-Does not occupy space in the memory
+			-It Does not occupy space in the memory
 
-object  ---> object is an instance of class
-Physical entity
-Occupy certain amount space in the memory
+Object  ---> Object is an instance of class
+        note: In python every thing is an object
+            its Physical entity
+            Occupy certain amount space in the memory
 
-For one class, we can create multiple objects. and Objects are independents.......
+For a class, we can create multiple objects. and Objects are independents.......
 
-Function Vs Method
+Basic difference Function Vs Method
 ----------------------
 Function --> we can create without class or outside the class called function.
 Method --> the function creates in side the class  called method.
 
-2 types of methods we can define within the class....
+3 types of methods we can define within the class....
 
 1) instance method ( we call only through object)
-2) static method ( we can directly call using class)
+    Instance methods are associated with individual instances of a class. They are typically used to perform actions
+    that depend on the data and state of the particular instance. Instance methods are accessed using the self keyword,
+    which refers to the current instance of the class.
+
+    class Employee:
+    def __init__(self, name, salary): # constructor
+        self.name = name
+        self.salary = salary
+
+    def get_name(self): # instance method
+        return self.name
+
+    def get_salary(self): # instance method
+        return self.salary
+
+    def set_name(self, name): # instance method
+        self.name = name
+
+    def set_salary(self, salary): # instance method
+        self.salary = salary
+
+    def monthly_salary(self): # instance method
+        return self.salary/12
+
+    def __str__(self): # instance method
+        return Employee[name=" + self.name + ", salary=" + str(self.salary) + "] # String representation of object
+
+    def __repr__(self): # instance method
+        return Employee[name=" + self.name + ", salary=" + str(self.salary) + "] # Representation of object
+        return "Employee[name=" + self.name + ", salary=" + str(self.salary) + "]" # Representation of object
+        return "Employee[name=%s, salary=%d]" % (self.name, self.salary) # Representation of object
+        return "Employee[name={}, salary={}]".format(self.name, self.salary) # Representation of object
+        return f"Employee[name={self.name}, salary={self.salary}]" # Representation of object
+
+
+    def __eq__(self, other): # instance method
+        return self.name == other.name and self.salary == other.salary # Equality test
+
+    def __add__(self, other): # instance method
+        return Employee(self.name + other.name, self.salary + other.salary) # Addition of two objects
+
+
+2) static method ( we can directly call using class name )
        when we call the static method inside the class , we have to give value for self as a parameter
        annotation ---->@staticmethod,
 
+       Static methods are associated with the class itself, not with any particular instance. They are typically
+       used to perform actions that don't depend on the specific data or state of an instance.
+       Static methods are accessed directly using the class name (as well as instance or object),
+       without using self or cls.
+       we can't access instance variable inside the static method.
 
+       class Employee:
+
+        @staticmethod
+        def calculate_bonus(base_salary): # static method
+            return base_salary * 0.2
+
+        @staticmethod
+        def calculate_bonus(base_salary, extra_hours): # static method
+            return base_salary * 0.2 + extra_hours * 10
+
+        @staticmethod
+        def calculate_bonus(base_salary, extra_hours, extra_bonus): # static method
+            return base_salary * 0.2 + extra_hours * 10 + extra_bonus
+
+        @staticmethod
+        def calculate_bonus(base_salary, extra_hours=0, extra_bonus=0): # static method
+            return base_salary * 0.2 + extra_hours * 10 + extra_bonus
+
+        @staticmethod
+        def calculate_bonus(base_salary, extra_hours=0, extra_bonus=0, *args, **kwargs): # static method
+            return base_salary * 0.2 + extra_hours * 10 + extra_bonus + sum(args) + sum(kwargs.values())
+
+
+3) class method ( we can directly call using class)
+       when we call the class method inside the class , we have to give value for cls as a parameter
+       `annotation ---->@classmethod,
+       Class methods are similar to static methods, but they differ in that they receive the class itself as an implicit
+        first argument, typically referred to as cls. This allows class methods to access and modify class data.
+        They are typically used to perform actions that are related to the class as a whole, such as creating
+        new instances or managing class state.
+
+        class Employee:
+
+        @classmethod
+        def create_employee(cls, name, salary):
+            return cls(name, salary)
+
+        @classmethod
+        def create_from_string(cls, string):
+            name, salary = string.split("-")
+            return cls(name, int(salary))
+
+        @classmethod
+        def create_from_file(cls, filename):
+            with open(filename) as f:
+                name, salary = f.readline().strip().split("-")
+                return cls(name, int(salary))
+
+        @classmethod
+        def create_from_file(cls, filename):
+            with open(filename) as f:
+                return [cls(*line.strip().split("-")) for line in f] # List comprehension
+
+        @classmethod
+        def create_from_file(cls, filename):
+            with open(filename) as f:
+                return map(lambda line: cls(*line.strip().split("-")), f) # Map function
+
+        @classmethod
+        def create_from_file(cls, filename):
+            with open(filename) as f:
+                return (cls(*line.strip().split("-")) for line in f) # Generator expression
+
+
+
+4) constructor method ( we can directly call using class)
+       when we call the constructor method inside the class , we have to give value for self as a parameter
+       annotation ---->def __init__(self, name, age, salary):
+
+         The __init__ method is a special method that is called when an instance of a class is created.
+            It is called a constructor because it constructs the values of data members of the class.
+            This method is called when we create the object of the class.
+            It accepts the self-keyword as a first argument which allows accessing the attributes or method of the class.
+            The __init__ method is similar to constructors in C++ and Java.
+            The __init__ method is run as soon as an object of a class is instantiated.
+            The method is useful to do any initialization you want to do with your object.
+            The __init__ method is run with every object instantiation automatically.
+            The __init__ method is used to initialize the attributes of a class.
+            The __init__ method is called automatically right after the object has been created.
+            The __init__ method is called the constructor method in Python.
+
+
+difference between instance method, static method & class method
+Feature	                                Class Method	                                Static Method
+Receives class as argument	            Yes (cls)	                                    No
+Accesses class data	                    Yes	                                            No
+Modifies class data	                    Yes	                                            No
+Typical usage	                        Creating new instances, modifying class state	Providing utility functions, validating input
+
+
+Types of variables in python.
 Global variables  --> If variable create out the class called global variable.
-Class variables --> declare the variable inside the class is called class variable.
-Local variables--> this for function.
+Class variables --> If the variables declare inside the class is called class variable.
+Instance variables --> If the variables declare inside the constructor is called instance variable.
+Local variables--> If the variables declare inside the function/method.
 
-Method  & constructor
+
+Method  & constructor in class python
 -------------------------
 Method: give any name as a method name.
 		 return the value/s
@@ -51,13 +192,16 @@ Method: give any name as a method name.
 		 we can use an object to invoke the method
 
 Constructor:constructor name is fixed :
-			   def  __init__(self):
+      def  __init__(self):
 	
- constructor will not return any value but print the value.
- constructor can also take arguments/parameters
- constructor will be called at the time of object creation itself.
- as soon as created the object, constructor called automatically.
- No mandatory to create the initialization constructor in the class.
+     constructor will not return any value but print the value.
+     example:
+     def __init__(self):
+        print("constructor called")
+     constructor can also take arguments/parameters
+     constructor will be called at the time of object creation itself.
+     as soon as created the object, constructor called automatically.
+     No mandatory to create the initialization constructor in the class.
 
 
 
