@@ -1,0 +1,40 @@
+### Kubernetes managed cluster service is one among digitalOcean
+
+
+### A Kubernetes managed cluster services
+    Amazon Elastic Kubernetes Service (EKS): Amazon EKS is a fully managed Kubernetes service that makes it easy to run containers on AWS. It simplifies the process of deploying, managing, and scaling containerized applications using Kubernetes.
+    
+    
+    Google Kubernetes Engine (GKE): GKE is a managed Kubernetes service provided by Google Cloud. It enables developers to deploy, manage, and scale containerized applications using Kubernetes, without the need to manage the underlying infrastructure.
+    
+    
+    Microsoft Azure Kubernetes Service (AKS): AKS is a fully managed Kubernetes service provided by Microsoft Azure. It simplifies the deployment, management, and scaling of containerized applications using Kubernetes, allowing developers to focus on their applications rather than the underlying infrastructure.
+    
+    
+    IBM Cloud Kubernetes Service: IBM Cloud Kubernetes Service is a fully managed Kubernetes service offered by IBM Cloud. It provides a secure and scalable platform for deploying and managing containerized applications using Kubernetes.
+    
+    
+    DigitalOcean Kubernetes: DigitalOcean Kubernetes is a managed Kubernetes service provided by DigitalOcean. It allows developers to deploy, manage, and scale containerized applications using Kubernetes on the DigitalOcean cloud platform.
+    
+    
+    Alibaba Cloud Container Service for Kubernetes (ACK): ACK is a managed Kubernetes service offered by Alibaba Cloud. It provides a highly available and scalable platform for running containerized applications using Kubernetes on Alibaba Cloud.
+    
+    
+    These are just a few examples of Kubernetes managed services available in the market. Each service has its own unique features, pricing, and integrations, so it's important to evaluate and choose the one that best fits your requirements and cloud provider preference.
+    
+    Is GCP A Kubernetes managed service?
+    Yes, Google Cloud offers a Kubernetes managed service called Google Kubernetes Engine (GKE) [1][2]. GKE is a fully managed Kubernetes service that allows users to securely run enterprise workloads at scale. It provides increased velocity, reduced risk, and lower total cost of ownership. GKE offers advanced features such as container-native networking and security, pod and cluster autoscaling, prebuilt Kubernetes applications, GPU and TPU support, multi-team and multi-cluster management, backup for GKE, multi-cloud support, hybrid support, managed service mesh, managed GitOps, and identity and access management [1]. GKE is the industry's first fully managed Kubernetes service and is considered one of the most advanced services in the market [1][2].
+
+### kubectl docs
+https://kubernetes.io/docs/tasks/tools/
+
+### Creating pod by using config file
+https://kubernetes.io
+
+
+
+### Complete CKAD notes available github link
+https://github.com/zealvora/certified-kubernetes-application-developer/tree/master/Domain%202%20-%20POD%20Design
+
+### Document - Labels and Selectors
+https://github.com/zealvora/certified-kubernetes-application-developer/blob/master/Domain%202%20-%20POD%20Design/labels.md
