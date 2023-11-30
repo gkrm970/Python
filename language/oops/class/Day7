@@ -36,8 +36,9 @@ Method --> the function creates in side the class  called method.
 
 1) instance method ( we call only through object)
     Instance methods are associated with individual instances of a class. They are typically used to perform actions
-    that depend on the data and state of the particular instance. Instance methods are accessed using the self keyword,
-    which refers to the current instance of the class.
+    that depend on the data and state of the particular instance.
+    Instance methods are accessed using the self keyword,which refers to the current instance of the class.
+    It can access and modify the instance's attributes.
 
     class Employee:
     def __init__(self, name, salary): # constructor
@@ -114,9 +115,12 @@ Method --> the function creates in side the class  called method.
        when we call the class method inside the class , we have to give value for cls as a parameter
        `annotation ---->@classmethod,
        Class methods are similar to static methods, but they differ in that they receive the class itself as an implicit
-        first argument, typically referred to as cls. This allows class methods to access and modify class data.
+        first argument, typically referred to as cls.
+        This allows class methods to access and modify class data.
         They are typically used to perform actions that are related to the class as a whole, such as creating
         new instances or managing class state.
+        A class method is a method that operates on the class itself rather than on instances of the class.
+        It takes the class as its first parameter, conventionally named cls.
 
         class Employee:
 
@@ -175,6 +179,14 @@ Receives class as argument	            Yes (cls)	                               
 Accesses class data	                    Yes	                                            No
 Modifies class data	                    Yes	                                            No
 Typical usage	                        Creating new instances, modifying class state	Providing utility functions, validating input
+
+Difference between instance method & class method
+
+Feature	                  When to Use Instance Methods	                        When to Use Class Methods
+Purpose	                  Access and modify object attributes	                Access and modify class variables
+Access	                  Through an object instance	                        Through the class itself
+Uses	                  Object-specific operations	                        Class-wide operations
+
 
 
 Types of variables in python.

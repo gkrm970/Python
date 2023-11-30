@@ -157,7 +157,7 @@
 # EXAMPLE7: constructor example
 # class MyClass:
 #     def __init__(self):
-#         print("this is constructor..")
+#         print("this is constructor")
 #
 #     @staticmethod
 #     def m1():
@@ -171,3 +171,136 @@
 # mc = MyClass()  # Invoke constructor automatically as soon as create an object. We need not use the object.
 # mc.m1()  # we can call the method using an object or class name.
 # print(mc.m2(10, 20))  # 20
+
+# Example8: Instance method
+# It can access and modify the instance's attributes.
+# Class MyClass:
+#     def __init__(self):
+#         print("this is constructor...")
+#         self.a = 10
+#         self.b = 20
+#
+#     def m1(self):
+#         print("this is instance method...")
+#         print(self.a + self.b)
+#
+#
+# mc = MyClass()
+# mc.m1()
+
+
+# Example usage of instance method
+
+# class Car:
+#     def __init__(self, make, model):
+#         self.make = make
+#         self.model = model
+#         self.speed = 0
+#
+#     def accelerate(self, increase_speed):
+#         self.speed += increase_speed
+#         print(f"The car is now moving at {self.speed} mph.")
+#
+#
+# # Creating an instance of the Car class
+# my_car = Car("Toyota", "Camry")
+#
+# # Calling an instance method
+# my_car.accelerate(20)
+
+
+# Example9: Instance method
+# class User:
+#     def __init__(self, name, email_address):
+#         self.name = name
+#         self.email_address = email_address
+#
+#     def greet(self):
+#         print(f"Hello, {self.name}!")
+#         print(f"Email address: {self.email_address}")
+#
+#     @classmethod
+#     def from_email_address(cls, email_address):
+#         username, domain = email_address.split('@')
+#         return cls(username, email_address)
+#
+#
+# user = User("John", "gkrm970@gmail.com")
+# user.greet()
+# print(user.from_email_address("gkrm970@gmail.com"))
+
+
+# Example8: @classmethod
+
+# class MyClass:
+#     a, b = 10, 20
+#
+#     @classmethod
+#     def m1(cls):
+#         print("this is class method...")
+#         print(cls.a + cls.b)
+#
+#     @staticmethod
+#     def m2():
+#         """
+#         # Can I print the class variables inside the static method?
+#         # And: Yes, we can print the class variables inside the static method.
+#         # But we can't access the class variables inside the static method.
+#         """
+#         print ("this is a static method")
+#         print(MyClass.a + MyClass.b)
+#         # we can't access the class variables inside the static method.
+#         the # Example below:
+#         # print(self.a + self.b)
+#
+#
+# ob1 = MyClass()
+# ob1.m1()
+# ob1.m2()
+
+# Example9: @classmethod
+
+# class Dog:
+#     total_dogs = 0  # Class-level attribute
+#
+#     def __init__(self, name):
+#         self.name = name
+#         Dog.total_dogs += 1  # Accessing and modifying class-level attribute
+#         print(f"There are now {Dog.total_dogs} dogs.")
+#
+#     @classmethod
+#     def get_total_dogs(cls):
+#         Dog.total_dogs += 2  # Accessing and modifying class-level attribute
+#         print(f"There are {cls.total_dogs} dogs.")
+#
+#
+# # Creating instances of the Dog class
+# dog1 = Dog("Buddy")
+#
+# # Calling a class method
+# Dog.get_total_dogs()
+
+# Example10: @classmethod usage
+#
+# class Date:
+#     def __init__(self, year, month, day):
+#         self.year = year
+#         self.month = month
+#         self.day = day
+#
+#     @classmethod
+#     def from_string(cls, date_string):  # cls is the class name
+#         year, month, day = map(int, date_string.split('-'))
+#         return cls(year, month, day)
+#
+#
+# # Usage
+# dat = Date(2021, 8, 12)
+# # print(dat.year)
+# # print(dat.month)
+# # print(dat.day)
+# date_from_string = Date.from_string("2023-11-30")
+# print(date_from_string)
+# print(date_from_string.year)
+# print(date_from_string.month)
+# print(date_from_string.day)
