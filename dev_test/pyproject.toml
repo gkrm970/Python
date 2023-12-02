@@ -48,11 +48,11 @@ pre-commit = "^3.4.0"
 ruff = "^0.0.285"
 # Unit testing framework
 pytest = "^7.4.2"
-# Pytest plugin to define test env variables from pyproject.toml
+# Pytest plugin to define tests env variables from pyproject.toml
 pytest-env = "^1.0.1"
 # Tool to generate testing coverage reports
 coverage = "^7.3.2"
-# The test client uses HTTPX to make requests against the app
+# The tests client uses HTTPX to make requests against the app
 httpx = "^0.25.0"
 
 
