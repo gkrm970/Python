@@ -2,13 +2,19 @@ Day-10 Python Programming
 ----------------------------
 Exception handling
 
-Exception is an event  which will Cause program termination
+Exception is an event  which will cause program termination.
+Its a run time error which will cause program termination.
+Exception handling is a mechanism to handle the exception so that normal flow of the program can be maintained.
 
-----
------
----
-----
-----
+try:
+    #statements
+except:
+    #statements
+else:
+    #statements
+finally:
+    #statements
+
 
 try, except 
 
@@ -23,6 +29,80 @@ File Handling/ working with the text
 
 Types of error.
 ==============
-sythanx error
-runtime error
-logic error
+syntax error ---> It is a error which occurs when the syntax of the program is wrong.
+    Syntax errors: These errors occur when the code is not syntactically correct,
+    such as when a typo is made or an incorrect keyword is used.
+    print(10 + 'hello')  # Syntax error: cannot concatenate integer and string
+    print(10 + 20)  # Correct syntax
+
+runtime error ---> It is a error which occurs when the program is running.
+    Runtime errors: These errors occur during the execution of the code, such as when a file cannot be opened or when a variable is not defined.
+    file = open('my_file.txt', 'r')  # Runtime error: file does not exist
+    print(x)  # Runtime error: variable x is not defined
+
+logic error ---> It is a error which occurs when the logic of the program is wrong.
+
+try:
+    x = int(input('Enter a number: '))
+    print(10 / x)
+except ValueError:
+    print('Please enter a valid number')
+except ZeroDivisionError:
+    print('Cannot divide by zero')
+
+
+try:
+    file = open('my_file.txt', 'r')
+except FileNotFoundError:
+    print('File not found')
+finally:
+    if file:
+        file.close()
+
+
+
+Here's a more detailed breakdown of common runtime errors in Python:
+
+ValueError: Raised when an operation or function receives an argument with an inappropriate value.
+    int('hello')  # ValueError: invalid literal for int() with base 10: 'hello'
+    int('100.5')  # ValueError: invalid literal for int() with base 10: '100.5'
+    int('100')  # Correct
+
+TypeError: Raised when an operation or function is applied to an object of inappropriate type.
+    'hello' / 10  # TypeError: unsupported operand type(s) for /: 'str' and 'int'
+    'hello' + 10  # TypeError: can only concatenate str (not "int") to str
+    'hello' + '10'  # Correct
+
+IndexError: Raised when a sequence subscript is out of range.
+    IndexError: Raised when an invalid index is used to access an item in a sequence or mapping.
+    x = [1, 2, 3]
+    x[3]  # IndexError: list index out of range
+    x[2]  # Correct
+
+KeyError: Raised when a mapping (dictionary) key is not found in the set of existing keys.
+    KeyError: Raised when a key is used to access an item in a mapping but the key is not present.
+    x = {'a': 1, 'b': 2}
+    x['c']  # KeyError: 'c'
+    x['b']  # Correct
+
+NameError: Raised when a local or global name is not found.
+    NameError: Raised when a variable or function name is used but not defined.
+    print(x)  # NameError: name 'x' is not defined
+    x = 10  # Correct
+
+AttributeError: Raised when an attribute reference or assignment fails.
+    Raised when an attribute is tried to be accessed on an object but the attribute does not exist.
+    x = 10
+    x.append(20)  # AttributeError: 'int' object has no attribute 'append'
+    x = []  # Correct
+
+    object = {}
+    print(object.nonexistent_attribute)  # AttributeError: 'dict' object has no attribute 'nonexistent_attribute'
+
+
+
+ZeroDivisionError: Raised when the second argument of a division or modulo operation is zero.
+    ZeroDivisionError: Raised when an attempt is made to divide by zero.
+    10 / 0  # ZeroDivisionError: division by zero
+    10 / 2  # Correct
+
