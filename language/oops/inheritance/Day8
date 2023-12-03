@@ -5,30 +5,72 @@ Object
 Method
 Constructor
 
-Inheritance
+Inheritance concept
 ------------------
 Acquiring all the attributes(variables) & behavior(methods) from one class to another class is called as inheritance.
+
+Inheritance we can implement using extends keyword mean while we can use parent class name also.
+Inheritance we can implement using parent class name.
+Inheritance we can implement using super() method.
+    super() method is used to call the parent class constructor.
+    instance method ---> super().methodname() ---> super().m1() ---> super().m2()
+    but super() method is used to call the parent class instance methods and static methods.
+    *** super() method is not used to call the parent class static methods from child class.
+Inheritance we can implement using child class name.
+Inheritance we can implement using object.
+
+
+
+
 
 class A():   ---> a,b,c  m1() m2()    ----> A is parent of B class    (Base class/Super class)
 
 class B(A)    ----> x,y,z   m3()   ----> B is child of A class    (Sub class/ Derived class)
 
-Objectives of inheritance
--------------------------
+Objectives of inheritance concept
+---------------------------------
+
 1) Code re-usability
 2) Avoid duplication
+3) Easy to maintain the code
+4) Easy to extend the application
 
 
-Types of inheritance
+
+Types of inheritance.
 ----------------------
 1) single
 2) multi level
 3) Hierarchy
 4) Multiple
 
-Polymorphism
+1) Single inheritance
+----------------------
+Acquiring all the attributes(variables) & behavior(methods) from one class to another class is called as single inheritance.
+
+2) Multi level inheritance
+----------------------------
+Acquiring all the attributes(variables) & behavior(methods) from one class to another class is called as multi level inheritance.
+
+3) Hierarchy inheritance
+--------------------------
+Acquiring all the attributes(variables) & behavior(methods) from one class to another class is called as hierarchy inheritance.
+
+4) Multiple inheritance
+-----------------------
+Acquiring all the attributes(variables) & behavior(methods) from one class to another class is called as multiple inheritance.
+
+
+
+Polymorphism concept
 --------------------
 shape--- circle, rectangle, square etc....
+
+overloading concept means same method name with different parameters.
+
+overriding concept means same method name with same parameters.
+
+
 
 Polymorphism we can implement using overloading concept.......
 
