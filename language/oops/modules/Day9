@@ -10,8 +10,8 @@ Module ---> collection of functions and classes(variables+methods)
 3) Same functions in 2 modules 
 
 
-appraoch1: import moduleName
-appraoch2: from modulename import functions,classes
+approach1: import moduleName
+approach2: from modulename import functions,classes
 
 
 Packages.
@@ -31,8 +31,8 @@ Ex:
 
 Ex:
 #Package  #Modules        #Classes     #Methods
-#packA==> emp.py ==>   class Employee: displayemp()
-#packB==> stu.py ==>      class  Student: displaystu()
+#packA==> emp.py ==>   class Employee: display_emp()
+#packB==> stu.py ==>      class  Student: display_stu()
 #packC ==> client.py
 
 

@@ -1,28 +1,41 @@
 # lambda expression
+
 # Example 01
 # str2 = 'GeeksforGeeks'
-#
-# # lambda returns a function object
-# rev_upper = lambda x: x.upper()
-# # rev_upper = lambda x: x.upper()[::-1]
+# #
+# # # lambda returns a function object
+# # rev_upper = lambda x: x.upper()
+# rev_upper = lambda x: x.upper()[::-1]  # reverse string
 # print(rev_upper(str2))
-#
+
 # # Example 02
 # format_numeric = lambda num: f"{num:e}" if isinstance(num, int) else f"{num:,.2f}"
 #
 # print("Int formatting:", format_numeric(1000000))
 # print("float formatting:", format_numeric(999999.789541235))
 #
+#
+# # or
+# def format_numeric(num):
+#     if isinstance(num, int):
+#         return f"{num:e}"
+#     else:
+#         return f"{num:,.2f}"
+
+#
 # # Example 03
-# def cube(y,z):
-# 	return y*y*z
+# def cube(y, z):
+#     return y * y * z
 #
 #
-# lambda_cube = lambda y,z: y*y*z
+# print(cube(2, 3))
 #
+# lambda_cube = lambda y, z: y * y * z
+# print(lambda_cube(2, 3))
+
 # # using function defined
 # # using def keyword
-# print("Using function defined with `def` keyword, cube:", cube(5,7))
+# print ("Using function defined with `def` keyword, cube:", cube(5,7))
 #
 # # using the lambda function
 # print("Using lambda function, cube:", lambda_cube(5,6))
@@ -45,29 +58,16 @@
 
 # Example 3: Python Lambda with Multiple statements
 
-List = [[2,3,4],[1, 4, 16, 64],[3, 6, 9, 12]]
-
-# Sort each sublist
-sortList = lambda x: (sorted(i) for i in x)
-
-
-# Get the second largest element
-secondLargest = lambda x, f : [y[len(y)-2] for y in f(x)]
-res = secondLargest(List, sortList)
-
-print(res)
-
-
-
-
-
-
-
-
-
-
-
-
+# List = [[2, 3, 4], [1, 4, 16, 64], [3, 6, 9, 12]]
+#
+# # Sort each sublist
+# sortList = lambda x: (sorted(i) for i in x)
+#
+# # Get the second largest element
+# secondLargest = lambda x, f: [y[len(y) - 2] for y in f(x)]
+# res = secondLargest(List, sortList)
+#
+# print(res)
 
 # ml = lambda x, y: x + y
 # print(ml(2, 3))
@@ -113,3 +113,7 @@ print(res)
 # sum = reduce((lambda x, y: x + y), li)
 # print(sum)
 
+# Return a function that checks if a number is even:
+is_even = lambda x: x % 2 == 0
+is_ten_even = is_even(10)
+print(is_ten_even)  # Output: True
