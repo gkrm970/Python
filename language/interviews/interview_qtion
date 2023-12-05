@@ -1,0 +1,113 @@
+Soft - Communication - Answer to point
+
+Intro - Python - very strong -
+
+DevOps - EKS -
+
+GIL - Async  I/O - multi threading - multi process - oops -
+Lint - Pylint -
+Complex situation, user stream,
+Narrow down the problem statement
+Concurrent Users -
+Express answer in crisp -
+Kubernatics -
+ACD - key value store
+do you want me explain more in
+Boto3 - Async - alternate AIBoto3 for async operation
+AWS - access log, monitor services
+APM tools - data log
+Security. -
+Async  I/O - how you implement 2 thread
+Kubernatics architecture - complete
+Terminology defining
+
+
+Secrets ask , alternate -., hasicorp
+
+Spin up pods,
+
+Differ
+Docker -
+
+3 important scenarios :
+
+Portal  pods - is running slow->
+
+Approach:
+
+Counter query -> particular user, region,
+
+favaraite bug or complex issue resolved
+
+Favraite library -> show passionate over library
+
+Pandas , numpy ,
+
+senario based question
+
+Form your question
+
+python testing tools -
+
+lint
+
+portery - package dependency
+
+precommits - better place local or precommit or CI/CD
+
+CI/CD pipelines detailed
+
+
+On Tue, Dec 5, 2023 at 1:09 PM Gururaju G <gururajutalks@gmail.com> wrote:
+1. What are the gotchas with Pandas?
+    2. Can we do async functions with boto3?
+    3. Download a large file. How to do it async fashion?
+    4. Multiprocessing vs multithreading vs async
+    5. ORM with Django?
+    6. When working with Python dependency management, which tool did you use?
+    7. What do you do for mocking?
+    8. How do you authenticate your APIs?
+    9. Have you come across any issues or pitfalls in Python, related to typing (duck typing, no strict typing enforced)?
+    10. Did you face any difficulties in terms of validating data when working big data or something? Have you used libraries?
+    11. Recommended approach for managing dependencies?
+    12. How does Kubernetes secure secrets?
+    13. Which format does Kubernetes secure secrets?
+    14. How well do you understand Kubernetes APIs?
+    15. Are you familiar with Kubernetes services? Like Metadata, Spec?
+    16. Do you know what's a control plane in Kubernetes?
+    17. Do you know what's etcd in Kubernetes?
+    18. Have you handled REST APIs other than Django?
+    19. Have you used Fast APIs?
+    20. Have you used Kafka?
+    21. How can you create topics in Kafka? How many ways?
+    22. What's the benefit of using Kafka instead of Queues?
+    23. Why can't I use SQS or RabbitMQ instead of Kafka?
+    24. Recent version of Kafka doesn't use ZooKeeper. Are you aware?
+    25. What is a Kafka Broker?
+    26. Why or when would you choose Django REST APIs vs Flask APIs?
+    27. If you need to use an ORM?
+    28. Explain the project structure - include pytests
+    29. Explain the structure of a pytest or a unittest file?
+    30. What are the best practices for writing pytest cases? What all does a typical unit test framework will have? What all do you in preparation for unit test to work?
+    31. Do you know what mocking of functions?
+    32. Do you know Setup and Teardown in tests?
+    33. Let's say an API that you used was taking 1 sec earlier, but now it's taking 5 secs. How do you debug the issue?
+    34. What's the difference between FastAPI vs Flask API? What would you pick and why?
+    35. How do you secure your API endpoint in Django?
+    36. What are __init__.py, settings.py and manage.py in Django framework?
+    37. What is your favorite package and why? What's the killer feature you liked in the package?
+    38. Which way you like in Pandas - using iloc, loc?
+    39. How do you write code? - VSCode/PyCharm?
+    40. Where would you keep your code analysis and others - local dev in tools or in pipelines?
+    41. APIs are slow - walk me through the process?
+    42. Do you use a profiler?
+    43. When someone says application is slow, what information would you collect from the users?
+    44. If someone says application is loading slow, is that information sufficient?
+    45. Why do we use containerization?
+    46. Why is Kubernetes required? Fault Tolerance and Scalability
+    47. Are you aware of Kubernetes resources and config files etc.?
+    48. Do you understand the Docker file?
+    49. What's the first line of the docker file?
+    50. Have you used anything beyond requirements.txt? Dependency management. Have you heard poetry?
+    51. Have you used Python programs or CLI with Cloud?
+has context menuCompose
