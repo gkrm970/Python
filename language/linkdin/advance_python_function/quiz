@@ -1,0 +1,43 @@
+Question 1 of 4
+If a particular function has no return value, where in the docstring should that be noted?
+
+before the parameter list
+at the top
+it should be omitted  # from the docstring is the correct answer
+
+Question 2 of 4
+To pass a list of values to a function that has a variable argument list, what should the list be preceded by?
+@
+
+#
+
+%
+* # is the correct answer
+
+Question 3 of 4
+What form would a lambda function that compares two values and returns whether the first is greater than the second take?
+
+
+lambda: x>y
+lambda x,y: x > y # is the correct answer
+lambda y,x: x > y
+
+Question 4 of 4
+What special character separates positional arguments from keyword-only arguments?
+
+&
+* # is the correct answer
+@
+#
+
+
+Question kwargs verses args in python
+args is a tuple of positional arguments
+kwargs is a dictionary of keyword arguments
+
+Question which is better to use args or kwargs
+args is better to use when you don't know how many arguments are going to be passed to your function
+kwargs is better to use when you want to make it clear what variable each value is assigned to when you
+pass them to your function
+
+
