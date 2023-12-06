@@ -1,0 +1,38 @@
+Namedtuple objects are essentially Python classes
+
+
+TRUE # Correct
+FALSE
+
+Question 2 of 5
+Which expression would create a default dictionary that initializes items to an empty string?
+
+defaultdict(str) # correct
+
+defaultdict("")
+
+defaultdict(None)
+defaultdict()
+
+Question 3 of 5
+What operator is used to determine the intersection of two Counters?
+
+*
+& # correct
+#
+||
+
+Question 4 of 5
+For two OrderedDict objects to be considered equal, what must be true?
+
+
+Order must be same
+Items and order must be same # correct
+Items must be same
+
+Question 5 of 5
+What is one of the main advantages of using a deque over a regular stack or queue?
+Memory efficient for operations on both ends # correct
+Optimized to hold numbers
+Automatically sorts content
+
