@@ -1,0 +1,82 @@
+Question 1 of 4
+For which of the following lists will the any() function return true?
+
+[False, None, 0]
+[None, "", 0]
+[0, 0j, None, "0"] correct
+
+Question 2 of 4
+To combine multiple iterators into one, which function should be use?
+
+
+combine()
+list()
+enumerate()
+zip() correct
+
+Question 3 of 4
+Which function is used to apply a function to transform a collection of values?
+
+dict
+map() correct
+range
+list
+
+Question 4 of 4
+Which function is an example of an infinite iterator?
+
+
+takewhile()
+dropwhile()
+cycle() correct
+chain()
+
+Question 1 of 4
+Which of the following is not a valid way to create a dictionary?
+
+dict([("a", 1), ("b", 2)])
+dict(a=1, b=2)
+dict({"a": 1, "b": 2})
+dict((("a", 1), ("b", 2)))
+
+None of the above is incorrect
+
+Question 2 of 4
+Which of the following is not a valid way to create a set?
+
+set([1, 2, 3])
+set((1, 2, 3))
+set({1, 2, 3})
+set({1: 1, 2: 2, 3: 3}) # correct
+
+Question 3 of 4
+Which of the following is not a valid way to create a list?
+
+[1, 2, 3]
+list((1, 2, 3))
+list({1, 2, 3}) # correct
+list({1: 1, 2: 2, 3: 3})
+
+None of the above is incorrect
+
+Question 4 of 4
+Which of the following is not a valid way to create a tuple?
+
+(1, 2, 3)
+tuple([1, 2, 3])
+tuple({1, 2, 3}) # correct
+tuple({1: 1, 2: 2, 3: 3})
+
+None of the above is incorrect.
+
+
+Which of the following is not a valid way to create a dictionary?
+
+dict([("a", 1), ("b", 2)])
+dict(a=1, b=2)
+dict({"a": 1, "b": 2})
+dict((("a", 1), ("b", 2)))
+
+None of the above is incorrect
+
+
