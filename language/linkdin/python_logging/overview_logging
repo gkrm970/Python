@@ -1,0 +1,182 @@
+# what is logging in python?
+# logging is a module in python that allows us to track events that happen when we run our program
+# why is it useful?
+# it allows us to record errors and exceptions that occur when we run our program
+
+Capture and record events while a software runs
+Useful for understanding what’s going on inside a program while it runs
+Helps to understand the flow of a program and discover bottlenecks
+Python provides a built-in module logging to log application events
+This module is widely used by libraries and is extensively documented
+The module has support for logging to files, console, HTTP GET/POST debug logging, SMTP debug logging, syslog/syslog-ng and more
+
+
+# how do we use it?
+# we use the logging module to create a logger object
+# we can then use the logger object to log messages
+# we can log messages at different levels
+# the levels are: debug, info, warning, error, critical
+# we can also log messages with different formats
+# we can log messages to different places
+# we can log messages to a file, to the console, to a database, etc.
+
+# why is logging better than print statements?
+# we can turn logging off
+# we can control the level of logging
+# we can control the format of the logging
+# we can send the logging to different places
+
+# how do we use the logging module?
+# we import the logging module
+# we create a logger object
+# we log messages using the logger object
+
+# how do we create a logger object?
+# we use the getLogger() method from the logging module
+# we pass in a name for the logger object
+# we usually pass in the name of the current module
+# we can also pass in the name of the current function
+# we can also pass in the name of the current class
+
+# how do we log messages?
+# we use the logger object to log messages
+# we use the debug() method to log debug messages
+# we use the info() method to log info messages
+# we use the warning() method to log warning messages
+# we use the error() method to log error messages
+# we use the critical() method to log critical messages
+
+# how do we control the level of logging?
+# we use the basicConfig() method from the logging module
+# we pass in the level parameter
+# we can set the level to DEBUG, INFO, WARNING, ERROR, CRITICAL
+# we can also set the level to NOTSET
+# NOTSET is the default level
+# NOTSET means that all messages will be logged
+
+# how do we control the format of the logging?
+# we use the basicConfig() method from the logging module
+# we pass in the format parameter
+# we can set the format to a string
+# we can use the following placeholders in the string:
+# %(asctime)s
+# %(levelname)s
+# %(name)s
+# %(message)s
+
+# how do we control where the logging goes?
+# we use the basicConfig() method from the logging module
+# we pass in the filename parameter
+# we can set the filename to a string
+# we can set the filename to a path
+# we can set the filename to a file
+# we can set the filename to a database
+# we can set the filename to a socket
+# we can set the filename to a stream
+# we can set the filename to a file-like object
+
+# how do we turn logging off?
+# we use the basicConfig() method from the logging module
+# we pass in the level parameter
+# we set the level to NOTSET
+
+# how do we turn logging on?
+# we use the basicConfig() method from the logging module
+# we pass in the level parameter
+# we set the level to DEBUG, INFO, WARNING, ERROR, CRITICAL
+
+# how do we log messages to a file?
+# we use the basicConfig() method from the logging module
+# we pass in the filename parameter
+# we set the filename to a string
+# we set the filename to a path
+# we set the filename to a file
+# we set the filename to a database
+# we set the filename to a socket
+# we set the filename to a stream
+# we set the filename to a file-like object
+
+# how do we log messages to the console?
+# we use the basicConfig() method from the logging module
+# we pass in the stream parameter
+# we set the stream to sys.stdout
+# we set the stream to sys.stderr
+
+# how do we log messages to a database?
+# we use the basicConfig() method from the logging module
+# we pass in the filename parameter
+# we set the filename to a database
+
+# how do we log messages to a socket?
+# we use the basicConfig() method from the logging module
+# we pass in the filename parameter
+# we set the filename to a socket
+
+similarly
+
+example for above concepts
+
+import logging
+
+# create logger
+logger = logging.getLogger(__name__)
+
+# set logging level
+logger.setLevel(logging.DEBUG, logging.INFO, logging.WARNING, logging.ERROR, logging.CRITICAL)
+
+# create console handler and set level to debug
+ch = logging.StreamHandler()
+ch.setLevel(logging.DEBUG)
+
+# create formatter
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+# add formatter to ch
+ch.setFormatter(formatter)
+
+# add ch to logger
+logger.addHandler(ch)
+
+logger.debug('debug message')
+logger.info('info message')
+logger.warning('warn message')
+logger.error('error message')
+logger.critical('critical message')
+
+output
+
+2020-05-17 12:12:12,123 - __main__ - DEBUG - debug message
+
+example 2
+# I want to log with file name , class name , function name, line number and different log level in python.
+
+import logging
+
+# create logger
+logger = logging.getLogger(__name__)
+
+# set logging level
+logger.setLevel(logging.DEBUG, logging.INFO, logging.WARNING, logging.ERROR, logging.CRITICAL)
+
+# create console handler and set level to debug
+ch = logging.StreamHandler()
+ch.setLevel(logging.DEBUG, logging.INFO, logging.WARNING, logging.ERROR, logging.CRITICAL)
+
+# create formatter
+formatter = logging.Formatter('%(asctime)s - %(name)s  - %(filename)s - %(funcName)s - %(lineno)d  - %(threadName)s - %(process)d - %(levelname)s - %(message)s')
+
+# add formatter to ch
+ch.setFormatter(formatter)
+
+# add ch to logger
+logger.addHandler(ch)
+
+logger.debug('debug message')
+logger.info('info message')
+logger.warning('warn message')
+logger.error('error message')
+logger.critical('critical message')
+
+output
+
+2020-05-17 12:12:12,123 - __main__  - logging_example.py - <module> - 26  - MainThread - 1234 - DEBUG - debug message

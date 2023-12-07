@@ -1,0 +1,15 @@
+The basicConfig() function can be called multiple times to change how logging is performed
+
+TRUE
+FALSE - Correct
+
+Question 2 of 2
+What formatting syntax would be used to insert the current date, file name, and message into a custom log?
+
+
+%(asctime)s %(message)s %(module)s
+%(asctime)s %(filename)s %(message)s - Correct
+%(asctime)s %(module)s %(message)s
+
+Question 1 of 2
+What is the default logging level?
