@@ -1,0 +1,16 @@
+Given the comprehension [e ** 2 for e in mylist if e > 10], the if statement part is known as a:
+
+transform expression
+output expression
+predicate expression (correct)
+
+The if statement part of a comprehension is known as a predicate expression. It is used to filter out elements that don't match the predicate.
+
+Which of the following is not a valid comprehension?
+
+[e for e in mylist if e > 10] (correct)
+[e for e in mylist if e > 10 else 0]
+[e if e > 10 else 0 for e in mylist]
+[e if e > 10 for e in mylist]
+
+The else statement is not valid in a comprehension. The if statement is valid, but only if it is placed after the for statement.
