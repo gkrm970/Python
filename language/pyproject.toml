@@ -29,6 +29,7 @@ pydantic = "^2.4.2"
 pydantic-settings = "^2.0.3"
 # Generic retry library
 tenacity = "^8.2.3"
+requests = "^2.31.0"
 
 
 [tool.poetry.group.dev.dependencies]
