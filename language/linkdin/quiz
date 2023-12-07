@@ -1,0 +1,64 @@
+Question 1 of 5
+To ensure that items in an enumeration have unique values, what class decorator is used?
+@count
+@unique - Correct
+@ensure
+@auto
+
+Question 2 of 5
+To provide detailed information for debugging purposes, which string function should your class override?
+
+__str()__
+__bytes()__
+__debug()__
+__repr()__ - correct
+
+Question 3 of 5
+What exception should be raised if an attribute cannot be found?
+
+ValueError
+AttributeError - correct
+Correct
+TypeError
+RuntimeError
+
+Question 4 of 5
+Which class method is used to support the += expression?
+
+__add()__
+__iadd()__ - Correct
+__pluseq()__
+
+Question 5 of 6
+Object comparison class functions enable objects to be sortable
+
+TRUE - Correct
+FALSE
+
+Question 6 of 7
+Which class method is used to support the == expression?
+
+__eq()__ - Correct
+__iseq()__
+__equal()__
+__equals()__
+
+Question 7 of 7
+Which class method is used to support the < expression?
+
+__lt()__ - Correct
+__less()__
+__lessthan()__
+__lessthanorequal()__
+
+Chapter 9 Quiz
+Question 1 of 5
+Which of the following is not a valid way to create a thread?
+
+threading.Thread(target=func)
+threading.Thread(target=func, args=(arg1, arg2))
+threading.Thread(target=func, args=(arg1, arg2), kwargs={'arg3': arg3})
+threading.Thread(target=func, args=(arg1, arg2), kwargs={'arg3': arg3}, daemon=True) - Correct
+
+Question 2 of 5
+
