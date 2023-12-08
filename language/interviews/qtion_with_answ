@@ -1,0 +1,470 @@
+# Q1 GIL - Async I/O - multi threading - multiprocess - oops
+# GIL - Global Interpreter Lock
+# GIL is a mutex (or a lock) that allows only one thread to hold the control of the Python interpreter.
+# This means that only one thread can be in a state of execution at any point in time.
+# The impact of the GIL isn’t visible to developers who execute single-threaded programs,
+# but it can be a performance bottleneck in CPU-bound and multi-threaded code.
+# GIL makes sure that a single thread runs in the python interpreter at a time.
+# Threads work in parallel but threads do not run in parallel.
+# GIL does not allow the python interpreter to run in multi-core.
+# GIL is necessary because the memory management in python is not thread-safe.
+# GIL is a lock that helps in preventing multiple threads from executing python bytecodes at once.
+# GIL makes sure that a single thread executes at a time.
+# GIL is used only in CPython implementation of Python.
+# GIL is not used in Jython, IronPython, and PyPy implementations.
+# GIL is used in CPython to make execution faster.
+
+Multithreading and Multiprocessing in Python.
+
+Both multithreading and multiprocessing are techniques for running multiple tasks simultaneously in Python.
+They are crucial for utilizing the full potential of your computer's hardware and speeding up your programs.
+However, they have distinct differences in their implementation and applicability.
+
+Multithreading -What is it?
+
+Multithreading involves creating multiple threads within a single process. These threads can execute concurrently,
+meaning they can switch back and forth between each other, giving the illusion of simultaneous execution.
+
+Benefits:
+
+Good for tasks with frequent I/O operations (e.g., reading/writing files, network requests)
+Can improve responsiveness of GUI applications
+Relatively simple to implement
+
+Limitations:
+
+Limited parallelism due to the Global Interpreter Lock (GIL) in Python, which only allows one thread to execute
+Python code at a time.
+Not suitable for CPU-intensive tasks as they will compete for the same resources.
+
+Example:
+import threading
+
+def download_image(url):
+    # Download image
+    # ...
+
+def main():
+    # Create threads for downloading images
+    threads = []
+    for url in urls:
+        thread = threading.Thread(target=download_image, args=(url,))
+        threads.append(thread)
+        thread.start()
+
+    # Wait for all threads to finish
+    for thread in threads:
+        thread.join()
+
+if __name__ == "__main__":
+    main()
+
+
+Multiprocessing-What is it?
+
+Multiprocessing creates multiple processes that run independently of each other. Unlike threads, processes have their
+own memory space and resources, allowing them to truly execute in parallel.
+
+Benefits:
+
+Achieves true parallelism for CPU-intensive tasks
+Utilizes multiple cores effectively
+Suitable for tasks that require isolation (e.g., running simulations)
+
+Limitations:
+
+More complex to implement than multithreading
+Communication between processes requires additional synchronization mechanisms
+Overhead of creating and managing processes can be significant for short-lived tasks
+
+from multiprocessing import Pool
+
+def square(x):
+    return x * x
+
+def main():
+    # Create a pool of worker processes
+    pool = Pool(processes=4)
+
+    # Submit tasks to the pool
+    results = pool.map(square, range(10))
+
+    # Print results
+    for result in results:
+        print(result)
+
+if __name__ == "__main__":
+    main()
+
+
+Choosing the Right Technique
+The choice between multithreading and multiprocessing depends on the specific needs of your application. Here are some factors to consider:
+
+Task type:
+Use multithreading for tasks with frequent I/O operations.
+Use multiprocessing for CPU-intensive tasks that benefit from true parallelism.
+
+Resource requirements:
+Multithreading is lightweight and easier to manage.
+Multiprocessing involves more overhead and requires careful resource management.
+
+Complexity:
+Multithreading is simpler to implement, especially for beginners.
+Multiprocessing requires more advanced coding skills and understanding of process management.
+Remember, both techniques have their own strengths and weaknesses. The best approach is to understand their differences
+and choose the one that best suits your specific needs.
+
+Q2. Async I/O - Async I/O is a concurrent programming design that has received dedicated support in Python,
+
+# Can you explain the difference between multithreading and multiprocessing?
+
+Multithreading vs Multiprocessing in Python
+Both multithreading and multiprocessing are techniques used to achieve concurrency in Python. However, they differ in their approach and have distinct advantages and disadvantages.
+
+Multithreading:
+
+Multiple threads of execution within a single process:
+    This means that multiple tasks can be executed concurrently, but they share the same resources (memory, CPU, etc.)
+    of the process.
+Lightweight and efficient for CPU-bound tasks:
+    Creating and managing threads is relatively inexpensive compared to processes.
+Limited to a single CPU core:
+    All threads within a process are ultimately executed on the same CPU core, limiting true parallelism.
+Potential for race conditions and deadlocks:
+    Threads accessing shared resources need proper synchronization to avoid conflicts and deadlocks.
+
+Multiprocessing:
+
+
+Multiple processes running concurrently:
+    Each process has its own separate memory space and resources, allowing for true parallelism on multi-core systems.
+More heavyweight and resource-intensive:
+    Creating and managing processes requires more resources than threads.
+Capable of utilizing multiple CPU cores:
+    Processes can be distributed across different cores, achieving true parallel processing.
+Improved isolation and resource protection:
+    Processes have separate memory spaces, preventing them from interfering with each other's resources.
+Communication between processes requires explicit mechanisms:
+    Unlike threads, processes cannot directly access each other's memory, requiring inter-process communication (IPC)
+    mechanisms like pipes, queues, or sockets.
+
+Choosing between multithreading and multiprocessing:
+
+The choice between multithreading and multiprocessing depends on the specific needs of your application:
+
+For CPU-bound tasks and situations where resource sharing is not an issue, multithreading can be a good choice due to
+its efficiency.
+For tasks that require true parallelism and can benefit from utilizing multiple CPU cores,
+multiprocessing is the better option.
+Consider the complexity of managing inter-process communication when choosing multiprocessing.
+
+It's important to evaluate your specific needs and choose the approach that provides the best performance,
+scalability, and resource utilization for your application.
+
+Q. Async  I/O - how you implement 2 threads?
+
+Asynchronous I/O allows Python programs to perform I/O operations without blocking the main thread.
+This can significantly improve the responsiveness and performance of your application, especially for tasks involving
+network requests or file operations.
+
+import asyncio
+import threading
+
+#This function will perform the actual I/O operation, which in this case is fetching a URL.
+async def do_io(url):
+    # Perform I/O operation, such as fetching a URL
+    response = await asyncio.get(url)
+    # Process response
+    print(response)
+
+#This function will run in a separate thread and process the list of URLs asynchronously using the event loop.
+def worker(loop, urls):
+    """
+    This function will run in a separate thread and process the list of URLs asynchronously using the event loop.
+    """
+    asyncio.set_event_loop(loop)
+    tasks = [do_io(url) for url in urls]
+    loop.run_until_complete(asyncio.gather(*tasks))
+    loop.close()
+
+Create Threads and Event Loop:
+    First, we create a list of URLs that we want to fetch. Then, we create a new thread and event loop.
+    The event loop is a core component of asynchronous I/O, responsible for scheduling and executing tasks.
+    We also set the event loop for the new thread using asyncio.set_event_loop().
+
+urls = [
+        "https://example.com",
+        "https://example.org",
+        "https://example.net",
+    ]
+# Create two threads
+thread1 = threading.Thread(target=worker, args=(asyncio.new_event_loop(), urls[:1]))
+thread2 = threading.Thread(target=worker, args=(asyncio.new_event_loop(), urls[1:]))
+
+# Start threads
+thread1.start()
+thread2.start()
+
+# Wait for threads to finish
+thread1.join()
+thread2.join()
+
+Explanation:
+
+asyncio.new_event_loop() creates a new event loop for each thread to avoid conflicts.
+asyncio.get(url) is used to asynchronously fetch the URL.
+asyncio.gather(*tasks) waits for all tasks in the list to complete.
+loop.close() closes the event loop after all tasks are finished.
+
+Advantages:
+
+This approach leverages two threads to perform I/O operations concurrently, improving efficiency.
+Asynchronous I/O prevents the main thread from blocking, allowing the program to remain responsive.
+
+Limitations:
+
+Managing multiple threads and event loops can be more complex than using a single event loop.
+Not all libraries support asynchronous I/O, requiring additional workarounds.
+
+Conclusion:
+
+Implementing asynchronous I/O with multiple threads can be a good strategy to improve the performance and responsiveness of your Python applications. However, it's crucial to carefully evaluate the complexity and potential challenges before choosing this approach.
+
+Q2 lint - pylint, ruff
+
+When to Choose Ruff:
+Ruff is a great choice for developers who are looking for a faster, more lightweight linting tool. It's also a good
+option for those who are already using Black and want to format their code while linting it.
+
+linting tool that is faster and more lightweight than Pylint. It's also a good option for those who are already using
+lint tools
+    ruff - for error checking, code formatting, and enforcing a coding style.
+    black - for code formatting only.
+    isort - for sorting imports alphabetically within distinct sections.
+    mypy - for static type checking.
+    autoflake - for removing unused imports and variables.
+
+
+difference between ruff and pylint
+Feature	                Ruff	      Pylint
+Speed	                Faster	      Slower
+Size	                Smaller	      Larger
+Plugins	                More	      Fewer
+Black integration	    Yes	          No
+pyproject.toml support	Yes	          No
+
+Q3. pyproject.toml v/s requirements.txt
+
+what is pyproject.toml?
+pyproject.toml is a configuration file that is used to store project metadata and build configuration. It is a
+standardized format supported by various tools like pip, setuptools, and Poetry, facilitating easier project
+management and collaboration.
+
+what is poetry ?
+Poetry is a tool for dependency management and packaging in Python. It allows you to declare the libraries your
+project depends on and easily manage them. It also provides a standardized format for defining builds, making it
+easier to create and distribute Python packages.
+
+what is poetry.lock ?
+poetry.lock is a lock file that is used to store the exact versions of dependencies installed by Poetry. It is
+automatically generated when you run poetry install and should be committed to version control along with pyproject.toml.
+
+
+pyproject.toml:
+
+Replaced setup.py and setup.cfg: Since 2022,
+    pyproject.toml has become the recommended configuration file for Python projects. It can define project metadata,
+    build options, dependencies, and other configurations.
+Centralized configuration:
+    It provides a single location for various configuration options, including dependencies, that were previously
+    spread across multiple files like setup.py and setup.cfg.
+Dynamic dependencies:
+    It supports dynamic dependencies, allowing you to specify dependencies within the file itself instead of relying
+    on a separate requirements.txt file.
+Flexibility: It offers a more flexible configuration format compared to older methods, supporting additional
+    features like development dependencies and optional dependencies.
+Standardized: It is a standardized format supported by various tools like pip, setuptools, and Poetry, facilitating
+    easier project management and collaboration.
+
+pre-commits - better place at local and pre-commit for CI/CD pipeline
+    pre-commit is a framework for managing and maintaining multi-language pre-commit hooks. It is a lightweight tool
+    that makes it easy to install and manage pre-commit hooks for various languages and frameworks.
+
+    It will prevent you from committing code that fails linting, tests, or other checks. This helps ensure that
+    your codebase is always in a consistent state and adheres to your project's standards.
+
+
+
+requirements.txt:
+
+what is requirements.txt ?
+requirements.txt is a file that is used to specify dependencies and their versions in Python projects. It is a
+widely used format that is supported by various tools like pip, Poetry, and Conda, making it a popular choice for
+managing dependencies.
+
+Simple dependency management:
+    It provides a simple and widely understood format for specifying dependencies and their versions.
+Human-readable:
+    It is easily readable and editable by humans, making it convenient for manual manipulation of dependencies.
+Tool-agnostic:
+    It is not tied to any specific build or packaging tool, allowing it to be used with various tools like pip,
+    Poetry, and Conda.
+Legacy support:
+    It remains widely used by many projects and tools, ensuring compatibility with older systems.
+Focused purpose:
+    It specifically focuses on managing dependencies, offering a clear and concise format for this purpose.
+
+Feature	                pyproject.toml	                requirements.txt
+Purpose	                General project configuration	Dependency management
+Replaced files	        setup.py, setup.cfg         	None
+Dependency management	Dynamic	                        Static
+Flexibility	            High	                        Low
+Standardization	        Higher	                        Lower
+Tool dependence	        More	                        Less
+Human-readability	    Moderate	                    High
+Legacy support	        Lower	                        Higher
+
+Q4.How do you debug in python program?
+
+Debugging is the process of identifying and removing errors from a software application. It involves a systematic
+process of finding and fixing bugs in a computer program. Debugging is an essential skill for any Python developer.
+It allows you to identify and fix errors in your code, making it more reliable and robust.
+
+Python provides several tools and techniques for debugging code. The most common ones are:
+
+    print() statements - for printing the value of a variable or expression at a specific point in the program. or
+    import pdb; pdb.set_trace()  in code to set a breakpoint.
+    Python debugger (pdb) - for setting breakpoints and stepping through code.
+    IDEs and editors - for providing a graphical interface to debug code.
+    Logging - for recording program events and errors to a file or console.
+    Profiling - for analyzing the performance of a program and identifying bottlenecks.
+
+Q. favorite python library and why ?
+
+1.async and wait library for writing concurrent code using the async/await syntax. It is a powerful tool for building
+    async with httpx.AsyncClient(verify=False) as client:
+        response = await client.request(method, url, headers=headers, json=request_body)
+        return response
+
+    async def main():
+        print("Hello")
+        await
+        print("world")
+
+    asyncio.run(main())
+
+2.pytest - for writing unit tests. It is a popular testing framework that makes it easy to write and run tests.
+    1. Easier to Write and Use:
+    Concise syntax:
+        pytest uses a more natural and concise syntax compared to unittest, making tests easier to write and read.
+    Fixtures:
+        pytest offers powerful fixture management, allowing you to set up complex test environments and reuse code across tests.
+    Parameterization:
+        pytest allows parametrized tests, enabling you to run the same test with different data sets efficiently.
+
+    2. More Flexible and Extensible:
+    Plugins:
+        pytest has a rich ecosystem of plugins that extend its functionality beyond basic unit testing. This allows you to integrate with other tools, improve test reporting, and customize your testing workflow.
+    Markers:
+        pytest supports markers, which are metadata tags attached to tests, allowing for better organization, filtering, and selection of tests based on specific criteria.
+    Fixtures as tests:
+        pytest allows you to write tests as fixtures, enabling reusable testing logic and modularization.
+
+
+    3. More Powerful Assertions:
+    Expressive assertions:
+        pytest provides a more powerful and expressive assertion mechanism compared to unittest, making it easier
+        to articulate your test expectations.
+    Debugging support:
+        pytest offers insightful error messages and built-in debugging tools, making it easier to identify and
+        fix problems in your tests.
+
+    4. Wider Community and Adoption:
+    Larger community:
+        pytest enjoys a larger and more active community compared to unittest, leading to more readily available
+        resources, support, and contributions.
+    continuous integration:
+        pytest integrates seamlessly with continuous integration tools and workflows, making it a popular choice for automated testing.
+
+        import pytest
+        def test_addition():
+            assert 1 + 1 == 2
+
+Feature	          pytest	                                                 unittest
+Syntax	          More concise and natural	                                 More verbose and traditional
+Fixtures	      Powerful fixture management for complex test setups	     Limited fixture support
+Parameterization  Supports running tests with different data sets	         Requires additional libraries
+Plugins	          Rich ecosystem of plugins for various functionalities	     Limited plugin support
+Markers	          Enables metadata tags for test organization and filtering	 No built-in support for markers
+Assertions	      More expressive and powerful	                             Less expressive assertion mechanisms
+Debugging	      Built-in debugging tools and insightful error messages	 Less comprehensive debugging support
+Community	      Larger and more active community	                         Smaller community
+CI integration	  Seamless integration with CI tools	                     Requires additional configuration for CI
+
+3.Correlation_id - for adding correlation IDs to logs. It is a simple and lightweight library that makes it easy to
+    add CorrelationIdFilter to logs.
+    import logging
+    from correlation import CorrelationIdFilter
+
+    logging.basicConfig(level=logging.INFO)
+    logger = logging.getLogger(__name__)
+    logger.addFilter(CorrelationIdFilter(uuid_length=68, prefix="correlation_id: ", default="_"))
+    LOGGER_FORMAT=(
+        "[%(asctime)s] [%(levelname)s] [%(name)s] "
+        "[PID %(process)d] [TID %(thread)d] [X-ID %(correlation_id)s] "
+        "[%(filename)s.%(lineno)s -> %(funcName)s()] %(message)s"
+    )
+    logger.Formatter(LOGGER_FORMAT)
+
+
+
+2. requests - for making HTTP requests. It is a simple and elegant library that makes it easy to send HTTP requests
+
+Q. Python testing tools?
+
+There are numerous Python testing tools available, each with its own strengths and weaknesses.
+Choosing the right tool depends on your specific needs and preferences. Here's an overview of some popular options:
+
+Unit Testing Frameworks:
+
+unittest: The built-in unit testing framework in Python, offering a basic but widely used option.
+pytest: A powerful and flexible framework with a concise syntax, extensive plugin ecosystem, and advanced features like
+    fixtures and parametrization.
+nose2: Another popular framework built on top of unittest, offering features like test discovery, plugins, and improved
+    test execution.
+
+Integration Testing Tools:
+Selenium: A powerful tool for automating browser interaction and testing web applications.
+Splinter: A web testing framework inspired by Selenium but offering a simpler and more Pythonic API.
+Robot Framework: A keyword-driven testing framework suitable for acceptance testing and automation of complex workflows.
+
+Functional Testing Tools:
+
+Behave: A behavior-driven development (BDD) framework using natural language syntax to describe test scenarios.
+Lettuce: A BDD framework focused on web applications, similar to Behave but with features specific to web testing.
+Hypothesis: A property-based testing framework that automatically generates test cases based on defined properties.
+
+Test Coverage Tools:
+coverage: A popular tool for measuring code coverage and identifying areas that lack tests.
+pytest-cov: A pytest plugin that integrates with coverage to provide detailed code coverage reports.
+Codecov: A hosted service for managing code coverage reports and integrating them with your workflow.
+
+Other Tools:
+
+Pylint: A static code analysis tool that identifies potential errors, bugs, and stylistic issues in your code.
+Flake8: A linter that checks for style and pep8 compliance in your code.
+Pytest-mock: A mocking library for unit testing, helping you isolate and test specific parts of your code.
+Choosing the right tools:
+
+Consider the type of testing you need to perform. Unit testing frameworks like pytest are ideal for testing individual
+units of code, while integration testing tools like Selenium are better suited for testing entire applications.
+Evaluate the size and complexity of your project. Large projects might benefit from a more powerful framework
+like pytest, while smaller projects might be fine with unittest.
+
+Look for ease of use and learning curve. Some frameworks, like pytest, are more beginner-friendly with their simple
+syntax and documentation.
+Consider community and support. Frameworks with larger communities often have more resources available,
+including plugins, tutorials, and troubleshooting guides.
+Ultimately, the best testing tools depend on your specific needs and preferences. It's recommended to explore and
+try different tools to see which ones best suit your project and workflow.
+

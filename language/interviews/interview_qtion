@@ -6,11 +6,11 @@ DevOps - EKS -
 
 GIL - Async  I/O - multi threading - multi process - oops -
 Lint - Pylint -
-Complex situation, user stream,
+Complex situation, user stream,      did not understand
 Narrow down the problem statement
 Concurrent Users -
 Express answer in crisp -
-Kubernatics -
+Kubernatics -                     did not understand
 ACD - key value store
 do you want me explain more in
 Boto3 - Async - alternate AIBoto3 for async operation
@@ -20,7 +20,6 @@ Security. -
 Async  I/O - how you implement 2 thread
 Kubernatics architecture - complete
 Terminology defining
-
 
 Secrets ask , alternate -., hasicorp
 
@@ -39,6 +38,8 @@ Counter query -> particular user, region,
 
 favaraite bug or complex issue resolved
 
+
+
 Favraite library -> show passionate over library
 
 Pandas , numpy ,
@@ -53,12 +54,11 @@ lint
 
 portery - package dependency
 
-precommits - better place local or precommit or CI/CD
+pre-commits - better place local or pre-commit or CI/CD
 
 CI/CD pipelines detailed
 
 
-On Tue, Dec 5, 2023 at 1:09 PM Gururaju G <gururajutalks@gmail.com> wrote:
 1. What are the gotchas with Pandas?
     2. Can we do async functions with boto3?
     3. Download a large file. How to do it async fashion?
