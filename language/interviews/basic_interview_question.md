@@ -388,5 +388,149 @@ Biometric authentication: In some cases, APIs may use biometric authentication m
 The choice of authentication method depends on factors such as the security requirements, the type of client applications (e.g., web, mobile), and the specific needs of your application. It's important to choose an authentication method that provides an appropriate level of security for your API and meets your application's requirements.
 
 
+9. Have you come across any issues or pitfalls in Python, related to typing (duck typing, no strict typing enforced)?
+    
+While Python's dynamic typing offers flexibility, it can also lead to potential issues and pitfalls if not handled carefully. Here are some common challenges related to typing in Python:
 
+1. Runtime Errors:
 
+Type Mismatch Errors: Operations on incompatible types can cause unexpected errors at runtime, hindering debugging. For example, adding a string to a number will raise a TypeError.
+Attribute Errors: Accessing attributes or methods that don't exist for a given object type also results in runtime errors.
+2. Readability and Maintainability:
+
+Less Code Clarity: Without explicit types, understanding variable and function behavior solely from code can be challenging, especially in large codebases.
+Collaboration Difficulties: In team projects, unclear types can increase misunderstandings and hinder collaboration.
+Refactoring Challenges: Making changes without a clear understanding of types can introduce errors or break existing functionality.
+3. Testing and Refactoring:
+
+Comprehensive Testing: Dynamic typing necessitates thorough testing to ensure code behaves as expected with various input types.
+Refactoring Caution: Type-related errors can easily surface during refactoring if type assumptions are not carefully considered.
+4. Performance:
+
+Type Checking Overhead: While Python performs type checks at runtime, type hints can improve performance by aiding static type checkers in identifying potential issues early on.
+5. Large-Scale Projects:
+
+Type-Related Issues Compound: As projects grow, type issues can become more prevalent and challenging to manage without proper type annotations and tooling.
+Best Practices to Mitigate Typing Issues:
+
+Use Type Hints: Add type hints to variables, functions, and return values to improve code clarity and enable static type checking tools.
+Leverage Static Type Checkers: Use tools like mypy to detect type errors before runtime, reducing debugging time and improving code quality.
+Write Comprehensive Tests: Ensure code handles various input types correctly and catches potential type-related errors.
+Adopt Clear Coding Conventions: Establish naming and commenting conventions to enhance readability and type understanding.
+Prioritize Code Readability: Favor clear and expressive code over overly concise syntax that might obscure types.
+By following these practices, you can significantly reduce the likelihood of typing-related issues in your Python projects and enjoy the benefits of flexibility while maintaining code clarity, reliability, and maintainability.
+
+10. Did you face any difficulties in terms of validating data when working big data or something? Have you used libraries?
+
+11. Recommended approach for managing dependencies?
+    
+The best approach for managing dependencies in Python depends on several factors, including:
+
+Project Size and Complexity:
+
+Small projects: For simple projects with few dependencies, using pip and a requirements.txt file might be sufficient.
+Medium-sized projects: For projects with moderate complexity and dependencies, consider virtual environments (venv) and pipenv or Poetry for better isolation and dependency management.
+Large projects: For complex projects with extensive dependencies, consider tools like PDM or Conda for advanced dependency management and build reproducibility.
+Team Collaboration:
+
+Individual projects: If you're working alone, any of the mentioned approaches are viable.
+Team projects: For collaborative projects, tools like Poetry or PDM offer features like lock files and dependency resolution to ensure everyone uses the same versions.
+Specific Development Practices:
+
+Continuous Integration/Continuous Deployment (CI/CD): Tools like Pipfile and Pipenv integrate well with CI/CD pipelines for automated dependency management.
+Specific frameworks or libraries: Some frameworks might recommend or require specific dependency management tools.
+Here's a breakdown of popular options and their strengths:
+
+pip and requirements.txt: Simple and widely used, but lack environment isolation and advanced features.
+venv and pipenv: Easy to set up, offer virtual environments and basic dependency management.
+Poetry: Built-in lock file, comprehensive dependency resolution, and project structure management.
+PDM: Powerful dependency management for complex projects, integrates with build tools and virtual environments.
+Conda: Popular for scientific computing, provides package management with environments and reproducibility.
+My recommendations:
+
+For small projects: Start with pip and requirements.txt, consider venv and pipenv if dependencies increase.
+For medium-sized projects: Use venv and pipenv or switch to Poetry for its lock file and advanced features.
+For large projects: Consider PDM or Conda for advanced dependency management and reproducibility.
+Remember, there's no single "best" approach. Choose the tool that best suits your project's needs, complexity, and development workflow. Feel free to ask if you have any further questions or need help selecting the right tool for your specific case.
+
+12. How does Kubernetes secure secrets?
+
+13. Which format does Kubernetes secure secrets?
+
+14. How well do you understand Kubernetes APIs?
+15. Are you familiar with Kubernetes services? Like Metadata, Spec?
+16. Do you know what's a control plane in Kubernetes?
+17. Do you know what's ETCD in Kubernetes service?
+
+18. Have you handled REST APIs other than Django?
+    Here are some popular Python frameworks for building REST APIs that I'm familiar with:
+
+Flask: A lightweight and flexible microframework, ideal for smaller APIs or those requiring more customization.
+FastAPI: A high-performance framework known for its speed, data validation, and automatic data conversion features.
+Falcon: A minimalist framework focused on speed and flexibility, well-suited for building microservices and lightweight APIs.
+Pyramid: A versatile framework that can be used for both simple and complex web applications, offering flexibility and scalability.
+Tornado: A non-blocking web server and framework known for its ability to handle high concurrency and real-time applications.
+Django: A popular framework for building web applications and REST APIs. It is known for its flexibility, scalability, and data validation.
+
+Key considerations when choosing a REST API framework include:
+
+Performance: How well does the framework handle requests and responses under load?
+Scalability: Can the framework easily handle growth in users and data?
+Ease of use: How quickly can developers learn and use the framework?
+Features: Does the framework provide the features you need, such as authentication, authorization, and data validation?
+Community and support: Is there a strong community and documentation to support the framework?
+
+19. Have you used Fast APIs?
+    Here's a summary of FastAPI's key features and benefits:
+
+Performance:
+
+High-speed: Built on Starlette and Pydantic, it offers exceptional performance, making it ideal for demanding applications.
+Asynchronous: Fully embraces asynchronous programming for efficient handling of concurrent requests, boosting performance and scalability.
+Development Experience:
+
+Intuitive API definition: Employs Python type hints for clear and concise API design, simplifying development and maintenance.
+Automatic data validation and conversion: Leverages Pydantic models to ensure data integrity and automatically convert data types between Python and JSON.
+OpenAPI documentation: Automatically generates comprehensive OpenAPI documentation, facilitating API exploration and integration.
+Developer-friendly features: Offers hot reloading for rapid development, interactive API docs for testing, and seamless integration with popular Python tools and libraries.
+Architecture:
+
+Dependency injection: Supports dependency injection for cleaner code organization and testability.
+Common Use Cases:
+
+Building high-performance REST APIs
+Developing data-driven web applications
+Creating microservices architectures
+Constructing real-time APIs using WebSockets
+Powering machine learning inference endpoints
+
+20. Have you used Kafka?
+    Here's what I know about Kafka:
+
+What is Kafka?
+
+Apache Kafka is an open-source distributed streaming platform used for high-throughput, low-latency data pipelines, real-time stream processing, and mission-critical applications.
+It acts as a central hub for data movement, allowing producers to publish data streams (called messages) and consumers to subscribe and receive them.
+This pub-sub (publish-subscribe) model enables real-time data processing and makes Kafka a powerful tool for various applications.
+Key features of Kafka:
+
+High throughput and low latency: Kafka can handle millions of messages per second with minimal latency, making it ideal for real-time applications.
+Scalability and fault tolerance: Kafka can be horizontally scaled to handle increasing data volumes and is resilient to failures, ensuring high availability.
+Durability and reliability: Messages are replicated across multiple nodes, guaranteeing data durability even in case of node failures.
+Flexibility and integration: Kafka integrates with various data sources and sinks, making it a versatile tool for diverse data pipelines.
+Use cases of Kafka:
+
+Real-time analytics: Analyze data as it streams in for fraud detection, anomaly detection, or monitoring critical metrics.
+Log aggregation: Collect and analyze logs from various systems in real-time to gain insights into system health and performance.
+Event streaming: Build event-driven applications that react to real-time events like news updates, social media activity, or sensor readings.
+Microservices communication: Facilitate communication between microservices through asynchronous message exchange.
+Data integration: Stream data between different systems and applications for real-time integration and synchronization.
+Benefits of using Kafka:
+
+Improved data processing efficiency: Real-time analysis and responsiveness enable faster decision-making and action.
+Reduced complexity: Simplifies data pipelines by decoupling producers and consumers, making applications more flexible and scalable.
+Enhanced data visibility: Gain real-time insights into data streams, improving operational efficiency and business intelligence.
+High reliability and fault tolerance: Ensures data availability and system uptime even in the face of failures.
+
+21. How can you create topics in Kafka? How many ways?
+    
