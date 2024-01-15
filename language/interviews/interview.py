@@ -359,7 +359,7 @@ is_even = lambda x: x % 2 == 0
 # l2 = list(filter(is_even, l1))
 # print(l2)
 # # exm02
-ll = ['apple', 'banana', 'pineapple']
+ll = ["apple", "banana", "pineapple"]
 #
 # fltr = list(filter(lambda x: len(x) > 5, ll))
 # print(fltr)
@@ -388,4 +388,3 @@ Dictionary Comprehension is a syntax construction to ease the creation of a dict
 # for i in range(5):
 #     print(i, end=" ")
 # print()
-
