@@ -1,10 +1,11 @@
 *** Settings ***
+Library    libraries.AuthLibrary
 # Third-party
 Library     RequestsLibrary
 # Local
-Resource    resources/keywords/all.resource
+Resource    ../keywords/all.resource
 # Variables
-Resource    resources/variables/all.resource
+Resource    ../variables/all.resource
 
 
 *** Keywords ***

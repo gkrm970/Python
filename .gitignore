@@ -1,0 +1,37 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+
+
+docker-stack.yml
+
+# Editor Configs
+.vscode
+.idea
+
+# Logs
+logs/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ruff
+.ruff_cache/
+
+# Mypy
+.mypy_cache/
+
+# Unit test
+.pytest_cache/
+
+# Virtual environments
+venv/
+
+# Mac OS
+.DS_Store
+
+# Unnecessory files are hidden
+*.xml
+*.iml

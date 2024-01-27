@@ -1,4 +1,4 @@
 *** Settings ***
-Library     libraries.AuthLibrary
-Resource    resources/keywords/common.resource
-Resource    resources/keywords/schema.resource
+Resource    common.resource
+Resource    schema.resource
+Resource    login.resource

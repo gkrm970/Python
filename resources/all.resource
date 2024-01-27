@@ -1,3 +1,5 @@
 *** Settings ***
-Resource    resources/keywords/all.resource
-Resource    resources/variables/all.resource
+Resource    keywords/all.resource
+Resource    variables/all.resource
+
+

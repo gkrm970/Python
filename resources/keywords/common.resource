@@ -2,9 +2,9 @@
 # Third-party
 Library     RequestsLibrary
 # Local
-Resource    resources/keywords/all.resource
+Resource    all.resource
 # Variables
-Resource    resources/variables/all.resource
+Resource    all.resource
 
 
 *** Keywords ***
