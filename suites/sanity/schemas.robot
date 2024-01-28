@@ -9,6 +9,3 @@ List All Schemas
     [Setup]    Create Pubsub Session
     List All Schemas Should Be Successful
     [Teardown]    Delete All Sessions
-
-Test git hub login
-    Git hub login
