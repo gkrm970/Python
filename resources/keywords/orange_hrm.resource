@@ -17,15 +17,32 @@ Organe HRM login
     Clear Element Text    ${password_locator}
     Input Text    ${password_locator}    admin123
     Click Button    xpath://button[contains(.,'Login')]
-    ${dashboard}=    Page Should Contain    xpath://*[@id="app"]/div[1]/div[1]/header/div[1]/div[1]/span/h6
-    Log To Console    dashboard is ${dashboard}
-    Sleep    5
-    Close Browser
+
 
 
 Orange HRM logout
     [Documentation]    orange hrm logout process
     Log To Console    trying to logout
-    Click Image    xpath://p[@class='oxd-userdropdown-name'] /ancestor::li
+    ${logout}    Set Variable    xpath://a[normalize-space()='Logout']
+    ${_logout_text}=   Get Text    ${logout}
+    Log To Console    _logout_text is{_logout_text}
+    Click Link    ${logout}
     Sleep    10
-#    Click Link    xpath://a[contains(text(),'Logout')]
+
+Check page contain Dashboard keyword
+    [Documentation]    Checking the page contain Dashboard keyword present or not.
+    ${dashboard}    Set Variable    xpath://h6[normalize-space()='Dashboard']
+    Wait Until Element Is Visible    ${dashboard}
+    Wait Until Element Is Visible    ${dashboard}
+
+    ${dashborad_text}=    Get Text    ${dashboard}
+    Log To Console    get text is ${dashborad_text}
+#    Element Text Should Be    ${dashboard}    Dashboard
+    SeleniumLibrary.Element Text Should Be    ${dashboard}    Dashboard
+    Page Should Contain Element    ${dashboard}
+    Log To Console    dashboard is ${dashboard}
+    Sleep    5
+    ${get_text}=    Get Text    xpath://span[@class='oxd-userdropdown-tab']
+    Log To Console    ${get_text}
+    Click Element    xpath://span[@class='oxd-userdropdown-tab']
+    Sleep    10

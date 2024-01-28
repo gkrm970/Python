@@ -9,7 +9,7 @@ authors = ["Bence Petho <bence.petho@prodapt.com>"]
 python = "^3.11"
 # Classes without boilerplate
 attrs = "^23.1.0"
-# OAuth library for authentication
+# OAuth's library for authentication
 oauthlib = "^3.2.2"
 # Task runner that works well with poetry
 poethepoet = "^0.22.0"
