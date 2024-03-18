@@ -106,3 +106,4 @@ In summary, nslookup is the primary command-line tool for interacting with DNS s
 ### Install python3.6 in host01 server We removed python3. You can confirm by running python3 -V
 answer: 
 
+
