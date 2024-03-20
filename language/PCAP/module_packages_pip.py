@@ -1,36 +1,32 @@
 """
 What is a module in Python?
 
-
-
 The total of Python's built-in functions
-
 
 An abstract function which can be used in many cases
 
-
-A file that groups related code for specific operations
-
+A file that groups related code for specific operations-->correct
 
 External Python code that we have to install ourselves
+
+Answer: A file that group related code for specific operations
+
 
 What is a namespace in Python?
 
 
 A. The variables contained within a module
 
-
 B. The names of a module's files
-
 
 C. The names of a module's entities
 
+D. Names contained in our code and modules --> correct
 
-D. Names contained in our code and modules
+Answer: Names contained in our code and modules.
 
 
 What methods does Python offer to work with modules?
-
 
 
 the import module
@@ -44,26 +40,25 @@ the import variable
 
 the import keyword
 
+Answer: the import module
+so that we can use function/methods/variables/keywords etc from the module
+
 
 Which of the following statements are correct?
 
-
-
 import math
-
 
 from math import pi, sin
 
-
 import math as m
-
 
 All options are correct
 
+Answer: All options are correct
 
-from math import *
 
 
+from math import * -->also correct but not reccomendated
 Some useful math functions are the following:
 
 
@@ -84,29 +79,29 @@ Some useful math functions are the following:
 
        factorial(x) => returns the factorial of a number, it only accepts positive integers. The factorial of a number is the sum of the multiplication, of all the whole numbers, from our specified number down to 1. E.x the factorial of 4 would be 4 x 3 x 2 x 1 = 24
 
-Which of the following expressions return True?
 
+Which of the following expressions return True?
 
 A.
 
->>> print(math.hypot(9,12) == math.sqrt(225))
+print(math.hypot(9,12) == math.sqrt(225))
 
 
 B.
 
->>> print(math.trunc(7.3) == math.floor(7.4))
+print(math.trunc(7.3) == math.floor(7.4))
 
 
 C.
 
->>> print(math.floor(10.8) > math.ceil(10.8))
+print(math.floor(10.8) > math.ceil(10.8))
 
 
 Which of the following answers is correct for the statement:
 
 
->>> import math
->>> math.ceil(math.pi)
+import math
+math.ceil(math.pi)
 
 
 3.0
