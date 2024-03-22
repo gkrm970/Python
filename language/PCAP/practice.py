@@ -1,6 +1,5 @@
-chars = "1234"
-char = ""
-for char in reversed(chars):
-    char += char
+p_string = "pumpkin soup".count("p", 2)
+print(p_string)
 
-    print(char)
+p_list = "pumpkin soup".split().count("p")
+print(p_list)
