@@ -1,4 +1,18 @@
-# ignore files
-*.xml
-*.iml
-.idea
+# Operating system specific
+.DS_Store
+Thumbs.db
+
+# Development environment
+*.pyc
+node_modules/
+.idea/
+
+# Build artifacts
+.class
+
+# Logs and temporary files
+*.log
+.tmp
+
+# IDE specific settings (uncomment if needed)
+.vscode/
