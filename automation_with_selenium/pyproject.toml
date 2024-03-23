@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "automation-with-selenium"
+version = "0.1.0"
+description = ""
+authors = ["Gopalakrishna R M <gkrm970@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+#
+python = "^3.12"
+# Used for interactive with UI
+selenium = "^4.8.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
