@@ -11,7 +11,7 @@ python = "^3.12"
 # Used for interactive with UI
 selenium = "^4.8.0"
 # Used for web automation framework
-pytest = "^7.2.2"
+pytest = "^8.1.1"
 
 
 [build-system]

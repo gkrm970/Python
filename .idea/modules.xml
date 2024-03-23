@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/python-materials.iml" filepath="$PROJECT_DIR$/.idea/python-materials.iml" />
+      <module fileurl="file://$PROJECT_DIR$/automation_with_selenium/.idea/ui-selenium.iml" filepath="$PROJECT_DIR$/automation_with_selenium/.idea/ui-selenium.iml" />
     </modules>
   </component>
 </project>
