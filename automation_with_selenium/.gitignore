@@ -1,18 +1,33 @@
-# Operating system specific
-.DS_Store
-Thumbs.db
+# Python
+__pycache__/
+*.py[cod]
 
-# Development environment
-*.pyc
-node_modules/
-.idea/
+# Environment
+venv/
+env/
+.venv/
+.env/
+.env
 
-# Build artifacts
-.class
+# Dependency directories
+__pypackages__/
+*.egg-info/
+dist/
+build/
+lib/
 
-# Logs and temporary files
+# Logs and databases
 *.log
-.tmp
+*.sql
+*.sqlite3
 
-# IDE specific settings (uncomment if needed)
+# Temporary files
+*.tmp
+
+# Editor-specific files
 .vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
