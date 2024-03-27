@@ -3,6 +3,7 @@ import string
 
 from page_objects.home_page import HomePage
 from page_objects.account_registration_page import AccountRegistrationPage
+from utilities.custom_logger import logger
 from utilities.random_string import random_string_generator
 from utilities.read_properties import ReadConfig
 
@@ -11,13 +12,17 @@ class Test001AccountRegistration:
     base_url = ReadConfig.get_application_url()
 
     def test_account_reg(self, setup):
+        logger.info("**** Test_001_Account_Registration ****")
         self.driver = setup
         self.driver.get(self.base_url)
+        logger.info("**** Navigated to Home Page ****")
         self.driver.maximize_window()
 
         self.hp = HomePage(self.driver)
+        logger.info("**** Click on My Account ****")
         self.hp.click_my_account()
         self.hp.click_register()
+        logger.info("**** Click on Register ****")
         self.regpage = AccountRegistrationPage(self.driver)
 
         self.regpage.set_first_name("Vijay")
@@ -39,8 +44,12 @@ class Test001AccountRegistration:
         self.confmsg = self.regpage.get_confirmation_msg()
         self.driver.close()
         if self.confmsg == "Your Account Has Been Created!":
+            logger.info("**** Account Created Successfully ****")
             assert True
+            self.driver.close()
         else:
             self.driver.save_screenshot(os.path.abspath(os.curdir) + "\\screen_shorts\\test_account_reg.png")
             self.driver.close()
             assert False
+
+        logger.info("**** Test_001_Account_Registration Completed ****")

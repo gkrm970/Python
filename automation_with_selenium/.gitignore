@@ -8,6 +8,8 @@ env/
 .venv/
 .env/
 .env
+*.xml/
+.iml/
 
 # Dependency directories
 __pypackages__/

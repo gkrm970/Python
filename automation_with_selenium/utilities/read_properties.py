@@ -8,7 +8,7 @@ config.read(os.path.abspath(os.curdir) + "\\configurations\\config.ini")
 class ReadConfig:
     @staticmethod
     def get_application_url():
-        url = config.get("commonInfo", "baseURL")
+        url = config.get("commonInfo", "base_url")
         return url
 
     @staticmethod
