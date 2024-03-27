@@ -4,7 +4,7 @@ from robot.api.deco import keyword
 
 
 @keyword
-def send_mail(mail_content, mail_to):
+def send_mail(mail_content, mail_to, access_token):
     # Sends the mail to the given mails and respective mail content.
     try:
         mail_data = {
@@ -21,12 +21,12 @@ def send_mail(mail_content, mail_to):
         headers = {
             "Content-Type": "application/json",
             "accept": "application/json",
-            "Authorization": f"Bearer access_token"
+            "Authorization": f"Bearer {access_token}"
         }
         mail_data = json.dumps(mail_data)
 
         response = requests.post(
-            "send_mail_url",
+            "http://10.168.170.180:8080/afService/mail/send/",
             headers=headers,
             data=mail_data,
             verify=False,

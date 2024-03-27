@@ -1,9 +1,9 @@
 *** Settings ***
-Library       ../libraries/netbot_email.py
-Resource      all.resource
+Library       ../../libraries/netbot_email.py
 
 *** Keywords ***
 Send netbot email
     [Documentation]    Send an email
-    send mail    ${mail_content}   ${mail_to}   ${mail_to}
+    [Arguments]    ${access_token}
+    send mail    Hi Gopalakrishna,<br/>Good Day.<br/> Test Mail.     gopalakrishna.rm@prodapt.com    ${access_token}
     Log    mail sent successfully
