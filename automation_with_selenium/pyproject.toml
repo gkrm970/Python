@@ -7,13 +7,21 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 #
-python = "^3.12"
+python = "^3.11"
 # Used for interactive with UI
 selenium = "^4.8.0"
-# Used for web automation framework
+# Used for a web automation framework
 pytest = "^8.1.1"
-
-
+# Used for a different browser-specific driver
+webdriver-manager = "^4.0.1"
+#To generate allure report
+allure-pytest = "^2.13.4"
+# To work with paralle testing
+pytest-xdist = "^3.5.0"
+# work with exel file
+openpyxl = "^3.1.2"
+# for html report generation
+pytest-html = "^4.1.1"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
