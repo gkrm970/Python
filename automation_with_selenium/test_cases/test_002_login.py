@@ -1,3 +1,5 @@
+import pytest
+
 from page_objects.home_page import HomePage
 from page_objects.login_page import LoginPage
 from utilities.read_properties import ReadConfig
@@ -11,6 +13,7 @@ class Test_Login:
     user = ReadConfig.get_user_email()
     password = ReadConfig.get_password()
 
+    @pytest.mark.regression
     def test_login(self, setup):
         logger.info("******* Starting test_002_login **********")
         self.driver = setup

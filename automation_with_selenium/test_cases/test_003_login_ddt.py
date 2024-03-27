@@ -1,4 +1,7 @@
 import time
+
+import pytest
+
 from page_objects.home_page import HomePage
 from page_objects.login_page import LoginPage
 from page_objects.my_account_page import MyAccountPage
@@ -14,6 +17,7 @@ class Test_Login_DDT():
 
     path = os.path.abspath(os.curdir) + "\\testdata\\Opencart_LoginData.xlsx"
 
+    @pytest.mark.regression
     def test_login_ddt(self, setup):
         self.logger.info("**** Starting test_003_login_Datadriven *******")
         self.rows = xl_utils.get_row_count(self.path, 'Sheet1')

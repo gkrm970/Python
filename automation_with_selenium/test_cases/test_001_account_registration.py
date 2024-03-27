@@ -1,6 +1,8 @@
 import os.path
 import string
 
+import pytest
+
 from page_objects.home_page import HomePage
 from page_objects.account_registration_page import AccountRegistrationPage
 from utilities.custom_logger import logger
@@ -11,6 +13,7 @@ from utilities.read_properties import ReadConfig
 class Test001AccountRegistration:
     base_url = ReadConfig.get_application_url()
 
+    @pytest.mark.sanity
     def test_account_reg(self, setup):
         logger.info("**** Test_001_Account_Registration ****")
         self.driver = setup
