@@ -1,0 +1,1 @@
+from netbot_email import send_mail
