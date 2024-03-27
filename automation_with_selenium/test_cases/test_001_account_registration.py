@@ -4,10 +4,11 @@ import string
 from page_objects.home_page import HomePage
 from page_objects.account_registration_page import AccountRegistrationPage
 from utilities.random_string import random_string_generator
+from utilities.read_properties import ReadConfig
 
 
 class Test001AccountRegistration:
-    base_url = "https://demo.opencart.com/"
+    base_url = ReadConfig.get_application_url()
 
     def test_account_reg(self, setup):
         self.driver = setup
@@ -40,6 +41,6 @@ class Test001AccountRegistration:
         if self.confmsg == "Your Account Has Been Created!":
             assert True
         else:
-            self.driver.save_screenshot(os.path.abspath("../screenshots/test_account_reg.png"))
+            self.driver.save_screenshot(os.path.abspath(os.curdir) + "\\screen_shorts\\test_account_reg.png")
             self.driver.close()
             assert False
