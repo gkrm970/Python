@@ -49,9 +49,6 @@ def send_mail(mail_content=mail_content1, mail_to="gopalakrishna.rm@prodapt.com 
         ) from exc
 
 
-send_mail()
-
-
 def check_and_reply_to_mails(access_token_for_mail=access_token1):
     # Use mail service API to get received emails (replace with actual API call)
     # get_received_emails api required
