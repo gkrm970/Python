@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "suites"
+version = "0.1.0"
+description = ""
+authors = ["Gopalakrishna R M <gopalakrishna.rm@prodapt.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+# synchronouse request
+requests = "^2.31.0"
+# async request mean asynchronous request
+aiohttp = "^3.9.3"
+# async request mean asynchronous request
+httpx = "^0.27.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

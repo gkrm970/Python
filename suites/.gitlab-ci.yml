@@ -1,0 +1,109 @@
+# The following template expects this list of variables to be present in Gitlab
+# Located in your group or project: Settings --> CI/CD --> Variables
+
+# When your project is organized in a group in gitlab, place the following at the group level so they are available to all the projects/services
+
+# These variables must be present in gitlab-ci.yml and shouldn't be moved to gitlab GUI variables without proper testing.
+# It might break the deployment pipeline due to CI/CD variable precedence.
+variables:
+  OCP_SERVER_LAB: https://api.tinaa-edtnabtf-app01.nfvdev.tlabs.ca:6443
+  OCP_SERVER_PROD: https://api.tinaa-eyrkonae-app01.tinaa.osc.tac.net:6443
+
+  # develop, qa, preprod variables
+  # IMPORTANT: Do not move below variables to gitlab variables. It will break the production deployment pipeline.
+  # This is due to CI/CD variable precedence:
+  # Ref.: https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
+  #
+  # <project name> provide a meaningful name for your project.
+  PROJECT_NAME: api-portal
+  GROUP: pltf
+  SERVICE_IMAGE_NAME: $PROJECT_NAME
+  PROJECT_DEV: $GROUP-develop-$PROJECT_NAME
+  PROJECT_QA: $GROUP-qa-$PROJECT_NAME
+  PROJECT_PREPROD: $GROUP-preprod-$PROJECT_NAME
+
+  # Prod variables
+  PROJECT_PROD: $GROUP-$PROJECT_NAME
+
+include:
+  #- project: 'tinaa-platform/scan-cli'
+  #  ref: v21.07
+  #  file: 'scan.gitlab-ci.yml'
+  - project: 'tinaa-platform/deployment/cicd'
+    file: 'build-deploy/build.template.gitlab-ci.yml'
+  - project: 'tinaa/infrastructure/venafi-cert-management'
+    file: 'cert.template.gitlab-ci.yml'
+
+stages:
+  - cert_ceation
+  - e2e_tests            # A test image is created and runs unit tests for the project
+
+E2E_test_frontend:
+  image: registry.gitlab.tinaa.osc.tac.net/tinaa/cdaf/tinaa-inventory/user-acceptance-tests/uat:robot_image
+  stage: e2e_tests
+  tags:
+    - toll6-runners
+  environment:
+    name: $CI_COMMIT_BRANCH
+  rules:
+    - if: $CI_COMMIT_BRANCH == "Api-Portal-E2E-Automation"
+      variables:
+        API_PORTAL_UI_URL: $API_PORTAL_UI_DEVELOP_URL
+    - if: $CI_COMMIT_BRANCH == "preprod"
+      variables:
+        API_PORTAL_UI_URL: $API_PORTAL_UI_PREPROD_URL
+  #parallel:
+    #matrix:
+      #- DIRECTORY: Test1_10
+      #- DIRECTORY: Test11_20
+      #- DIRECTORY: Test21_30
+      
+
+  script:
+    - CURRENT_PATH=$(pwd)
+    - echo $CURRENT_PATH
+    #- cd "$CI_PROJECT_DIR/E2E_Tests/$DIRECTORY"
+    #- robot "$CI_PROJECT_DIR/E2E_Tests/$DIRECTORY/Api_Portal.robot"
+    - status=""
+    - |
+      api_portal_access_validation() {
+        echo "Sending GET request to $API_PORTAL_UI_URL"
+        deployment_status=$(curl -sS -w "%{http_code}" -X GET -k "${API_PORTAL_UI_URL}")
+        response_length=${#deployment_status}
+        status=${deployment_status:$response_length-3}
+        echo "API response status code: $status"
+      }
+    - start_time=$(date +%s)
+    - timeout_duration=300
+    - |
+      while true; do
+        api_portal_access_validation
+        if [ "$status" -eq 200 ]; then
+          echo "Api_portal UI is reachable, deployed and ready"
+          #cd $CURRENT_PATH/E2E_Tests/Api-Portal
+          #cd "$CURRENT_PATH/E2E_Tests/$DIRECTORY"
+          #robot "$CI_PROJECT_DIR/E2E_Tests/$DIRECTORY/Api_Portal.robot"
+          cd $CURRENT_PATH/E2E_Tests/Api-Portal
+          robot Api_Portal.robot
+          break
+        fi
+
+        current_time=$(date +%s)
+        elapsed_time=$((current_time - start_time))
+
+        if [ "$elapsed_time" -ge "$timeout_duration" ]; then
+          echo "Timeout reached, Api_portal UI is NOT reachable and not yet ready"
+          exit 1
+        fi
+
+        sleep 2
+      done
+
+  artifacts:
+    name: "robot"
+    expire_in: 1 day
+    public: false
+    paths:
+      - E2E_Tests/Api-Portal/log.html
+      - E2E_Tests/Api-Portal/report.html
+    when: always
